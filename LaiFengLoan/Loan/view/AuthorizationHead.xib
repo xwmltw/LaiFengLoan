@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="3k9-PR-YVA" customClass="AuthorizationHeadView">
+            <rect key="frame" x="0.0" y="0.0" width="349" height="95"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="authorized" translatesAutoresizingMaskIntoConstraints="NO" id="Ylx-e0-isH">
+                    <rect key="frame" x="56" y="20.5" width="28" height="30"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="身份证认证" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ue-Oq-zyX">
+                    <rect key="frame" x="39.5" y="57.5" width="61.5" height="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.61568627450980395" green="0.61568627450980395" blue="0.61568627450980395" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bank_line" translatesAutoresizingMaskIntoConstraints="NO" id="IoD-tg-NcF">
+                    <rect key="frame" x="84" y="34.5" width="41.5" height="2"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="fT4-jc-0ym"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unauthorized" translatesAutoresizingMaskIntoConstraints="NO" id="cKo-3o-aXE">
+                    <rect key="frame" x="125.5" y="20.5" width="28" height="30"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bank_line" translatesAutoresizingMaskIntoConstraints="NO" id="btJ-Bt-4Yp">
+                    <rect key="frame" x="153.5" y="34.5" width="42" height="2"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="XPw-aU-jbi"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unauthorized" translatesAutoresizingMaskIntoConstraints="NO" id="5Zw-QM-dJg">
+                    <rect key="frame" x="195.5" y="20.5" width="28" height="30"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unauthorized" translatesAutoresizingMaskIntoConstraints="NO" id="4a6-Ub-l9g">
+                    <rect key="frame" x="265" y="20.5" width="28" height="30"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="联系人信息" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2aP-Mn-VJO">
+                    <rect key="frame" x="109" y="57.5" width="61.5" height="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.61568627450000002" green="0.61568627450000002" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="运营商认证" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oum-ei-11L">
+                    <rect key="frame" x="248.5" y="57.5" width="61.5" height="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.61568627450000002" green="0.61568627450000002" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="基本信息" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0M-lS-TDB">
+                    <rect key="frame" x="185" y="57.5" width="49.5" height="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.61568627450000002" green="0.61568627450000002" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bank_line" translatesAutoresizingMaskIntoConstraints="NO" id="K1P-wb-FBn">
+                    <rect key="frame" x="224" y="35" width="41" height="2"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="cxk-IY-bGX"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="1Ue-Oq-zyX" firstAttribute="top" secondItem="Ylx-e0-isH" secondAttribute="bottom" constant="7" id="07n-QY-SDz"/>
+                <constraint firstItem="2aP-Mn-VJO" firstAttribute="centerX" secondItem="cKo-3o-aXE" secondAttribute="centerX" id="0aO-CR-G5Z"/>
+                <constraint firstItem="oum-ei-11L" firstAttribute="top" secondItem="4a6-Ub-l9g" secondAttribute="bottom" constant="7" id="8bB-1d-Tfd"/>
+                <constraint firstItem="5Zw-QM-dJg" firstAttribute="leading" secondItem="btJ-Bt-4Yp" secondAttribute="trailing" id="9On-OK-I6h"/>
+                <constraint firstItem="K1P-wb-FBn" firstAttribute="centerY" secondItem="3k9-PR-YVA" secondAttribute="centerY" multiplier="0.75" id="AT9-mY-bcU"/>
+                <constraint firstItem="Ylx-e0-isH" firstAttribute="centerY" secondItem="3k9-PR-YVA" secondAttribute="centerY" multiplier="0.75" id="Eas-cM-0r6"/>
+                <constraint firstItem="5Zw-QM-dJg" firstAttribute="centerY" secondItem="3k9-PR-YVA" secondAttribute="centerY" multiplier="0.75" id="EiU-Vq-BCo"/>
+                <constraint firstItem="IoD-tg-NcF" firstAttribute="centerY" secondItem="3k9-PR-YVA" secondAttribute="centerY" multiplier="0.75" id="GbY-23-Coj"/>
+                <constraint firstItem="4a6-Ub-l9g" firstAttribute="leading" secondItem="K1P-wb-FBn" secondAttribute="trailing" id="Hy9-bE-GdF"/>
+                <constraint firstItem="oum-ei-11L" firstAttribute="centerX" secondItem="4a6-Ub-l9g" secondAttribute="centerX" id="IFP-Sp-t92"/>
+                <constraint firstItem="Z0M-lS-TDB" firstAttribute="top" secondItem="5Zw-QM-dJg" secondAttribute="bottom" constant="7" id="MYZ-Te-2k0"/>
+                <constraint firstItem="2aP-Mn-VJO" firstAttribute="top" secondItem="cKo-3o-aXE" secondAttribute="bottom" constant="7" id="NsI-pH-0tu"/>
+                <constraint firstItem="cKo-3o-aXE" firstAttribute="centerX" secondItem="3k9-PR-YVA" secondAttribute="centerX" multiplier="0.8" id="PPD-tk-4GV"/>
+                <constraint firstItem="5Zw-QM-dJg" firstAttribute="width" secondItem="Ylx-e0-isH" secondAttribute="width" id="Qfh-UI-GbO"/>
+                <constraint firstItem="4a6-Ub-l9g" firstAttribute="width" secondItem="Ylx-e0-isH" secondAttribute="width" id="Thq-Th-PAQ"/>
+                <constraint firstItem="cKo-3o-aXE" firstAttribute="width" secondItem="Ylx-e0-isH" secondAttribute="width" id="Tx7-Zh-FcR"/>
+                <constraint firstItem="4a6-Ub-l9g" firstAttribute="centerX" secondItem="3k9-PR-YVA" secondAttribute="centerX" multiplier="1.6" id="Tzc-of-yi7"/>
+                <constraint firstItem="btJ-Bt-4Yp" firstAttribute="centerY" secondItem="3k9-PR-YVA" secondAttribute="centerY" multiplier="0.75" id="W96-RN-lyY"/>
+                <constraint firstItem="btJ-Bt-4Yp" firstAttribute="leading" secondItem="cKo-3o-aXE" secondAttribute="trailing" id="b5F-aR-dq4"/>
+                <constraint firstItem="Ylx-e0-isH" firstAttribute="centerX" secondItem="3k9-PR-YVA" secondAttribute="centerX" multiplier="0.4" id="fH3-a2-K5U"/>
+                <constraint firstItem="4a6-Ub-l9g" firstAttribute="centerY" secondItem="3k9-PR-YVA" secondAttribute="centerY" multiplier="0.75" id="gJE-YB-pu4"/>
+                <constraint firstItem="4a6-Ub-l9g" firstAttribute="height" secondItem="Ylx-e0-isH" secondAttribute="height" id="hfX-7w-FEm"/>
+                <constraint firstItem="K1P-wb-FBn" firstAttribute="leading" secondItem="5Zw-QM-dJg" secondAttribute="trailing" id="jlM-j1-0qc"/>
+                <constraint firstItem="cKo-3o-aXE" firstAttribute="centerY" secondItem="3k9-PR-YVA" secondAttribute="centerY" multiplier="0.75" id="js5-fG-393"/>
+                <constraint firstItem="Z0M-lS-TDB" firstAttribute="centerX" secondItem="5Zw-QM-dJg" secondAttribute="centerX" id="l8J-YH-wuU"/>
+                <constraint firstItem="IoD-tg-NcF" firstAttribute="leading" secondItem="Ylx-e0-isH" secondAttribute="trailing" id="mfV-sQ-0hq"/>
+                <constraint firstItem="5Zw-QM-dJg" firstAttribute="height" secondItem="Ylx-e0-isH" secondAttribute="height" id="ne6-Tv-LFl"/>
+                <constraint firstItem="cKo-3o-aXE" firstAttribute="height" secondItem="Ylx-e0-isH" secondAttribute="height" id="ph1-bZ-Dbp"/>
+                <constraint firstItem="1Ue-Oq-zyX" firstAttribute="centerX" secondItem="Ylx-e0-isH" secondAttribute="centerX" id="q5Q-VE-cvf"/>
+                <constraint firstItem="cKo-3o-aXE" firstAttribute="leading" secondItem="IoD-tg-NcF" secondAttribute="trailing" id="qlq-na-mHn"/>
+                <constraint firstItem="5Zw-QM-dJg" firstAttribute="centerX" secondItem="3k9-PR-YVA" secondAttribute="centerX" multiplier="1.2" id="srN-nA-bgf"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="infoImage" destination="5Zw-QM-dJg" id="hAl-mW-rmo"/>
+                <outlet property="line1" destination="IoD-tg-NcF" id="Xir-KV-KVQ"/>
+                <outlet property="line2" destination="btJ-Bt-4Yp" id="iqc-jT-s7C"/>
+                <outlet property="line3" destination="K1P-wb-FBn" id="86W-j9-NMc"/>
+                <outlet property="liveImage" destination="Ylx-e0-isH" id="eV0-i0-4bN"/>
+                <outlet property="phineImage" destination="4a6-Ub-l9g" id="yCS-kb-NXM"/>
+                <outlet property="telImage" destination="cKo-3o-aXE" id="Rt1-tr-ZiU"/>
+            </connections>
+            <point key="canvasLocation" x="181.5" y="-205.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="authorized" width="28" height="28"/>
+        <image name="bank_line" width="54" height="2"/>
+        <image name="unauthorized" width="31" height="30"/>
+    </resources>
+</document>
