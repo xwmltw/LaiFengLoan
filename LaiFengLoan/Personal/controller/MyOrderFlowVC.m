@@ -13,6 +13,7 @@
 #import "DateHelper.h"
 #import "PayAlertView.h"
 #import <AlipaySDK/AlipaySDK.h>
+
 typedef NS_ENUM(NSInteger ,MyOrderFlowRequset) {
     MyOrderFlowRequsetGetInfo,
     MyOrderFlowRequsetPay,
@@ -148,6 +149,7 @@ typedef NS_ENUM(NSInteger ,MyOrderFlowRequset) {
     if (self.orderDetailModel.overDueDays.integerValue) {
         UILabel *overDueDays = [[UILabel alloc]init];
         [overDueDays setText:[NSString stringWithFormat:@"已逾期%@天",self.orderDetailModel.overDueDays.description]];
+//        [overDueDays setText:[NSString stringWithFormat:@"已逾期2天"]];
         [overDueDays setFont:[UIFont systemFontOfSize:AdaptationWidth(12)]];
         [overDueDays setTextColor:XColorWithRGB(255, 70, 70)];
         [overDueDays setBackgroundColor:XColorWithRGB(255, 238, 238)];
@@ -317,9 +319,8 @@ typedef NS_ENUM(NSInteger ,MyOrderFlowRequset) {
             break;
         case 102:
         {
-            XRootWebVC *vc = [[XRootWebVC alloc]init];
-            vc.url = self.orderDetailModel.eleContractPreviewUrl;
-            [self.navigationController pushViewController:vc animated:YES];
+             [[UIApplication sharedApplication]openURL:[NSURL URLWithString:self.orderDetailModel.eleContractPreviewUrl]];
+
         }
             break;
         default:
@@ -327,6 +328,8 @@ typedef NS_ENUM(NSInteger ,MyOrderFlowRequset) {
     }
     
 }
+
+
 #pragma mark - alert delegate
 - (void)payBtnOnClick:(UIButton *)btn{
     switch (btn.tag) {

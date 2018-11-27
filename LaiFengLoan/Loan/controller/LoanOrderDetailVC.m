@@ -124,7 +124,7 @@ typedef NS_ENUM(NSInteger ,LoanOrderRequest) {
     UIButton *heTong = [[UIButton alloc]init];
     heTong.tag = 101;
     [heTong setTitleColor:AppMainColor forState:UIControlStateNormal];
-    [heTong setTitle:[NSString stringWithFormat:@"《%@合同》",AppName] forState:UIControlStateNormal];
+    [heTong setTitle:[NSString stringWithFormat:@"《订单合同》"] forState:UIControlStateNormal];
     [heTong.titleLabel setFont:[UIFont systemFontOfSize:AdaptationWidth(14)]];
     [heTong addTarget:self action:@selector(btnOnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:heTong];

@@ -14,7 +14,7 @@
 
 /** APP NAME*/
 static NSString *const AppName = @"来风现金贷";
-static NSString *const AppScheme = @"LaiFengLoan";
+static NSString *const AppScheme = @"LaiFengXJD";
 /** 网络环境*/
 #ifdef DEBUG
 
@@ -24,7 +24,7 @@ static NSString *const AppScheme = @"LaiFengLoan";
 
 #else
 
-#define SERVICEURL @"" //正式环境
+#define SERVICEURL @"http://mapi.lf.sdhoo.me" //正式环境
 #endif
 
 /** TalkingData */
@@ -34,11 +34,11 @@ static NSString *const TalkingData_ChannelId = @"AppStore";
 #ifdef DEBUG
 static NSString *const TalkingData_AppID =   @"";
 #else
-static NSString *const TalkingData_AppID =   @"2138E87340F64502BAF22FB2B413BE72";
+static NSString *const TalkingData_AppID =   @"969A998745F14C05B8634C3B9ACB872D";
 #endif
 
 /** 高德*/
-static NSString *const AMapKey = @"fd7016bdd0be18a5ddf2ebc27ddd0783";
+static NSString *const AMapKey = @"7021cdb14ec5bdc9f52b5b420512f3db";
 
 
 /** 极光*/

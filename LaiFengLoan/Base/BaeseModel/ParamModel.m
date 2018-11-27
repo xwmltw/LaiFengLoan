@@ -51,7 +51,8 @@ MJCodingImplementation
     return  [XCacheHelper getModelWithFileName:@"ClientGlobalInfoModel" withClass:[ClientGlobalInfo class] isCanClear:NO];
 }
 @end
-
+@implementation BannerAdList
+@end
 
 
 

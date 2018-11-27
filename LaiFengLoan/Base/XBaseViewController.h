@@ -85,4 +85,6 @@
   */
 
 - (NSString *)decimalNumberWithDouble:(NSNumber *)conversionValue;
+
+- (void)dealloc;
 @end

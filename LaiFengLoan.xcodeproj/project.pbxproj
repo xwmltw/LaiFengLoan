@@ -116,6 +116,7 @@
 		04614542219439F100800226 /* XChooseBankView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04614540219439F100800226 /* XChooseBankView.m */; };
 		046145442194625600800226 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = 046145432194625500800226 /* area.plist */; };
 		046145472194760600800226 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 046145462194760600800226 /* BaseModel.m */; };
+		0464BC1521ABD9B700FCEC7D /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0464BC1421ABD9B600FCEC7D /* QuickLook.framework */; };
 		046F91272199AABB002D9ACD /* PageQueryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 046F91262199AABB002D9ACD /* PageQueryModel.m */; };
 		046F912A2199AFB8002D9ACD /* OrderListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 046F91292199AFB8002D9ACD /* OrderListModel.m */; };
 		046F912D2199AFCE002D9ACD /* OrderDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 046F912C2199AFCE002D9ACD /* OrderDetailModel.m */; };
@@ -341,6 +342,7 @@
 		046145432194625500800226 /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
 		046145452194760600800226 /* BaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
 		046145462194760600800226 /* BaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
+		0464BC1421ABD9B600FCEC7D /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
 		046F91252199AABB002D9ACD /* PageQueryModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageQueryModel.h; sourceTree = "<group>"; };
 		046F91262199AABB002D9ACD /* PageQueryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageQueryModel.m; sourceTree = "<group>"; };
 		046F91282199AFB8002D9ACD /* OrderListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderListModel.h; sourceTree = "<group>"; };
@@ -415,6 +417,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0464BC1521ABD9B700FCEC7D /* QuickLook.framework in Frameworks */,
 				04F7A6B621A2A14D00E549F4 /* libz.tbd in Frameworks */,
 				04F7A6B421A2A12D00E549F4 /* Security.framework in Frameworks */,
 				04F7A6B221A2A10700E549F4 /* AdSupport.framework in Frameworks */,
@@ -967,6 +970,7 @@
 		16EE4A1900F94CE76DF066C6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0464BC1421ABD9B600FCEC7D /* QuickLook.framework */,
 				04F7A6B521A2A14D00E549F4 /* libz.tbd */,
 				04F7A6B321A2A12D00E549F4 /* Security.framework */,
 				04F7A6B121A2A10700E549F4 /* AdSupport.framework */,
@@ -1398,7 +1402,7 @@
 					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/OCR",
 					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/TalkingData",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.lfxjd.LaiFengLoan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lfxjd.LFLoan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1434,7 +1438,7 @@
 					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/OCR",
 					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/TalkingData",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.lfxjd.LaiFengLoan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lfxjd.LFLoan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

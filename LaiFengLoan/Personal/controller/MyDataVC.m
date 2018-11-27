@@ -79,6 +79,7 @@
         {
             
             IdentityViewController *vc = [[IdentityViewController alloc]init];
+            vc.creditInfoModel = self.creditInfoModel;
             vc.isFromVC = @1;
             [self.navigationController pushViewController:vc animated:YES];
         }

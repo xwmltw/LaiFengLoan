@@ -306,7 +306,7 @@
     
     NSString *changeString = [NSString dictionaryToJson:params];
     NSMutableURLRequest *request =[[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",SERVICEURL,model]]];
-//    NSMutableURLRequest *request =[[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"https://restapi.amap.com/v3/config/district?key=efb36fcfea0e9941e201260a4087e236&subdistrict=3"]];
+
     [request setHTTPBody: [changeString dataUsingEncoding:NSUTF8StringEncoding]];
     [request setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];//请求格式
     [request setHTTPMethod:@"POST"];

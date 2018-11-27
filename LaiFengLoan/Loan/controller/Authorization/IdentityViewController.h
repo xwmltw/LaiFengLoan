@@ -7,7 +7,8 @@
 //
 
 #import "XBaseViewController.h"
-
+#import "CreditInfoModel.h"
 @interface IdentityViewController : XBaseViewController
 @property (nonatomic ,copy) NSNumber *isFromVC;
+@property (nonatomic ,strong) CreditInfoModel *creditInfoModel;
 @end

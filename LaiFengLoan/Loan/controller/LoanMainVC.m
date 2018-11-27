@@ -38,6 +38,7 @@ typedef NS_ENUM(NSInteger ,LoanMainRequest) {
 @property (nonatomic, strong) UIView *informationView;
 @property (nonatomic, strong) UILabel *amountLab;
 @property (nonatomic, strong) CreditInfoModel *creditInfoModel;
+@property (nonatomic, strong) BannerAdList *BannerAdListModel;
 @end
 
 @implementation LoanMainVC
@@ -194,19 +195,22 @@ typedef NS_ENUM(NSInteger ,LoanMainRequest) {
 }
 #pragma mark - sdcycscrollview delegate
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
-    
+    self.BannerAdListModel = [BannerAdList mj_objectWithKeyValues:self.clientGlobalInfo.bannerAdList[index]];
+    if(!self.BannerAdListModel.adDetailUrl.length){
+        return;
+    }
     NSNumber *adtype = self.clientGlobalInfo.bannerAdList[index][@"adType"];
     switch (adtype.integerValue) {
         case 1:
         {
             XRootWebVC *vc = [[XRootWebVC alloc]init];
-            vc.url = self.clientGlobalInfo.bannerAdList[index][@"adDetailUrl"];
+            vc.url = self.BannerAdListModel.adDetailUrl;
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;
         case 2:
             //浏览器打开
-            [[UIApplication sharedApplication]openURL:[NSURL URLWithString:self.clientGlobalInfo.bannerAdList[index][@"adDetailUrl"]]];
+            [[UIApplication sharedApplication]openURL:[NSURL URLWithString:self.BannerAdListModel.adDetailUrl]];
             break;
         case 3:
             
@@ -248,6 +252,7 @@ typedef NS_ENUM(NSInteger ,LoanMainRequest) {
                     case 1:
                     {
                         IdentityViewController *vc = [[IdentityViewController alloc]init];
+                        vc.creditInfoModel = self.creditInfoModel;
                         [self.navigationController pushViewController:vc animated:YES];
                     }
                         break;
@@ -350,6 +355,7 @@ typedef NS_ENUM(NSInteger ,LoanMainRequest) {
                     case 1:
                     {
                         IdentityViewController *vc = [[IdentityViewController alloc]init];
+                        vc.creditInfoModel = self.creditInfoModel;
                         [self.navigationController pushViewController:vc animated:YES];
                     }
                         break;
@@ -538,6 +544,12 @@ typedef NS_ENUM(NSInteger ,LoanMainRequest) {
         _creditInfoModel = [[CreditInfoModel alloc]init];
     }
     return _creditInfoModel;
+}
+- (BannerAdList *)BannerAdListModel{
+    if (!_BannerAdListModel) {
+        _BannerAdListModel = [[BannerAdList alloc]init];
+    }
+    return _BannerAdListModel;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

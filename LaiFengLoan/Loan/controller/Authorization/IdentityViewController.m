@@ -31,8 +31,11 @@ typedef NS_ENUM(NSInteger,IdentityRequest) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"身份证认证";
-   
-    [self prepareDataWithCount:IdentityRequestGet];
+    if (self.creditInfoModel.scheduleStatus.integerValue == 1) {
+        [self initUI];
+    }else{
+        [self prepareDataWithCount:IdentityRequestGet];
+    }
 }
 - (void)overUI{
     
@@ -251,12 +254,8 @@ typedef NS_ENUM(NSInteger,IdentityRequest) {
             break;
         case IdentityRequestGet:{
             self.userDic = [NSDictionary dictionaryWithDictionary:response.data];
-
-            if (![[self.userDic objectForKey:@"idCardNo"] isKindOfClass:[NSNull class]]) {
                 [self overUI];
-            }else{
-                 [self initUI];
-            }    
+            
         }
             break;
         default:

@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>程序在运行期间获取用户定位信息以推送本地资讯</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -26,10 +24,10 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>LaiFengLoan</string>
+			<string>LaiFengXJD</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>LaiFengLoan</string>
+				<string>LaiFengXJD</string>
 			</array>
 		</dict>
 	</array>
@@ -48,6 +46,8 @@
 	<string>我们需要通过您的相机进行拍摄</string>
 	<key>NSContactsUsageDescription</key>
 	<string>我们需要通过您的通讯录权限获取信息</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>程序在运行期间获取用户定位信息以推送本地资讯</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>授权我们访问您的相册</string>
 	<key>NSPhotoLibraryUsageDescription</key>

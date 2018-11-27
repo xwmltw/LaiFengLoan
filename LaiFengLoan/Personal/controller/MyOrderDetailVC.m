@@ -65,7 +65,7 @@ typedef NS_ENUM(NSInteger ,MyOrderDetailRequest) {
         make.edges.mas_equalTo(self.view);
     }];
     self.tableView.separatorStyle = UITableViewCellEditingStyleNone;
-    [XNotificationCenter addObserver:self selector:@selector(AlipayNotification:) name:XAliPaySucceed object:nil];
+    
     
 }
 - (UIView *)creatFootView{
@@ -253,6 +253,8 @@ typedef NS_ENUM(NSInteger ,MyOrderDetailRequest) {
 }
 - (UIView *)bgView{
     if (!_bgView) {
+        [XNotificationCenter addObserver:self selector:@selector(AlipayNotification:) name:XAliPaySucceed object:nil];
+        
         _bgView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
         [self.view addSubview:_bgView];
         _bgView.backgroundColor = XColorWithRBBA(34, 58, 80, 0.5);
@@ -272,6 +274,7 @@ typedef NS_ENUM(NSInteger ,MyOrderDetailRequest) {
     }
     return _bgView;
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
