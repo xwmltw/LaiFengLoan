@@ -28,6 +28,7 @@ typedef NS_ENUM(NSInteger ,MyOrderFlowRequset) {
 {
     PayAlertView *alert;
     NSNumber *repayType;
+    UIButton *autBtn;
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -233,12 +234,21 @@ typedef NS_ENUM(NSInteger ,MyOrderFlowRequset) {
 }
 - (UIView *)creatFoooterView{
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, AdaptationWidth(126))];
-    UIButton *autBtn = [[UIButton alloc]init];
+    autBtn = [[UIButton alloc]init];
     autBtn.tag = 101;
-    [autBtn setBorderWidth:1 andColor:AppMainColor];
+    
     [autBtn setCornerValue:AdaptationWidth(22)];
-    [autBtn setTitle:@"立即还款" forState:UIControlStateNormal];
-    [autBtn setBackgroundColor:XColorWithRGB(56, 123, 230)];
+    if (self.orderDetailModel.repayStatus.integerValue == 4) {
+        [autBtn setTitle:@"还款中" forState:UIControlStateNormal];
+        [autBtn setBackgroundColor:LineColor];
+        [autBtn setBorderWidth:1 andColor:LineColor];
+        autBtn.enabled = NO;
+    }else{
+        autBtn.enabled = YES;
+        [autBtn setTitle:@"立即还款" forState:UIControlStateNormal];
+        [autBtn setBackgroundColor:AppMainColor];
+        [autBtn setBorderWidth:1 andColor:AppMainColor];
+    }
     [autBtn addTarget:self action:@selector(btnOnClick:) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:autBtn];
     [autBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -429,7 +439,7 @@ typedef NS_ENUM(NSInteger ,MyOrderFlowRequset) {
                 return;
             }
             
-            [self setHudWithName:@"还款成功" Time:2 andType:1];
+            [self setHudWithName:@"提交成功" Time:2 andType:1];
             [self prepareDataWithCount:MyOrderFlowRequsetGetInfo];
         }
             break;

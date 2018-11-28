@@ -16,6 +16,7 @@
 @property (nonatomic ,copy) NSNumber *overDueDays;
 @property (nonatomic ,copy) NSNumber *repayAmt;
 @property (nonatomic ,copy) NSNumber *repayPlanId;
+@property (nonatomic ,copy) NSNumber *repayStatus;
 @property (nonatomic ,copy) NSNumber *repayTime;
 @property (nonatomic ,copy) NSNumber *stageTimeunitCnt;
 @end
@@ -39,6 +40,8 @@
 //
 //repayPlanId    integer($int64)
 //还款计划ID
+//repayStatus    integer($int32)
+//账单状态: 1还款成功,2待还款,3还款失败,4还款中,等于4的时候需要限制用户重复提交还款
 //repayTime    integer($int64)
 //还款时间
 //

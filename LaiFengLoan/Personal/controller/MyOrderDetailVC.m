@@ -230,7 +230,7 @@ typedef NS_ENUM(NSInteger ,MyOrderDetailRequest) {
                 }];
                 return;
             }
-            [self setHudWithName:@"还款成功" Time:2 andType:1];
+            [self setHudWithName:@"提交成功" Time:2 andType:1];
             [self prepareDataWithCount:MyOrderDetailRequestList];
         }
             break;

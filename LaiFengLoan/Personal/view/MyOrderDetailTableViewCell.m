@@ -34,6 +34,15 @@
         {
             self.threeLab.hidden = NO;
             self.paybtn.hidden = NO;
+            if (orderListModel.repayStatus.integerValue == 4) {
+                [self.paybtn setBackgroundColor:LineColor];
+                [self.paybtn setTitle:@"还款中" forState:UIControlStateNormal];
+                self.paybtn.enabled = NO;
+            }else{
+                self.paybtn.enabled = YES;
+                [self.paybtn setBackgroundColor:AppMainColor];
+                [self.paybtn setTitle:@"去还款" forState:UIControlStateNormal];
+            }
             self.twoLab.text = [NSString stringWithFormat:@"还款日期：%@",[DateHelper getDateFromTimeNumber:orderListModel.dueRepayDate withFormat:@"yyyy-MM-dd"]];
             self.threeLab.text = [NSString stringWithFormat:@"还款金额：%@元",orderListModel.repayAmt.description];
         }
@@ -61,11 +70,20 @@
             break;
         case 4:
         {
+            
             if (orderListModel.overDueDays.integerValue) {
                 self.stateImage.image = [UIImage imageNamed:@"已逾期-state"];
             }else{
-                self.stateImage.image = [UIImage imageNamed:@"正常-state"];
+                
+                if (orderListModel.repayStatus.integerValue == 4) {
+                    self.stateImage.image = [UIImage imageNamed:@"还款中-state"];
+                }else if(orderListModel.repayStatus.integerValue == 3){
+                    self.stateImage.image = [UIImage imageNamed:@"还款失败-state"];
+                }else{
+                    self.stateImage.image = [UIImage imageNamed:@"正常-state"];
+                }
             }
+            
         }
             break;
         case 5:

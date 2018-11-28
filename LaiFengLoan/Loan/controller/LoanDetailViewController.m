@@ -36,6 +36,7 @@ typedef NS_ENUM(NSInteger, LoanDetailBtnTag) {
     UIButton *selectDateBtn2;
     NSString *selectMoney;
     NSString *selectDate;
+    int multiple;
 
 }
 - (void)viewWillAppear:(BOOL)animated{
@@ -444,7 +445,7 @@ typedef NS_ENUM(NSInteger, LoanDetailBtnTag) {
 -(void)setNewSliderValue:(UISlider *)slider andAccuracy:(float)accuracy
 {
     // 滑动条的 宽
-    float width = ScreenWidth - 2*AdaptationWidth(22.5) ;
+    float width = ScreenWidth - 2*AdaptationWidth(37) ;
     // 如： 用户想每滑动一次 增加100的量 每次滑块需要滑动的宽
     float slideWidth = width*accuracy/slider.maximumValue ;
     // 在滑动条中 滑块的位置 是根据 value值 显示在屏幕上的 那么 把目前滑块的宽 加上用户新滑动一次的宽 转换成value值
