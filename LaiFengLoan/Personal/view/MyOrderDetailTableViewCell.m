@@ -18,6 +18,11 @@
     self.firstLab.text = [NSString stringWithFormat:@"借款金额：%@元",orderListModel.orderAmt.description];
     self.fourLab.text = [NSString stringWithFormat:@"订单编号：%@",orderListModel.orderNo.description];
     [self.paybtn setCornerValue:10];
+    if(orderListModel.repayStatus.integerValue == 3){
+        self.faleLab.hidden = NO;;
+    }else{
+        self.faleLab.hidden = YES;
+    }
     switch (self.orderState) {
         case 1:
         case 2:
@@ -76,12 +81,11 @@
             }else{
                 
                 if (orderListModel.repayStatus.integerValue == 4) {
-                    self.stateImage.image = [UIImage imageNamed:@"还款中-state"];
-                }else if(orderListModel.repayStatus.integerValue == 3){
-                    self.stateImage.image = [UIImage imageNamed:@"还款失败-state"];
-                }else{
-                    self.stateImage.image = [UIImage imageNamed:@"正常-state"];
+                    self.faleLab.hidden = YES;
+                    
                 }
+                    self.stateImage.image = [UIImage imageNamed:@"正常-state"];
+                
             }
             
         }

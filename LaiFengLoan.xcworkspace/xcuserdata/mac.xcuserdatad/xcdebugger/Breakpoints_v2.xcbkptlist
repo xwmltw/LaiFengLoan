@@ -71,7 +71,7 @@
                   moduleName = "LaiFengLoan"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mac/Documents/compile_env/%E6%9D%A5%E9%A3%8E%E7%8E%B0%E9%87%91%E8%B4%B7/LaiFengLoan/LaiFengLoan/Loan/controller/Authorization/ContactViewController.m"
-                  timestampString = "565094906.5667289"
+                  timestampString = "565178777.558387"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "676"
@@ -86,7 +86,7 @@
                   moduleName = "LaiFengLoan"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mac/Documents/compile_env/%E6%9D%A5%E9%A3%8E%E7%8E%B0%E9%87%91%E8%B4%B7/LaiFengLoan/LaiFengLoan/Loan/controller/Authorization/ContactViewController.m"
-                  timestampString = "565094906.569581"
+                  timestampString = "565178777.561354"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "676"
@@ -109,6 +109,38 @@
             startingLineNumber = "662"
             endingLineNumber = "662"
             landmarkName = "-getAllContacts"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LaiFengLoan/Personal/controller/MyOrderDetailVC.m"
+            timestampString = "565178822.595026"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "234"
+            endingLineNumber = "234"
+            landmarkName = "-requestSuccessWithDictionary:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LaiFengLoan/Personal/controller/MyOrderDetailVC.m"
+            timestampString = "565178825.6388431"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "208"
+            endingLineNumber = "208"
+            landmarkName = "-requestSuccessWithDictionary:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

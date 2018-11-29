@@ -529,6 +529,14 @@ typedef NS_ENUM(NSInteger ,LoanMainRequest) {
                         [self.navigationController pushViewController:vc animated:YES];
                     }
                     break;
+                case 0:{
+                    [self setHudWithName:@"未授信" Time:1 andType:1];
+                }
+                    break;
+                case 2:{
+                    [self setHudWithName:@"已授信" Time:1 andType:1];
+                }
+                    break;
                 default:
                     break;
             }

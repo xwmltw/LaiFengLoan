@@ -12,6 +12,7 @@
 #import <AMapFoundationKit/AMapFoundationKit.h>
 #import <AMapLocationKit/AMapLocationKit.h>
 #import "UserLocation.h"
+#import "JPEngine.h"
 @interface AppDelegate ()
 
 @end
@@ -42,6 +43,8 @@
     //高德
     [AMapServices sharedServices].apiKey = AMapKey;
     [[UserLocation sharedInstance]UserLocation];
+    
+//    jsp
 }
 #pragma mark - 支付宝
 /**

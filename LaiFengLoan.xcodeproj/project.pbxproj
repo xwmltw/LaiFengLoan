@@ -137,6 +137,8 @@
 		04C49DE3218B20BE004BBF58 /* ServiceURLVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C49DE2218B20BE004BBF58 /* ServiceURLVC.m */; };
 		04C49DE6218B22D8004BBF58 /* LoanMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C49DE5218B22D8004BBF58 /* LoanMainVC.m */; };
 		04CB2ADD21A6DC4000ADDD20 /* content.json in Resources */ = {isa = PBXBuildFile; fileRef = 04CB2ADC21A6DC4000ADDD20 /* content.json */; };
+		04DE16A521AFDDD500672501 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DE16A421AFDDD500672501 /* JavaScriptCore.framework */; };
+		04DE16A721AFDDEA00672501 /* libz.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DE16A621AFDDEA00672501 /* libz.1.tbd */; };
 		04EF835821A3EE29000257AB /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 04EF835621A3EE29000257AB /* AlipaySDK.bundle */; };
 		04EF835921A3EE29000257AB /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04EF835721A3EE29000257AB /* AlipaySDK.framework */; };
 		04F1E3B5218FE131006523AE /* IdentityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F1E3B4218FE131006523AE /* IdentityViewController.m */; };
@@ -380,6 +382,8 @@
 		04C49DE4218B22D8004BBF58 /* LoanMainVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoanMainVC.h; sourceTree = "<group>"; };
 		04C49DE5218B22D8004BBF58 /* LoanMainVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoanMainVC.m; sourceTree = "<group>"; };
 		04CB2ADC21A6DC4000ADDD20 /* content.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = content.json; sourceTree = "<group>"; };
+		04DE16A421AFDDD500672501 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		04DE16A621AFDDEA00672501 /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
 		04EF835621A3EE29000257AB /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
 		04EF835721A3EE29000257AB /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
 		04F1E3B3218FE131006523AE /* IdentityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IdentityViewController.h; sourceTree = "<group>"; };
@@ -417,6 +421,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04DE16A721AFDDEA00672501 /* libz.1.tbd in Frameworks */,
+				04DE16A521AFDDD500672501 /* JavaScriptCore.framework in Frameworks */,
 				0464BC1521ABD9B700FCEC7D /* QuickLook.framework in Frameworks */,
 				04F7A6B621A2A14D00E549F4 /* libz.tbd in Frameworks */,
 				04F7A6B421A2A12D00E549F4 /* Security.framework in Frameworks */,
@@ -970,6 +976,8 @@
 		16EE4A1900F94CE76DF066C6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04DE16A621AFDDEA00672501 /* libz.1.tbd */,
+				04DE16A421AFDDD500672501 /* JavaScriptCore.framework */,
 				0464BC1421ABD9B600FCEC7D /* QuickLook.framework */,
 				04F7A6B521A2A14D00E549F4 /* libz.tbd */,
 				04F7A6B321A2A12D00E549F4 /* Security.framework */,
@@ -1133,12 +1141,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-LaiFengLoan/Pods-LaiFengLoan-resources.sh",
 				"${PODS_ROOT}/DateTools/DateTools/DateTools/DateTools.bundle",
 				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
+				"${PODS_ROOT}/JSPatch/JSPatch/JSPatch.js",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/DateTools.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/JSPatch.js",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

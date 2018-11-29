@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *fourLab;
 @property (weak, nonatomic) IBOutlet UIImageView *stateImage;
 @property (weak, nonatomic) IBOutlet UIButton *paybtn;
+@property (weak, nonatomic) IBOutlet UILabel *faleLab;
 @property (nonatomic ,strong) OrderListModel *orderListModel;
 @property (nonatomic ,assign) MyOrderState orderState;
 @property (nonatomic ,copy) XBlock block;
