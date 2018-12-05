@@ -68,7 +68,7 @@ typedef NS_ENUM(NSInteger, PersonalRequest) {
 }
 - (void)setData{
     self.cellTitleAry = [NSArray arrayWithObjects:@"修改密码",@"常见问题",@"意见反馈",@"关于我们",@"联系客服", nil];
-//    self.btnAry = [NSMutableArray arrayWithObjects:@(PersonalBtnTagMyData),@(PersonalBtnTagMyOrder),@(PersonalBtnTagQuickPay),@(PersonalBtnTagBank), nil];
+
     self.btnAry = [NSMutableArray array];
     [self.btnAry addObject:@(PersonalBtnTagMyData)];
      [self.btnAry addObject:@(PersonalBtnTagMyOrder)];

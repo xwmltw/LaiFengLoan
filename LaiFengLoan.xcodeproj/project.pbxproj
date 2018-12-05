@@ -137,6 +137,7 @@
 		04C49DE3218B20BE004BBF58 /* ServiceURLVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C49DE2218B20BE004BBF58 /* ServiceURLVC.m */; };
 		04C49DE6218B22D8004BBF58 /* LoanMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C49DE5218B22D8004BBF58 /* LoanMainVC.m */; };
 		04CB2ADD21A6DC4000ADDD20 /* content.json in Resources */ = {isa = PBXBuildFile; fileRef = 04CB2ADC21A6DC4000ADDD20 /* content.json */; };
+		04D5594521B7AC4A005760DD /* JSPatchPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D5594421B7AC4A005760DD /* JSPatchPlatform.framework */; };
 		04DE16A521AFDDD500672501 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DE16A421AFDDD500672501 /* JavaScriptCore.framework */; };
 		04DE16A721AFDDEA00672501 /* libz.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DE16A621AFDDEA00672501 /* libz.1.tbd */; };
 		04EF835821A3EE29000257AB /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 04EF835621A3EE29000257AB /* AlipaySDK.bundle */; };
@@ -351,6 +352,7 @@
 		046F91292199AFB8002D9ACD /* OrderListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderListModel.m; sourceTree = "<group>"; };
 		046F912B2199AFCE002D9ACD /* OrderDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailModel.h; sourceTree = "<group>"; };
 		046F912C2199AFCE002D9ACD /* OrderDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailModel.m; sourceTree = "<group>"; };
+		0479AA5F21B65768006E5017 /* LaiFengLoan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LaiFengLoan.entitlements; sourceTree = "<group>"; };
 		047BD2D121A39CB00080662C /* MyMessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyMessageModel.h; sourceTree = "<group>"; };
 		047BD2D221A39CB00080662C /* MyMessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyMessageModel.m; sourceTree = "<group>"; };
 		047BD2D421A3BA320080662C /* MyOrderCntModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyOrderCntModel.h; sourceTree = "<group>"; };
@@ -382,6 +384,7 @@
 		04C49DE4218B22D8004BBF58 /* LoanMainVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoanMainVC.h; sourceTree = "<group>"; };
 		04C49DE5218B22D8004BBF58 /* LoanMainVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoanMainVC.m; sourceTree = "<group>"; };
 		04CB2ADC21A6DC4000ADDD20 /* content.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = content.json; sourceTree = "<group>"; };
+		04D5594421B7AC4A005760DD /* JSPatchPlatform.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JSPatchPlatform.framework; sourceTree = "<group>"; };
 		04DE16A421AFDDD500672501 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		04DE16A621AFDDEA00672501 /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
 		04EF835621A3EE29000257AB /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
@@ -422,6 +425,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04DE16A721AFDDEA00672501 /* libz.1.tbd in Frameworks */,
+				04D5594521B7AC4A005760DD /* JSPatchPlatform.framework in Frameworks */,
 				04DE16A521AFDDD500672501 /* JavaScriptCore.framework in Frameworks */,
 				0464BC1521ABD9B700FCEC7D /* QuickLook.framework in Frameworks */,
 				04F7A6B621A2A14D00E549F4 /* libz.tbd in Frameworks */,
@@ -488,6 +492,7 @@
 		043897D52192C22D0007F2A7 /* ToolKit */ = {
 			isa = PBXGroup;
 			children = (
+				0479AA5C21B64D65006E5017 /* JSPatch */,
 				04EF835521A3EE29000257AB /* AliPay */,
 				04F7A6AD21A2A0D200E549F4 /* TalkingData */,
 				045D7C3C219C402400A51281 /* OCR */,
@@ -561,6 +566,7 @@
 		044BA5492189A48400363D13 /* LaiFengLoan */ = {
 			isa = PBXGroup;
 			children = (
+				0479AA5F21B65768006E5017 /* LaiFengLoan.entitlements */,
 				04381EB221A0126100F27B5C /* Message */,
 				0495A406218D6F7D00421131 /* Personal */,
 				044BA5642189C93100363D13 /* Loan */,
@@ -814,6 +820,14 @@
 			path = model;
 			sourceTree = "<group>";
 		};
+		0479AA5C21B64D65006E5017 /* JSPatch */ = {
+			isa = PBXGroup;
+			children = (
+				04D5594421B7AC4A005760DD /* JSPatchPlatform.framework */,
+			);
+			path = JSPatch;
+			sourceTree = "<group>";
+		};
 		047BD2D021A39C8A0080662C /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -1040,6 +1054,11 @@
 				TargetAttributes = {
 					044BA5462189A48400363D13 = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -1141,14 +1160,12 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-LaiFengLoan/Pods-LaiFengLoan-resources.sh",
 				"${PODS_ROOT}/DateTools/DateTools/DateTools/DateTools.bundle",
 				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
-				"${PODS_ROOT}/JSPatch/JSPatch/JSPatch.js",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/DateTools.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/JSPatch.js",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1388,6 +1405,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
+				CODE_SIGN_ENTITLEMENTS = LaiFengLoan/LaiFengLoan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EJ59536L25;
 				ENABLE_BITCODE = NO;
@@ -1396,6 +1414,7 @@
 					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDSDK",
 					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDIDSDK",
 					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/AliPay",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/JSPatch",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LaiFengLoan/Prefix.pch";
@@ -1411,6 +1430,45 @@
 					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDIDSDK/OpenLibs",
 					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/OCR",
 					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/TalkingData",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"DateTools\"",
+					"-l\"IQKeyboardManager\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"MJExtension\"",
+					"-l\"MJRefresh\"",
+					"-l\"Masonry\"",
+					"-l\"SDCycleScrollView\"",
+					"-l\"SDWebImage\"",
+					"-l\"c++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AMapFoundationKit\"",
+					"-framework",
+					"\"AMapLocationKit\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lfxjd.LFLoan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1424,6 +1482,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
+				CODE_SIGN_ENTITLEMENTS = LaiFengLoan/LaiFengLoan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EJ59536L25;
 				ENABLE_BITCODE = NO;
@@ -1432,6 +1491,7 @@
 					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDSDK",
 					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDIDSDK",
 					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/AliPay",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/JSPatch",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LaiFengLoan/Prefix.pch";
@@ -1447,6 +1507,45 @@
 					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDIDSDK/OpenLibs",
 					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/OCR",
 					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/TalkingData",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"DateTools\"",
+					"-l\"IQKeyboardManager\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"MJExtension\"",
+					"-l\"MJRefresh\"",
+					"-l\"Masonry\"",
+					"-l\"SDCycleScrollView\"",
+					"-l\"SDWebImage\"",
+					"-l\"c++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AMapFoundationKit\"",
+					"-framework",
+					"\"AMapLocationKit\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lfxjd.LFLoan;
 				PRODUCT_NAME = "$(TARGET_NAME)";

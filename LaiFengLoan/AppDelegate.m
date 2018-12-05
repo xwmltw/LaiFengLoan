@@ -12,7 +12,7 @@
 #import <AMapFoundationKit/AMapFoundationKit.h>
 #import <AMapLocationKit/AMapLocationKit.h>
 #import "UserLocation.h"
-#import "JPEngine.h"
+#import <JSPatchPlatform/JSPatch.h>
 @interface AppDelegate ()
 
 @end
@@ -44,7 +44,9 @@
     [AMapServices sharedServices].apiKey = AMapKey;
     [[UserLocation sharedInstance]UserLocation];
     
-//    jsp
+    [JSPatch startWithAppKey:JSPatchId];
+    [JSPatch setupRSAPublicKey:JSPatchRSAPublicKey];
+    [JSPatch sync];
 }
 #pragma mark - 支付宝
 /**

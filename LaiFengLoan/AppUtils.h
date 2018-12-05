@@ -15,6 +15,8 @@
 /** APP NAME*/
 static NSString *const AppName = @"来风现金贷";
 static NSString *const AppScheme = @"LaiFengXJD";
+static NSString *const JSPatchId = @"ea6f4017d1244661";
+static NSString *const JSPatchRSAPublicKey = @"-----BEGIN PUBLIC KEY-----\nMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDqUvdaT0L9fTuJ3n+aFsV3DUnL\nD3VYqXoS6DZcDhoZKxvQVMs7WBefiJSzDdKtLQZinJYH1gZAkkV8l4useGO9TvJB\nlPV++MXmFwSLUtvG4Hoq+vVLq/mH9DTMddGgTPvAxrFAG8Nyb5f2OsgeBsp8Xu21\nYsPcIUlFCStmln5kcwIDAQAB\n-----END PUBLIC KEY-----";
 /** 网络环境*/
 #ifdef DEBUG
 

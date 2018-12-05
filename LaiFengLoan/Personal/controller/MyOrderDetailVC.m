@@ -231,6 +231,8 @@ typedef NS_ENUM(NSInteger ,MyOrderDetailRequest) {
                 return;
             }
             [self setHudWithName:@"提交成功" Time:2 andType:1];
+            [self.dataSourceArr removeAllObjects];
+            self.pageQueryModel.page = @(1);
             [self prepareDataWithCount:MyOrderDetailRequestList];
         }
             break;

@@ -31,6 +31,12 @@ typedef NS_ENUM(NSInteger ,LoanMainRequest) {
     LoanMainRequestPostCreditInfo,
 };
 @interface LoanMainVC ()<SDCycleScrollViewDelegate>
+{
+    UILabel *eduLab;
+    UILabel *pendPay;
+    UIButton *getBtn;
+    UIButton *loanBtn;
+}
 @property (nonatomic, strong) SDCycleScrollView *sdcycleScrollView;
 @property (nonatomic, strong) NSMutableArray *scrollArry;//banner图片组
 @property (nonatomic, strong) UIButton *myBtn;
@@ -42,13 +48,9 @@ typedef NS_ENUM(NSInteger ,LoanMainRequest) {
 @end
 
 @implementation LoanMainVC
-{
-    UILabel *eduLab;
-    UILabel *pendPay;
-    UIButton *getBtn;
-    UIButton *loanBtn;
-}
+
 - (void)viewWillAppear:(BOOL)animated{
+
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     if ([UserInfo sharedInstance].isSignIn) {
          [self prepareDataWithCount:LoanMainRequestCreditInfo];
@@ -222,10 +224,12 @@ typedef NS_ENUM(NSInteger ,LoanMainRequest) {
 }
 #pragma  mark - btn事件
 - (void)btnOnClick:(UIButton *)btn{
+
     
     switch (btn.tag) {
         case LoanMainBtnTagMY:
         {
+
             PersonViewController *vc = [[PersonViewController alloc]init];
             [self.navigationController pushViewController:vc animated:YES];
         }
