@@ -121,8 +121,12 @@
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="bankImage" destination="fpC-ym-BVL" id="eK1-Bj-4BC"/>
+                <outlet property="bankLab" destination="6wX-wE-Dnq" id="vsf-T3-LCD"/>
                 <outlet property="threeBtn" destination="6SU-wE-5I3" id="Nvc-Av-4SP"/>
                 <outlet property="zfbBtn" destination="2qn-A3-6JJ" id="iXz-9y-DTu"/>
+                <outlet property="zfbImage" destination="d7H-Jc-vVS" id="nBn-Rz-ca6"/>
+                <outlet property="zfbLab" destination="lLl-dm-Uu0" id="lu9-iy-juo"/>
             </connections>
             <point key="canvasLocation" x="-10" y="206.5"/>
         </view>

@@ -61,11 +61,12 @@ typedef NS_ENUM(NSInteger ,MyOrderFlowRequset) {
     self.tableView.separatorStyle = UITableViewCellEditingStyleNone;
     
     UIButton *rightBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, AdaptationWidth(40), AdaptationWidth(40))];
-    [rightBtn setTitle:@"合同" forState:UIControlStateNormal];
+//    [rightBtn setTitle:@"合同" forState:UIControlStateNormal];
+    [rightBtn setImage:[UIImage imageNamed:@"nav_icon"] forState:UIControlStateNormal];
     rightBtn.tag = 102;
     [rightBtn addTarget:self action:@selector(btnOnClick:) forControlEvents:UIControlEventTouchUpInside];
-    [rightBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [rightBtn.titleLabel setFont:[UIFont systemFontOfSize:AdaptationWidth(14)]];
+//    [rightBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//    [rightBtn.titleLabel setFont:[UIFont systemFontOfSize:AdaptationWidth(14)]];
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithCustomView:rightBtn];
     self.navigationItem.rightBarButtonItem = rightItem;
     
@@ -329,7 +330,26 @@ typedef NS_ENUM(NSInteger ,MyOrderFlowRequset) {
             break;
         case 102:
         {
-             [[UIApplication sharedApplication]openURL:[NSURL URLWithString:self.orderDetailModel.eleContractPreviewUrl]];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+            UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"合同" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                [[UIApplication sharedApplication]openURL:[NSURL URLWithString:self.orderDetailModel.eleContractPreviewUrl]];
+            }];
+            UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"结清证明" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                XRootWebVC *vc = [[XRootWebVC alloc]init];
+                vc.url =[NSString stringWithFormat:@"%@%@",self.clientGlobalInfo.orderJQZMUrl,self.orderDetailModel.orderNo];
+                [self.navigationController pushViewController:vc animated:YES];
+//                [[UIApplication sharedApplication]openURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",self.clientGlobalInfo.orderJQZMUrl,self.orderDetailModel.orderNo]]];
+            }];
+            UIAlertAction *action3 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                
+            }];
+            [alert addAction:action1];
+            if (self.orderState == MyOrderStateRefuse) {
+                [alert addAction:action2];
+            }
+            [alert addAction:action3];
+            [self presentViewController:alert animated:YES completion:nil];
+            
 
         }
             break;
@@ -465,12 +485,33 @@ typedef NS_ENUM(NSInteger ,MyOrderFlowRequset) {
         [alert setCornerValue:10];
         alert.delegate = self;
         [_bgView addSubview:alert];
-        [alert mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerX.mas_equalTo(_bgView);
-            make.centerY.mas_equalTo(_bgView).offset(-30);
-            make.width.mas_equalTo(270);
-            make.height.mas_equalTo(193);
-        }];
+        NSArray *arry = [NSArray array];
+        arry = [self.clientGlobalInfo.repaymentMethod componentsSeparatedByString:@","];
+        if (arry.count == 1) {
+            NSString *str = arry[0];
+            if ([str isEqualToString:@"1"]) {
+                alert.zfbBtn.hidden = YES;
+                alert.zfbLab.hidden = YES;
+                alert.zfbImage.hidden = YES;
+            }else{
+                alert.bankLab.hidden = YES;
+                alert.bankImage.hidden = YES;
+                alert.threeBtn.hidden = YES;
+            }
+            [alert mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.centerX.mas_equalTo(_bgView);
+                make.centerY.mas_equalTo(_bgView).offset(-30);
+                make.width.mas_equalTo(270);
+                make.height.mas_equalTo(143);
+            }];
+        }else{
+            [alert mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.centerX.mas_equalTo(_bgView);
+                make.centerY.mas_equalTo(_bgView).offset(-30);
+                make.width.mas_equalTo(270);
+                make.height.mas_equalTo(193);
+            }];
+        }
         
     }
     return _bgView;

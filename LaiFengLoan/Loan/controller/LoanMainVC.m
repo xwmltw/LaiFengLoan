@@ -133,7 +133,7 @@ typedef NS_ENUM(NSInteger ,LoanMainRequest) {
     }];
     
     self.amountLab = [[UILabel alloc] init];
-    self.amountLab.text = self.clientGlobalInfo.riskCreditAmtMax;
+    self.amountLab.text = self.clientGlobalInfo.notLoginShowCreditMax;
     self.amountLab.textColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1];
     self.amountLab.font = [UIFont fontWithName:@"PingFang SC" size:AdaptationWidth(33)];
     [self.informationView addSubview:_amountLab];
@@ -488,7 +488,7 @@ typedef NS_ENUM(NSInteger ,LoanMainRequest) {
                 }else{
                     eduLab.text = @"最高可借(元)额度";
                     self.amountLab.text = self.clientGlobalInfo.riskCreditAmtMax;
-                    pendPay.text = @"额度高   |  审核简单   |   放款快 ";
+                    pendPay.text = @"额度高   |  审核简单   |   放款快";
                     [getBtn setTitle:@"获取额度" forState:UIControlStateNormal];
                     [loanBtn setTitle:@"我要借款" forState:UIControlStateNormal];
                     [loanBtn setBorderWidth:1 andColor:AppMainColor];

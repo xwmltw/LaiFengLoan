@@ -166,55 +166,105 @@ typedef NS_ENUM(NSInteger, PersonalRequest) {
     [dataImage setImage:[UIImage imageNamed:@"personal_headbg"]];
     [view addSubview:dataImage];
     if ([[UserInfo sharedInstance]isSignIn]) {
-        UILabel *creditMoney = [[UILabel alloc] init];
-        creditMoney.text = self.creditInfoModel.creditAmt.description.length ?  self.creditInfoModel.creditAmt.description : @"0";
-        creditMoney.textColor = XColorWithRGB(250, 131, 67);
-        creditMoney.font = [UIFont fontWithName:@"PingFang SC" size:AdaptationWidth(25)];
-        [dataImage addSubview:creditMoney];
-        [creditMoney mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerX.mas_equalTo(dataImage).multipliedBy(0.5);
-            make.top.mas_equalTo(dataImage).offset(AdaptationWidth(21));
-        }];
+        if (self.creditInfoModel.creditStatus.integerValue == 2) {
+
+            UILabel *creditMoney = [[UILabel alloc] init];
+            creditMoney.text = self.creditInfoModel.creditAmt.description.length ?  self.creditInfoModel.creditAmt.description : @"0";
+            creditMoney.textColor = XColorWithRGB(250, 131, 67);
+            creditMoney.font = [UIFont fontWithName:@"PingFang SC" size:AdaptationWidth(25)];
+            [dataImage addSubview:creditMoney];
+            [creditMoney mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.centerX.mas_equalTo(dataImage).multipliedBy(0.5);
+                make.top.mas_equalTo(dataImage).offset(AdaptationWidth(21));
+            }];
+            
+            UILabel *creditLab = [[UILabel alloc] init];
+            creditLab.text = @"授信总额";
+            creditLab.textColor = LabelMainColor;
+            creditLab.font = [UIFont fontWithName:@"PingFang SC" size:AdaptationWidth(14)];
+            [dataImage addSubview:creditLab];
+            [creditLab mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.centerX.mas_equalTo(creditMoney);
+                make.top.mas_equalTo(creditMoney.mas_bottom).offset(AdaptationWidth(4));
+            }];
+            
+            UILabel *amtMoney = [[UILabel alloc] init];
+            amtMoney.text = self.creditInfoModel.useAmt.description.length ? self.creditInfoModel.useAmt.description : @"0";
+            amtMoney.textColor = XColorWithRGB(250, 131, 67);
+            amtMoney.font = [UIFont fontWithName:@"PingFang SC" size:AdaptationWidth(25)];
+            [dataImage addSubview:amtMoney];
+            [amtMoney mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.centerX.mas_equalTo(dataImage).multipliedBy(1.5);
+                make.top.mas_equalTo(dataImage).offset(AdaptationWidth(21));
+            }];
+            
+            UILabel *amtLab = [[UILabel alloc] init];
+            amtLab.text = @"可用额度";
+            amtLab.textColor = LabelMainColor;
+            amtLab.font = [UIFont fontWithName:@"PingFang SC" size:AdaptationWidth(14)];
+            [dataImage addSubview:amtLab];
+            [amtLab mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.centerX.mas_equalTo(amtMoney);
+                make.top.mas_equalTo(amtMoney.mas_bottom).offset(AdaptationWidth(4));
+            }];
+            
+            UIView *line = [[UIView alloc]init];
+            line.backgroundColor = LineColor;
+            [dataImage addSubview:line];
+            [line mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.centerX.mas_equalTo(dataImage);
+                make.width.mas_equalTo(AdaptationWidth(310));
+                make.height.mas_equalTo(AdaptationWidth(1));
+                make.top.mas_equalTo(amtLab.mas_bottom).offset(AdaptationWidth(8));
+            }];
+        }else{
+            UILabel *creditStatusLab = [[UILabel alloc]init];
+            [creditStatusLab setFont:[UIFont systemFontOfSize:AdaptationWidth(20)]];
+            [dataImage addSubview:creditStatusLab];
+            [creditStatusLab mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.top.mas_equalTo(dataImage).offset(AdaptationWidth(33));
+                make.centerX.mas_equalTo(dataImage);
+            }];
+            switch (self.creditInfoModel.creditStatus.integerValue) {
+                case 0:
+                    [creditStatusLab setText:@"授信状态：未提交"];
+                    [creditStatusLab setTextColor:LabelMainColor];
+                    break;
+                case 1:
+                    [creditStatusLab setText:@"授信状态：授信中"];
+                    [creditStatusLab setTextColor:LabelMainColor];
+                    break;
+                case 3:
+                    [creditStatusLab setText:@"授信状态：已拒绝"];
+                    [creditStatusLab setTextColor:XColorWithRGB(255, 0, 0)];
+                    break;
+                case 4:
+                    [creditStatusLab setText:@"授信状态：已驳回"];
+                    [creditStatusLab setTextColor:XColorWithRGB(255, 0, 0)];
+                    break;
+                    
+                default:
+                    break;
+            }
+            UIImageView *statusImage = [[UIImageView alloc]init];
+            [statusImage setImage:[UIImage imageNamed:@"personal_unstatus"]];
+            [dataImage addSubview:statusImage];
+            [statusImage mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.right.mas_equalTo(creditStatusLab.mas_left).offset(-AdaptationWidth(10));
+                make.centerY.mas_equalTo(creditStatusLab);
+            }];
+            
+            UIView *line = [[UIView alloc]init];
+            line.backgroundColor = LineColor;
+            [dataImage addSubview:line];
+            [line mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.centerX.mas_equalTo(dataImage);
+                make.width.mas_equalTo(AdaptationWidth(310));
+                make.height.mas_equalTo(AdaptationWidth(1));
+                make.top.mas_equalTo(creditStatusLab.mas_bottom).offset(AdaptationWidth(20));
+            }];
+        }
         
-        UILabel *creditLab = [[UILabel alloc] init];
-        creditLab.text = @"授信总额";
-        creditLab.textColor = LabelMainColor;
-        creditLab.font = [UIFont fontWithName:@"PingFang SC" size:AdaptationWidth(14)];
-        [dataImage addSubview:creditLab];
-        [creditLab mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerX.mas_equalTo(creditMoney);
-            make.top.mas_equalTo(creditMoney.mas_bottom).offset(AdaptationWidth(4));
-        }];
-        
-        UILabel *amtMoney = [[UILabel alloc] init];
-        amtMoney.text = self.creditInfoModel.useAmt.description.length ? self.creditInfoModel.useAmt.description : @"0";
-        amtMoney.textColor = XColorWithRGB(250, 131, 67);
-        amtMoney.font = [UIFont fontWithName:@"PingFang SC" size:AdaptationWidth(25)];
-        [dataImage addSubview:amtMoney];
-        [amtMoney mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerX.mas_equalTo(dataImage).multipliedBy(1.5);
-            make.top.mas_equalTo(dataImage).offset(AdaptationWidth(21));
-        }];
-        
-        UILabel *amtLab = [[UILabel alloc] init];
-        amtLab.text = @"可用额度";
-        amtLab.textColor = LabelMainColor;
-        amtLab.font = [UIFont fontWithName:@"PingFang SC" size:AdaptationWidth(14)];
-        [dataImage addSubview:amtLab];
-        [amtLab mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerX.mas_equalTo(amtMoney);
-            make.top.mas_equalTo(amtMoney.mas_bottom).offset(AdaptationWidth(4));
-        }];
-        
-        UIView *line = [[UIView alloc]init];
-        line.backgroundColor = LineColor;
-        [dataImage addSubview:line];
-        [line mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerX.mas_equalTo(dataImage);
-            make.width.mas_equalTo(AdaptationWidth(310));
-            make.height.mas_equalTo(AdaptationWidth(1));
-            make.top.mas_equalTo(amtLab.mas_bottom).offset(AdaptationWidth(8));
-        }];
         
         [dataImage mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.bottom.mas_equalTo(view);
@@ -362,10 +412,15 @@ typedef NS_ENUM(NSInteger, PersonalRequest) {
         }
             break;
         case 4:{
-            [self setHudWithName:@"复制成功" Time:1.5 andType:1];
-            UIPasteboard *pasterd = [UIPasteboard generalPasteboard];
-            pasterd.string = self.clientGlobalInfo.customerContact;
-            
+            if ([self.clientGlobalInfo.customerContact rangeOfString:@"电话"].location != NSNotFound) {
+                NSString *str1 = [self.clientGlobalInfo.customerContact substringFromIndex:5];
+                NSString *str = [NSString stringWithFormat:@"tel://%@",str1];
+                [[UIApplication sharedApplication]openURL:[NSURL URLWithString:str]];
+            }else{
+                [self setHudWithName:@"复制成功" Time:1.5 andType:1];
+                UIPasteboard *pasterd = [UIPasteboard generalPasteboard];
+                pasterd.string = self.clientGlobalInfo.customerContact;
+            }
         }
             break;
         default:

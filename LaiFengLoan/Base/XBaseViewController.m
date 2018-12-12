@@ -343,12 +343,12 @@
     titlelabel.font = [UIFont fontWithName:@"PingFangSC-Medium" size:AdaptationWidth(30)];
     titlelabel.textAlignment = NSTextAlignmentLeft;
     
-    UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Unconneted"]];
+    UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"noData"]];
     UIButton *refreshButton = [UIButton buttonWithType:UIButtonTypeCustom];
     refreshButton.layer.cornerRadius = 4;
     refreshButton.clipsToBounds = YES;
     refreshButton.backgroundColor = AppMainColor;
-    [refreshButton setTitle:@"刷新试试" forState:UIControlStateNormal];
+    [refreshButton setTitle:@"重新加载" forState:UIControlStateNormal];
     [refreshButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [refreshButton  setTitleColor:XColorWithRBBA(255, 255, 255, 0.4) forState:UIControlStateHighlighted];
     refreshButton.titleLabel.font = [UIFont systemFontOfSize:AdaptationWidth(17)];

@@ -70,7 +70,7 @@ typedef NS_ENUM(NSInteger ,MyOrderDetailRequest) {
 }
 - (UIView *)creatFootView{
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
-    UIImageView *image = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"noData"]];
+    UIImageView *image = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"noOrder"]];
     [view addSubview:image];
     [image mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.mas_equalTo(view).offset(-40);
@@ -78,7 +78,7 @@ typedef NS_ENUM(NSInteger ,MyOrderDetailRequest) {
     }];
     UILabel *lab = [[UILabel alloc]init];
     [lab setFont:[UIFont systemFontOfSize:AdaptationWidth(16)]];
-    [lab setText:@"暂无数据"];
+    [lab setText:@"暂无订单消息~"];
     [lab setTextColor:LabelMainColor];
     [view addSubview:lab];
     [lab mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -266,12 +266,33 @@ typedef NS_ENUM(NSInteger ,MyOrderDetailRequest) {
         [alert setCornerValue:10];
         alert.delegate = self;
         [_bgView addSubview:alert];
-        [alert mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerX.mas_equalTo(_bgView);
-            make.centerY.mas_equalTo(_bgView).offset(-30);
-            make.width.mas_equalTo(270);
-            make.height.mas_equalTo(193);
-        }];
+        NSArray *arry = [NSArray array];
+        arry = [self.clientGlobalInfo.repaymentMethod componentsSeparatedByString:@","];
+        if (arry.count == 1) {
+            NSString *str = arry[0];
+            if ([str isEqualToString:@"1"]) {
+                alert.zfbBtn.hidden = YES;
+                alert.zfbLab.hidden = YES;
+                alert.zfbImage.hidden = YES;
+            }else{
+                alert.bankLab.hidden = YES;
+                alert.bankImage.hidden = YES;
+                alert.threeBtn.hidden = YES;
+            }
+            [alert mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.centerX.mas_equalTo(_bgView);
+                make.centerY.mas_equalTo(_bgView).offset(-30);
+                make.width.mas_equalTo(270);
+                make.height.mas_equalTo(143);
+            }];
+        }else{
+            [alert mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.centerX.mas_equalTo(_bgView);
+                make.centerY.mas_equalTo(_bgView).offset(-30);
+                make.width.mas_equalTo(270);
+                make.height.mas_equalTo(193);
+            }];
+        }
         
     }
     return _bgView;

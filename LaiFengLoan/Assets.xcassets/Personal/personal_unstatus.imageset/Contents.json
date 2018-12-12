@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "无网络.png",
+      "filename" : "center_icon_status.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "无网络@2x.png",
+      "filename" : "center_icon_status@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "无网络@3x.png",
+      "filename" : "center_icon_status@3x.png",
       "scale" : "3x"
     }
   ],

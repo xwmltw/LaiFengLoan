@@ -190,10 +190,19 @@ typedef NS_ENUM(NSInteger, LoanDetailBtnTag) {
         }];
     }else{
         NSArray *btnAry = [NSArray array];
+        NSMutableArray *loanAmtAry = [NSMutableArray array];
         if (self.creditInfoModel.isFirstLoan.integerValue == 1) {
            btnAry  = [self.clientGlobalInfo.firstLoanAmtFixedDesc componentsSeparatedByString:@","];
+            if (self.clientGlobalInfo.firstLoanAmtFixedSupportUserCreditAmt.length) {
+                [loanAmtAry addObject:self.clientGlobalInfo.firstLoanAmtFixedSupportUserCreditAmt];
+            }
+            [loanAmtAry addObjectsFromArray:btnAry];
         }else{
             btnAry  = [self.clientGlobalInfo.notFirstLoanAmtFixedDesc componentsSeparatedByString:@","];
+            if (self.clientGlobalInfo.notFirstLoanAmtFixedSupportUserCreditAmt.length) {
+                [loanAmtAry addObject:self.clientGlobalInfo.notFirstLoanAmtFixedSupportUserCreditAmt];
+            }
+            [loanAmtAry addObjectsFromArray:btnAry];
         }
         
         selectMoneyBtn = [[UIButton alloc]init];
@@ -201,7 +210,7 @@ typedef NS_ENUM(NSInteger, LoanDetailBtnTag) {
         selectMoneyBtn.tag  = LoanDetailBtnTagSelectMoney1;
         [selectMoneyBtn addTarget:self action:@selector(btnOnClick:) forControlEvents:UIControlEventTouchUpInside];
         [selectMoneyBtn.titleLabel setFont:[UIFont systemFontOfSize:AdaptationWidth(14)]];
-        [selectMoneyBtn setTitle:btnAry[0] forState:UIControlStateNormal];
+        [selectMoneyBtn setTitle:loanAmtAry[0] forState:UIControlStateNormal];
         selectMoneyBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
         [selectMoneyBtn setImage:[UIImage imageNamed:@"loanDetail_unselect"] forState:UIControlStateNormal];
         [selectMoneyBtn setImage:[UIImage imageNamed:@"loanDetail_select"] forState:UIControlStateSelected];
@@ -215,17 +224,17 @@ typedef NS_ENUM(NSInteger, LoanDetailBtnTag) {
             make.width.mas_equalTo(AdaptationWidth(80));
         }];
         
-        if (btnAry.count == 1) {
+        if (loanAmtAry.count == 1) {
             selectMoney = selectMoneyBtn.titleLabel.text;
             selectMoneyBtn.selected = YES;
         }
         
-        if (btnAry.count > 1) {
+        if (loanAmtAry.count > 1) {
             selectMoneyBtn2 = [[UIButton alloc]init];
             selectMoneyBtn2.tag  = LoanDetailBtnTagSelectMoney2;
             [selectMoneyBtn2 addTarget:self action:@selector(btnOnClick:) forControlEvents:UIControlEventTouchUpInside];
             [selectMoneyBtn2.titleLabel setFont:[UIFont systemFontOfSize:AdaptationWidth(14)]];
-            [selectMoneyBtn2 setTitle:btnAry[1] forState:UIControlStateNormal];
+            [selectMoneyBtn2 setTitle:loanAmtAry[1] forState:UIControlStateNormal];
             selectMoneyBtn2.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
             [selectMoneyBtn2 setImage:[UIImage imageNamed:@"loanDetail_unselect"] forState:UIControlStateNormal];
             [selectMoneyBtn2 setImage:[UIImage imageNamed:@"loanDetail_select"] forState:UIControlStateSelected];
@@ -237,19 +246,19 @@ typedef NS_ENUM(NSInteger, LoanDetailBtnTag) {
                 make.centerX.mas_equalTo(self.view);
                 make.width.mas_equalTo(AdaptationWidth(80));
             }];
-            if (btnAry.count == 2) {
+            if (loanAmtAry.count == 2) {
                 selectMoney = selectMoneyBtn2.titleLabel.text;
                 selectMoneyBtn2.selected = YES;
             }
            
         }
         
-        if (btnAry.count > 2) {
+        if (loanAmtAry.count > 2) {
             selectMoneyBtn3 = [[UIButton alloc]init];
             selectMoneyBtn3.tag  = LoanDetailBtnTagSelectMoney3;
             [selectMoneyBtn3 addTarget:self action:@selector(btnOnClick:) forControlEvents:UIControlEventTouchUpInside];
             [selectMoneyBtn3.titleLabel setFont:[UIFont systemFontOfSize:AdaptationWidth(14)]];
-            [selectMoneyBtn3 setTitle:btnAry[2] forState:UIControlStateNormal];
+            [selectMoneyBtn3 setTitle:loanAmtAry[2] forState:UIControlStateNormal];
             selectMoneyBtn3.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
             [selectMoneyBtn3 setImage:[UIImage imageNamed:@"loanDetail_unselect"] forState:UIControlStateNormal];
             [selectMoneyBtn3 setImage:[UIImage imageNamed:@"loanDetail_select"] forState:UIControlStateSelected];
@@ -262,7 +271,7 @@ typedef NS_ENUM(NSInteger, LoanDetailBtnTag) {
                 make.width.mas_equalTo(AdaptationWidth(80));
             }];
             
-            if (btnAry.count == 3) {
+            if (loanAmtAry.count == 3) {
                 selectMoney = selectMoneyBtn3.titleLabel.text;
                 selectMoneyBtn3.selected = YES;
             }

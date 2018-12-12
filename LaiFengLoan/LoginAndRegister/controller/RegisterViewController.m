@@ -11,7 +11,9 @@
 #import "XWMCodeImageView.h"
 #import "XTextField.h"
 #import "XRootWebVC.h"
-
+#import "UserLocation.h"
+#import "PersonViewController.h"
+#import "LoanMainVC.h"
 typedef NS_ENUM(NSInteger , RegisterBtnTag) {
     RegisterBtnTagRegist,
     RegisterBtnTagAgreement,
@@ -27,6 +29,7 @@ typedef NS_ENUM(NSInteger , RegisterRequest) {
     RegisterRequestCodeImage,
     RegisterRequestCode,
     RegisterRequestSure,
+    RegisterRequestLogin,
 };
 @interface RegisterViewController ()<UITextFieldDelegate>
 @property (nonatomic ,strong)UIView *alertView;
@@ -195,7 +198,7 @@ typedef NS_ENUM(NSInteger , RegisterRequest) {
     tipsLab.font = [UIFont fontWithName:@"PingFang SC" size:AdaptationWidth(14)];
     [self.view addSubview:tipsLab];
     [tipsLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.mas_equalTo(self.view);
+        make.centerX.mas_equalTo(self.view).offset(-AdaptationWidth(35));
         make.top.mas_equalTo(registerBtn.mas_bottom).offset(AdaptationWidth(18));
     }];
     UIButton *AgreementBtn = [[UIButton alloc]init];
@@ -332,7 +335,18 @@ typedef NS_ENUM(NSInteger , RegisterRequest) {
             self.dict = [NSDictionary dictionaryWithDictionary:dic];
         }
             break;
+        case RegisterRequestLogin:{
+            self.cmd = XUserLogin;
+            NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                        _pwdTextAccount.text,@"loginPwd",
+                                        _phoneTextAccount.text,@"phoneNum",
+                                        [UserLocation sharedInstance].areaName,@"areaName",
+                                        [UserLocation sharedInstance].cityName,@"cityName",
+                                        [UserLocation sharedInstance].province,@"provinceName",nil];
             
+            self.dict = [NSDictionary dictionaryWithDictionary:dic];
+        }
+            break;
         default:
             break;
     }
@@ -359,12 +373,30 @@ typedef NS_ENUM(NSInteger , RegisterRequest) {
             break;
         case RegisterRequestSure:
         {
-            [self setHudWithName:response.rspMsg Time:1 andType:1];
+//            [self setHudWithName:response.rspMsg Time:1 andType:1];
             [TalkingData onRegister:_phoneTextAccount.text type:TDAccountTypeRegistered name:AppName];
-            [self.navigationController popViewControllerAnimated:YES];
+            [self prepareDataWithCount:RegisterRequestLogin];
         }
             break;
+        case RegisterRequestLogin:{
+            [self setHudWithName:@"登录成功" Time:1.5 andType:1];
+            [TalkingData onLogin:_phoneTextAccount.text type:TDAccountTypeRegistered name:AppName];
+            [[UserInfo sharedInstance]savePhone:_phoneTextAccount.text password:_pwdTextAccount.text accessToken:response.data[@"token"]];
+            for (UIViewController *controller in self.navigationController.viewControllers) {
+                if ([controller isKindOfClass:[PersonViewController class]]) {
+                    PersonViewController *vc = (PersonViewController*)controller;
+                    [self.navigationController popToViewController:vc animated:YES];
+                    return;
+                }
+                if ([controller isKindOfClass:[LoanMainVC class]]) {
+                    LoanMainVC *vc = (LoanMainVC*)controller;
+                    [self.navigationController popToViewController:vc animated:YES];
+                    return;
+                }
+            }
             
+        }
+            break;
         default:
             break;
     }

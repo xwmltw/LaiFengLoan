@@ -28,40 +28,38 @@
 @property (nonatomic ,copy) NSString *firstLoanAmtFixedDesc;
 @property (nonatomic ,copy) NSString *firstLoanAmtFixedType;
 @property (nonatomic ,copy) NSString *firstLoanAmtMin;
+@property (nonatomic ,copy) NSString *firstLoanAmtFixedSupportUserCreditAmt;
 @property (nonatomic ,copy) NSString *notFirstLoanAmtFixedDesc;
 @property (nonatomic ,copy) NSString *notFirstLoanAmtFixedType;
 @property (nonatomic ,copy) NSString *notFirstLoanAmtMin;
+@property (nonatomic ,copy) NSString *notFirstLoanAmtFixedSupportUserCreditAmt;
 @property (nonatomic ,copy) NSString *riskCreditAmtMax;
 @property (nonatomic ,copy) NSString *companyCopyrightInfo;
 @property (nonatomic ,copy) NSString *customerContact;
 @property (nonatomic ,copy) NSString *registAgreementUrl;
+@property (nonatomic ,copy) NSString *notLoginShowCreditMax;
+@property (nonatomic ,copy) NSString *repaymentMethod;
+@property (nonatomic ,copy) NSString *orderJQZMUrl;
 //存储数据
 - (void)setClientGlobalInfoModel;
 + (ClientGlobalInfo *)getClientGlobalInfoModel;
 //bannerAdList             banner广告列表
-//borrowDaysMax    string
-//最长借款期限
-//borrowDaysMin    string
-//最短借款期限
-//firstLoanAmtFixedDesc    string
-//[首借]固定类型描述: 固定值时即为N个固定值,隔开; 区间值时表示金额颗粒度
-//firstLoanAmtFixedType    string
-//[首借]借款金额金额固定类型 1固定值，2区间值
-//firstLoanAmtMin    string
-//[首借]借款金额最低金额
-//notFirstLoanAmtFixedDesc    string
-//[非首借]固定类型描述: 固定值时即为N个固定值,隔开; 区间值时表示金额颗粒度
-//notFirstLoanAmtFixedType    string
-//[非首借]借款金额金额固定类型 1固定值，2区间值
-//notFirstLoanAmtMin    string
-//[非首借]借款金额最低金额
-//riskCreditAmtMax    string
-//风控最高授信额度
-//companyCopyrightInfo    string
-//公司版权信息，例：@copyright XX服务有限公司
-//customerContact    string
-//客服联系方式
+//borrowDaysMax    string//最长借款期限
+//borrowDaysMin    string//最短借款期限
+//firstLoanAmtFixedDesc    string//[首借]固定类型描述: 固定值时即为N个固定值,隔开; 区间值时表示金额颗粒度
+//firstLoanAmtFixedType    string//[首借]借款金额金额固定类型 1固定值，2区间值
+//firstLoanAmtMin    string//[首借]借款金额最低金额
+//firstLoanAmtFixedSupportUserCreditAmt //[首借]固定金额时是否支持使用（可用金额）
+//notFirstLoanAmtFixedDesc    string//[非首借]固定类型描述: 固定值时即为N个固定值,隔开; 区间值时表示金额颗粒度
+//notFirstLoanAmtFixedType    string//[非首借]借款金额金额固定类型 1固定值，2区间值
+//notFirstLoanAmtMin    string//[非首借]借款金额最低金额
+//notFirstLoanAmtFixedSupportUserCreditAmt //[非首借]固定金额时是否支持使用（可用金额）
+//riskCreditAmtMax    string//风控最高授信额度
+//companyCopyrightInfo    string//公司版权信息，例：@copyright XX服务有限公司
+//customerContact    string//客服联系方式
 //registAgreementUrl  注册协议
+//notLoginShowCreditMax 用户未登录显示的最大可借额度
+//repaymentMethod //还款方式(1,2)  1银行卡2支付宝
 @end
 @interface BannerAdList:ParamModel
 @property (nonatomic ,copy) NSString *adContent;

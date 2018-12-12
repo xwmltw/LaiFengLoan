@@ -25,7 +25,7 @@
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "UIViewAlertForUnsatisfiableConstraints"
-                  moduleName = "UIKit"
+                  moduleName = "UIKitCore"
                   usesParentBreakpointCondition = "Yes"
                   offsetFromSymbolStart = "0">
                </Location>
@@ -62,6 +62,38 @@
             endingLineNumber = "676"
             landmarkName = "-getAllContacts"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ContactViewController getAllContacts]"
+                  moduleName = "LaiFengLoan"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac/Documents/compile_env/%E6%9D%A5%E9%A3%8E%E7%8E%B0%E9%87%91%E8%B4%B7/LaiFengLoan/LaiFengLoan/Loan/controller/Authorization/ContactViewController.m"
+                  timestampString = "566273646.911502"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "676"
+                  endingLineNumber = "676"
+                  offsetFromSymbolStart = "752">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ContactViewController getAllContacts]"
+                  moduleName = "LaiFengLoan"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac/Documents/compile_env/%E6%9D%A5%E9%A3%8E%E7%8E%B0%E9%87%91%E8%B4%B7/LaiFengLoan/LaiFengLoan/Loan/controller/Authorization/ContactViewController.m"
+                  timestampString = "566273646.9136389"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "676"
+                  endingLineNumber = "676"
+                  offsetFromSymbolStart = "856">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

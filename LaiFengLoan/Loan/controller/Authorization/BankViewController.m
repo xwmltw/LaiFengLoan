@@ -27,6 +27,7 @@ typedef NS_ENUM(NSInteger ,BankRequest) {
 };
 @interface BankViewController ()<UITextFieldDelegate>
 @property (nonatomic ,strong) BankModel *bankModel;
+@property (nonatomic ,strong) NSNumber *accStepStatus;
 @end
 
 @implementation BankViewController
@@ -303,7 +304,7 @@ typedef NS_ENUM(NSInteger ,BankRequest) {
     
     self.bankModel.bankPhone = textTF4.text;
     self.bankModel.trueName = textTF2.text;
-    if (self.bankModel.bankAccountId.integerValue) {
+    if (self.accStepStatus.integerValue == 3) {
         [self prepareDataWithCount:BankRequestCodeAgain];
     }else{
         [self prepareDataWithCount:BankRequestCode];
@@ -414,11 +415,13 @@ typedef NS_ENUM(NSInteger ,BankRequest) {
             [self setHudWithName:@"发送成功"Time:1 andType:1];
             
             self.bankModel.bankAccountId = response.data[@"bankAccountId"];
+            self.accStepStatus = response.data[@"accStepStatus"];
             break;
         case BankRequestCodeAgain:
             [self beginCountDown];
             [self setHudWithName:@"发送成功"Time:1 andType:1];
             self.bankModel.bankAccountId = response.data[@"bankAccountId"];
+            self.accStepStatus = response.data[@"accStepStatus"];
             break;
         case BankRequestPostInfo:
             [self setHudWithName:@"认证成功"Time:1 andType:1];

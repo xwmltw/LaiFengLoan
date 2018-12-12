@@ -12,7 +12,6 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self  = [super initWithFrame:frame]) {
         self = [[NSBundle mainBundle]loadNibNamed:@"PayAlertView" owner:nil options:nil].firstObject;
-        
     }
     return self;
 }

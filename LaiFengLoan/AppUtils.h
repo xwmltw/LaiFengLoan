@@ -20,8 +20,8 @@ static NSString *const JSPatchRSAPublicKey = @"-----BEGIN PUBLIC KEY-----\nMIGfM
 /** 网络环境*/
 #ifdef DEBUG
 
-//#define SERVICEURL @"http://192.168.5.126:8081" // 测试环境
-#define SERVICEURL @"http://mapi.lf.sdhoo.me" // 阿里测试环境
+#define SERVICEURL @"http://192.168.5.126:8053" // 测试环境
+//#define SERVICEURL @"http://mapi.lf.sdhoo.me" // 阿里测试环境
 
 
 #else

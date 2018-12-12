@@ -35,6 +35,10 @@ typedef NS_ENUM(NSInteger, LoginRequest) {
 @interface LoginViewController ()<UITextFieldDelegate>
 @property (nonatomic, strong) UIView * passwordView;
 @property (nonatomic, strong) UIView * messageView;
+@property (nonatomic ,strong)UIView *line1;
+
+@property (nonatomic, strong) UIButton *buttonA;
+@property (nonatomic, strong) UIButton *buttonB;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic ,strong)UIView *alertView;
 @end
@@ -94,26 +98,52 @@ typedef NS_ENUM(NSInteger, LoginRequest) {
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (void)setInitUI{
-    UILabel *lblLogin = [[UILabel alloc]init];
-    [lblLogin setText:@"登录"];
-    [lblLogin setFont:[UIFont fontWithName:@"PingFang SC" size:AdaptationWidth(24)]];
-    [lblLogin setTextColor:XColorWithRBBA(22, 28, 42, 1)];
-    [self.view addSubview:lblLogin];
-    [lblLogin mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.view).offset(AdaptationWidth(16));
-        make.centerX.mas_equalTo(self.view);
+
+    
+    self.buttonA = [[UIButton alloc] init];
+    self.buttonB = [[UIButton alloc] init];
+
+    [self.buttonA setTitle:@"账号登录" forState:UIControlStateNormal];
+    [self.buttonB setTitle:@"验证码登录" forState:UIControlStateNormal];
+    [self.buttonA setTitleColor:LabelMainColor forState:UIControlStateNormal];
+    [self.buttonB setTitleColor:LabelMainColor forState:UIControlStateNormal];
+    
+    //    [self.buttonA setTitle:@"验证码登录" forState:UIControlStateSelected];
+    //    [self.buttonB setTitle:@"账号密码登录" forState:UIControlStateSelected];
+    [self.buttonA setTitleColor:AppMainColor forState:UIControlStateSelected];
+    [self.buttonB setTitleColor:AppMainColor forState:UIControlStateSelected];
+    
+    self.buttonA.titleLabel.font = [UIFont fontWithName:@"PingFang SC" size:AdaptationWidth(24)];
+    self.buttonB.titleLabel.font = [UIFont fontWithName:@"PingFang SC" size:AdaptationWidth(24)];
+    
+    self.buttonA.selected = YES;
+    
+    [self.buttonA addTarget:self action:@selector(clickButtonA) forControlEvents:UIControlEventTouchUpInside];
+    [self.buttonB addTarget:self action:@selector(clickButtonB) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.buttonA];
+    [self.buttonA mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.view).offset(AdaptationWidth(80));
+        make.left.mas_equalTo(self.view).offset(AdaptationWidth(50));
+        make.width.mas_equalTo(AdaptationWidth(100));
     }];
     
-    UIView *line = [[UIView alloc]init];
-    line.backgroundColor = XColorWithRGB(221, 221, 221);
-    [self.view addSubview:line];
-    [line mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(lblLogin.mas_bottom).offset(AdaptationWidth(10));
-        make.centerX.mas_equalTo(self.view);
-        make.height.mas_equalTo(1);
-        make.width.mas_equalTo(AdaptationWidth(273));
+    [self.view addSubview:self.buttonB];
+    [self.buttonB mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.view).offset(AdaptationWidth(80));
+        make.right.mas_equalTo(self.view).offset(AdaptationWidth(-50));
+        make.width.mas_equalTo(AdaptationWidth(130));
     }];
     
+    
+    self.line1 = [[UIView alloc] init];
+    self.line1.backgroundColor = AppMainColor;
+    [self.view addSubview:_line1];
+    [self.line1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.buttonA.mas_bottom).offset(AdaptationWidth(8));
+        make.width.mas_equalTo(AdaptationWidth(100));
+        make.height.mas_equalTo(3);
+        make.left.mas_equalTo(self.view).offset(AdaptationWidth(50));
+    }];
     
     //配置scrollView的属性
     self.scrollView = [[UIScrollView alloc] init];
@@ -131,7 +161,7 @@ typedef NS_ENUM(NSInteger, LoginRequest) {
     }
     [self.view addSubview:self.scrollView];
     [self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(line.mas_bottom).offset(2);
+        make.top.mas_equalTo(self.line1.mas_bottom).offset(2);
         make.left.bottom.right.mas_equalTo(self.view);
     }];
     
@@ -139,6 +169,7 @@ typedef NS_ENUM(NSInteger, LoginRequest) {
     
     self.passwordView = [[UIView alloc]init];
     self.messageView  = [[UIView alloc]init];
+    
     
     for (int i = 0; i<2; i++) {
         UIView *view = [[UIView alloc]initWithFrame:CGRectMake(ScreenWidth*i, 0, ScreenWidth, ScreenHeight-115)];
@@ -249,15 +280,15 @@ typedef NS_ENUM(NSInteger, LoginRequest) {
         make.width.mas_equalTo(AdaptationWidth(273));
     }];
     
-    UILabel *tipsLab = [[UILabel alloc] init];
-    tipsLab.text = @"验证码登录->";
-    tipsLab.textColor = [UIColor colorWithRed:157/255.0 green:157/255.0 blue:157/255.0 alpha:1];
-    tipsLab.font = [UIFont fontWithName:@"PingFang SC" size:AdaptationWidth(14)];
-    [self.passwordView addSubview:tipsLab];
-    [tipsLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.mas_equalTo(self.passwordView);
-        make.top.mas_equalTo(quickLoginBtn.mas_bottom).offset(AdaptationWidth(18));
-    }];
+//    UILabel *tipsLab = [[UILabel alloc] init];
+//    tipsLab.text = @"验证码登录->";
+//    tipsLab.textColor = [UIColor colorWithRed:157/255.0 green:157/255.0 blue:157/255.0 alpha:1];
+//    tipsLab.font = [UIFont fontWithName:@"PingFang SC" size:AdaptationWidth(14)];
+//    [self.passwordView addSubview:tipsLab];
+//    [tipsLab mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.centerX.mas_equalTo(self.passwordView);
+//        make.top.mas_equalTo(quickLoginBtn.mas_bottom).offset(AdaptationWidth(18));
+//    }];
     
     UIButton *quickRegister = [[UIButton alloc]init];
     quickRegister.tag = LoginButtonTagQuickRegister;
@@ -357,15 +388,15 @@ typedef NS_ENUM(NSInteger, LoginRequest) {
         make.width.mas_equalTo(AdaptationWidth(273));
     }];
 
-    UILabel *tipsLab = [[UILabel alloc] init];
-    tipsLab.text = @"<-账号登录";
-    tipsLab.textColor = [UIColor colorWithRed:157/255.0 green:157/255.0 blue:157/255.0 alpha:1];
-    tipsLab.font = [UIFont fontWithName:@"PingFang SC" size:AdaptationWidth(14)];
-    [self.messageView addSubview:tipsLab];
-    [tipsLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.mas_equalTo(self.messageView);
-        make.top.mas_equalTo(quickLoginBtn.mas_bottom).offset(AdaptationWidth(18));
-    }];
+//    UILabel *tipsLab = [[UILabel alloc] init];
+//    tipsLab.text = @"<-账号登录";
+//    tipsLab.textColor = [UIColor colorWithRed:157/255.0 green:157/255.0 blue:157/255.0 alpha:1];
+//    tipsLab.font = [UIFont fontWithName:@"PingFang SC" size:AdaptationWidth(14)];
+//    [self.messageView addSubview:tipsLab];
+//    [tipsLab mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.centerX.mas_equalTo(self.messageView);
+//        make.top.mas_equalTo(quickLoginBtn.mas_bottom).offset(AdaptationWidth(18));
+//    }];
     
     UIButton *quickRegister = [[UIButton alloc]init];
     quickRegister.tag = LoginButtonTagQuickRegister;
@@ -384,7 +415,55 @@ typedef NS_ENUM(NSInteger, LoginRequest) {
 }
 #pragma mark - scrollView代理方法
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (scrollView.contentOffset.x > ScreenWidth / 2) {
 
+        [self.line1 mas_updateConstraints:^(MASConstraintMaker *make) {
+//            make.top.mas_equalTo(self.buttonB.mas_bottom).offset(AdaptationWidth(8));
+            make.width.mas_equalTo(AdaptationWidth(130));
+//            make.height.mas_equalTo(3);
+            make.left.mas_equalTo(AdaptationWidth(205));
+            make.right.mas_equalTo(self.view).offset(-AdaptationWidth(50));
+        }];
+        //修改button按钮的状态
+        [UIView animateWithDuration:0.3 animations:^{
+            //强制刷新页面布局，不执行此方法，约束动画是没有用的！！！！！
+
+            self.buttonA.selected = NO;
+            self.buttonB.selected = YES;
+            self.buttonB.titleLabel.font = [UIFont fontWithName:@"PingFang SC" size:AdaptationWidth(24)];
+            self.buttonA.titleLabel.font = [UIFont fontWithName:@"PingFang SC" size:AdaptationWidth(24)];
+        }];
+    } else {
+        [self.line1 mas_updateConstraints:^(MASConstraintMaker *make) {
+//            make.top.mas_equalTo(self.buttonA.mas_bottom).offset(AdaptationWidth(8));
+            make.width.mas_equalTo(AdaptationWidth(110));
+//            make.height.mas_equalTo(3);
+            make.left.mas_equalTo(self.view).offset(AdaptationWidth(50));
+            make.right.mas_equalTo(-AdaptationWidth(229));
+        }];
+        [UIView animateWithDuration:0.3 animations:^{
+
+            self.buttonB.selected = NO;
+            self.buttonA.selected = YES;
+            self.buttonB.titleLabel.font = [UIFont fontWithName:@"PingFang SC" size:AdaptationWidth(24)];
+            self.buttonA.titleLabel.font = [UIFont fontWithName:@"PingFang SC" size:AdaptationWidth(24)];
+        }];
+    }
+}
+- (void)clickButtonA {
+    self.buttonB.selected = NO;
+    self.buttonA.selected = YES;
+    [UIView animateWithDuration:0.3 animations:^{
+        [self.scrollView setContentOffset:CGPointMake(0, 0) animated:NO];
+    }];
+}
+
+- (void)clickButtonB {
+    self.buttonA.selected = NO;
+    self.buttonB.selected = YES;
+    [UIView animateWithDuration:0.3 animations:^{
+        [self.scrollView setContentOffset:CGPointMake(ScreenWidth, 0) animated:NO];
+    }];
 }
 #pragma mark -UITextField 事件
 - (void)textFieldDidChange:(UITextField *)textField{

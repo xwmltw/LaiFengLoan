@@ -13,6 +13,10 @@
 @end;
 @interface PayAlertView : UIView
 @property (weak, nonatomic) IBOutlet UIButton *threeBtn;
+@property (weak, nonatomic) IBOutlet UILabel *bankLab;
+@property (weak, nonatomic) IBOutlet UIImageView *bankImage;
 @property (weak, nonatomic) IBOutlet UIButton *zfbBtn;
+@property (weak, nonatomic) IBOutlet UIImageView *zfbImage;
+@property (weak, nonatomic) IBOutlet UILabel *zfbLab;
 @property (nonatomic, weak) id<PayAlertBtnDelegate> delegate;
 @end
