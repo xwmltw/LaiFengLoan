@@ -4,16 +4,14 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
-	<key>CFBundleDisplayName</key>
-	<string>来风现金贷</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<string>$(APP_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>$(PRODUCT_NAME)</string>
+	<string>$(APP_NAME)</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -28,6 +26,116 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>LaiFengXJD</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>ChaoHengHuaLoan</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>ChaoHengHuaLoan</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>YongBeiLoan</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>YongBeiLoan</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>HaiLiangHuaLoan</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>HaiLiangHuaLoan</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>kuaibeiLoan</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>kuaibeiLoan</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>YouLaiHuaLoan</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>YouLaiHuaLoan</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>JiDaiBaoLoan</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>JiDaiBaoLoan</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>MengXiangLoan</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>MengXiangLoan</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>XiaoDaiShuLoan</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>XiaoDaiShuLoan</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>XiaoHuangYuLoan</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>XiaoHuangYuLoan</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>XiaoKouLoan</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>XiaoKouLoan</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>XinYiDai</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>XinYiDai</string>
 			</array>
 		</dict>
 	</array>
@@ -53,7 +161,7 @@
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>我们需要通过您的相册获取相关相册</string>
 	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
+	<string>LaunchScreen_XKD</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>

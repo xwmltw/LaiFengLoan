@@ -204,7 +204,7 @@ typedef NS_ENUM(NSInteger , RegisterRequest) {
     UIButton *AgreementBtn = [[UIButton alloc]init];
     AgreementBtn.tag = RegisterBtnTagAgreement;
     [AgreementBtn.titleLabel setFont:[UIFont fontWithName:@"PingFang SC" size:AdaptationWidth(14)]];
-    [AgreementBtn setTitleColor:XColorWithRGB(48, 136, 255) forState:UIControlStateNormal];
+    [AgreementBtn setTitleColor:AppMainColor forState:UIControlStateNormal];
     [AgreementBtn setTitle:@"《用户协议》" forState:UIControlStateNormal];
     [AgreementBtn addTarget:self action:@selector(btnOnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:AgreementBtn];
@@ -216,7 +216,7 @@ typedef NS_ENUM(NSInteger , RegisterRequest) {
     UIButton *loginBtn = [[UIButton alloc]init];
     loginBtn.tag = RegisterBtnTagLogin;
     [loginBtn.titleLabel setFont:[UIFont fontWithName:@"PingFang SC" size:AdaptationWidth(14)]];
-    [loginBtn setTitleColor:XColorWithRGB(48, 136, 255) forState:UIControlStateNormal];
+    [loginBtn setTitleColor:AppMainColor forState:UIControlStateNormal];
     [loginBtn setTitle:@"已有账号,请登录" forState:UIControlStateNormal];
     [loginBtn setImage:[UIImage imageNamed:@"GoRegiter"] forState:UIControlStateNormal];
     [loginBtn addTarget:self action:@selector(btnOnClick:) forControlEvents:UIControlEventTouchUpInside];

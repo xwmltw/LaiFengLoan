@@ -124,10 +124,22 @@
 		047BD2D621A3BA320080662C /* MyOrderCntModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 047BD2D521A3BA320080662C /* MyOrderCntModel.m */; };
 		047BD2D921A3D7800080662C /* PayAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 047BD2D821A3D7800080662C /* PayAlertView.m */; };
 		047BD2DB21A3D7930080662C /* PayAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047BD2DA21A3D7930080662C /* PayAlertView.xib */; };
+		0488EE7E21C3957000635459 /* MoxieStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0488EE6F21C3956F00635459 /* MoxieStatusView.m */; };
+		0488EE7F21C3957000635459 /* mx_quit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0488EE7521C3956F00635459 /* mx_quit@2x.png */; };
+		0488EE8021C3957000635459 /* screenshot_imported@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0488EE7621C3956F00635459 /* screenshot_imported@2x.png */; };
+		0488EE8121C3957000635459 /* mx_refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0488EE7721C3956F00635459 /* mx_refresh@2x.png */; };
+		0488EE8221C3957000635459 /* mx_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0488EE7821C3956F00635459 /* mx_back@2x.png */; };
+		0488EE8321C3957000635459 /* screenshot_next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0488EE7921C3956F00635459 /* screenshot_next@2x.png */; };
+		0488EE8421C3957000635459 /* mx_ScanningLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0488EE7A21C3956F00635459 /* mx_ScanningLine@2x.png */; };
+		0488EE8521C3957000635459 /* screenshot_header_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0488EE7B21C3956F00635459 /* screenshot_header_bg@2x.png */; };
+		0488EE8621C3957000635459 /* libMoxieSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0488EE7C21C3956F00635459 /* libMoxieSDK.a */; };
+		0488EE8721C3957000635459 /* MoxieSDKOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0488EE7D21C3956F00635459 /* MoxieSDKOperation.m */; };
 		0495A402218D6B1800421131 /* ForgetPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0495A401218D6B1800421131 /* ForgetPwdViewController.m */; };
 		0495A405218D6DB300421131 /* ResetPwdController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0495A404218D6DB300421131 /* ResetPwdController.m */; };
 		0495A409218D6FB500421131 /* PersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0495A408218D6FB500421131 /* PersonViewController.m */; };
 		0495A40F218DAA9000421131 /* LoanDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0495A40E218DAA9000421131 /* LoanDetailViewController.m */; };
+		0499664B21C7A21A005C19B7 /* LaunchScreen_XYD.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0499664A21C7A21A005C19B7 /* LaunchScreen_XYD.storyboard */; };
+		0499664D21C7B5A4005C19B7 /* LaunchScreen_XKD.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0499664C21C7B5A4005C19B7 /* LaunchScreen_XKD.storyboard */; };
 		04A797B9219E92FB00E1E879 /* XRootWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A797B8219E92FB00E1E879 /* XRootWebVC.m */; };
 		04B3BAEA219168BE002C39AF /* MyOrderFlowVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B3BAE9219168BE002C39AF /* MyOrderFlowVC.m */; };
 		04B3BAEE2191A3B9002C39AF /* MyOrderFlowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B3BAEC2191A3B9002C39AF /* MyOrderFlowTableViewCell.m */; };
@@ -140,8 +152,17 @@
 		04D5594521B7AC4A005760DD /* JSPatchPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D5594421B7AC4A005760DD /* JSPatchPlatform.framework */; };
 		04DE16A521AFDDD500672501 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DE16A421AFDDD500672501 /* JavaScriptCore.framework */; };
 		04DE16A721AFDDEA00672501 /* libz.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DE16A621AFDDEA00672501 /* libz.1.tbd */; };
+		04DFD19321C7817000DC5859 /* LaunchScreen_JDB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04DFD19221C7817000DC5859 /* LaunchScreen_JDB.storyboard */; };
+		04DFD19721C79B4000DC5859 /* LaunchScreen_MXD.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04DFD19621C79B4000DC5859 /* LaunchScreen_MXD.storyboard */; };
+		04DFD19B21C79D8B00DC5859 /* LaunchScreen_XDS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04DFD19A21C79D8B00DC5859 /* LaunchScreen_XDS.storyboard */; };
+		04DFD19F21C79F5E00DC5859 /* LaunchScreen_XHY.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04DFD19E21C79F5E00DC5859 /* LaunchScreen_XHY.storyboard */; };
 		04EF835821A3EE29000257AB /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 04EF835621A3EE29000257AB /* AlipaySDK.bundle */; };
 		04EF835921A3EE29000257AB /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04EF835721A3EE29000257AB /* AlipaySDK.framework */; };
+		04EFF49421C74DEB00AF5CEF /* LaunchScreen_CXH.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04EFF49321C74DEA00AF5CEF /* LaunchScreen_CXH.storyboard */; };
+		04EFF4A321C771C600AF5CEF /* LaunchScreen_YB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04EFF4A221C771C500AF5CEF /* LaunchScreen_YB.storyboard */; };
+		04EFF4A721C775EB00AF5CEF /* LaunchScreen_HLH.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04EFF4A621C775EB00AF5CEF /* LaunchScreen_HLH.storyboard */; };
+		04EFF4AB21C777DA00AF5CEF /* LaunchScreen_KB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04EFF4AA21C777DA00AF5CEF /* LaunchScreen_KB.storyboard */; };
+		04EFF4AF21C778D300AF5CEF /* LaunchScreen_YLH.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04EFF4AE21C778D200AF5CEF /* LaunchScreen_YLH.storyboard */; };
 		04F1E3B5218FE131006523AE /* IdentityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F1E3B4218FE131006523AE /* IdentityViewController.m */; };
 		04F1E3B8218FE469006523AE /* AuthorizationHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F1E3B7218FE469006523AE /* AuthorizationHeadView.m */; };
 		04F1E3BD218FE4F7006523AE /* AuthorizationHead.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F1E3BC218FE4F7006523AE /* AuthorizationHead.xib */; };
@@ -360,6 +381,19 @@
 		047BD2D721A3D7800080662C /* PayAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PayAlertView.h; sourceTree = "<group>"; };
 		047BD2D821A3D7800080662C /* PayAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PayAlertView.m; sourceTree = "<group>"; };
 		047BD2DA21A3D7930080662C /* PayAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PayAlertView.xib; sourceTree = "<group>"; };
+		0488EE6E21C3956F00635459 /* MoxieStatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoxieStatusView.h; sourceTree = "<group>"; };
+		0488EE6F21C3956F00635459 /* MoxieStatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoxieStatusView.m; sourceTree = "<group>"; };
+		0488EE7021C3956F00635459 /* MoxieSDKOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoxieSDKOperation.h; sourceTree = "<group>"; };
+		0488EE7321C3956F00635459 /* MoxieSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoxieSDK.h; sourceTree = "<group>"; };
+		0488EE7521C3956F00635459 /* mx_quit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mx_quit@2x.png"; sourceTree = "<group>"; };
+		0488EE7621C3956F00635459 /* screenshot_imported@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screenshot_imported@2x.png"; sourceTree = "<group>"; };
+		0488EE7721C3956F00635459 /* mx_refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mx_refresh@2x.png"; sourceTree = "<group>"; };
+		0488EE7821C3956F00635459 /* mx_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mx_back@2x.png"; sourceTree = "<group>"; };
+		0488EE7921C3956F00635459 /* screenshot_next@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screenshot_next@2x.png"; sourceTree = "<group>"; };
+		0488EE7A21C3956F00635459 /* mx_ScanningLine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mx_ScanningLine@2x.png"; sourceTree = "<group>"; };
+		0488EE7B21C3956F00635459 /* screenshot_header_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screenshot_header_bg@2x.png"; sourceTree = "<group>"; };
+		0488EE7C21C3956F00635459 /* libMoxieSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMoxieSDK.a; sourceTree = "<group>"; };
+		0488EE7D21C3956F00635459 /* MoxieSDKOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoxieSDKOperation.m; sourceTree = "<group>"; };
 		0495A400218D6B1800421131 /* ForgetPwdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgetPwdViewController.h; sourceTree = "<group>"; };
 		0495A401218D6B1800421131 /* ForgetPwdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgetPwdViewController.m; sourceTree = "<group>"; };
 		0495A403218D6DB300421131 /* ResetPwdController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResetPwdController.h; sourceTree = "<group>"; };
@@ -368,6 +402,8 @@
 		0495A408218D6FB500421131 /* PersonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonViewController.m; sourceTree = "<group>"; };
 		0495A40D218DAA9000421131 /* LoanDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoanDetailViewController.h; sourceTree = "<group>"; };
 		0495A40E218DAA9000421131 /* LoanDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoanDetailViewController.m; sourceTree = "<group>"; };
+		0499664A21C7A21A005C19B7 /* LaunchScreen_XYD.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen_XYD.storyboard; sourceTree = "<group>"; };
+		0499664C21C7B5A4005C19B7 /* LaunchScreen_XKD.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen_XKD.storyboard; sourceTree = "<group>"; };
 		04A797B7219E92FA00E1E879 /* XRootWebVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XRootWebVC.h; sourceTree = "<group>"; };
 		04A797B8219E92FB00E1E879 /* XRootWebVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XRootWebVC.m; sourceTree = "<group>"; };
 		04B3BAE8219168BE002C39AF /* MyOrderFlowVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyOrderFlowVC.h; sourceTree = "<group>"; };
@@ -387,8 +423,17 @@
 		04D5594421B7AC4A005760DD /* JSPatchPlatform.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JSPatchPlatform.framework; sourceTree = "<group>"; };
 		04DE16A421AFDDD500672501 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		04DE16A621AFDDEA00672501 /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
+		04DFD19221C7817000DC5859 /* LaunchScreen_JDB.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen_JDB.storyboard; sourceTree = "<group>"; };
+		04DFD19621C79B4000DC5859 /* LaunchScreen_MXD.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen_MXD.storyboard; sourceTree = "<group>"; };
+		04DFD19A21C79D8B00DC5859 /* LaunchScreen_XDS.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen_XDS.storyboard; sourceTree = "<group>"; };
+		04DFD19E21C79F5E00DC5859 /* LaunchScreen_XHY.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen_XHY.storyboard; sourceTree = "<group>"; };
 		04EF835621A3EE29000257AB /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
 		04EF835721A3EE29000257AB /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
+		04EFF49321C74DEA00AF5CEF /* LaunchScreen_CXH.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen_CXH.storyboard; sourceTree = "<group>"; };
+		04EFF4A221C771C500AF5CEF /* LaunchScreen_YB.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen_YB.storyboard; sourceTree = "<group>"; };
+		04EFF4A621C775EB00AF5CEF /* LaunchScreen_HLH.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen_HLH.storyboard; sourceTree = "<group>"; };
+		04EFF4AA21C777DA00AF5CEF /* LaunchScreen_KB.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen_KB.storyboard; sourceTree = "<group>"; };
+		04EFF4AE21C778D200AF5CEF /* LaunchScreen_YLH.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen_YLH.storyboard; sourceTree = "<group>"; };
 		04F1E3B3218FE131006523AE /* IdentityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IdentityViewController.h; sourceTree = "<group>"; };
 		04F1E3B4218FE131006523AE /* IdentityViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IdentityViewController.m; sourceTree = "<group>"; };
 		04F1E3B6218FE469006523AE /* AuthorizationHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthorizationHeadView.h; sourceTree = "<group>"; };
@@ -414,9 +459,20 @@
 		04F7A6B121A2A10700E549F4 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		04F7A6B321A2A12D00E549F4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		04F7A6B521A2A14D00E549F4 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		153EC93F6823F4963B03D2AC /* Pods-LaiFengLoan.app_yb.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaiFengLoan.app_yb.xcconfig"; path = "Pods/Target Support Files/Pods-LaiFengLoan/Pods-LaiFengLoan.app_yb.xcconfig"; sourceTree = "<group>"; };
+		17258435546DF9FA433E7F3E /* Pods-LaiFengLoan.app_xhy.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaiFengLoan.app_xhy.xcconfig"; path = "Pods/Target Support Files/Pods-LaiFengLoan/Pods-LaiFengLoan.app_xhy.xcconfig"; sourceTree = "<group>"; };
+		24AC6B6487F4368189575086 /* Pods-LaiFengLoan.app_ylh.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaiFengLoan.app_ylh.xcconfig"; path = "Pods/Target Support Files/Pods-LaiFengLoan/Pods-LaiFengLoan.app_ylh.xcconfig"; sourceTree = "<group>"; };
+		2665904229100432C6CFE9F0 /* Pods-LaiFengLoan.app_jdb.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaiFengLoan.app_jdb.xcconfig"; path = "Pods/Target Support Files/Pods-LaiFengLoan/Pods-LaiFengLoan.app_jdb.xcconfig"; sourceTree = "<group>"; };
+		5B40C37FC0D6D9CDE969D047 /* Pods-LaiFengLoan.app_hlh.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaiFengLoan.app_hlh.xcconfig"; path = "Pods/Target Support Files/Pods-LaiFengLoan/Pods-LaiFengLoan.app_hlh.xcconfig"; sourceTree = "<group>"; };
 		649F7E7A5E50C77C93F33942 /* Pods-LaiFengLoan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaiFengLoan.release.xcconfig"; path = "Pods/Target Support Files/Pods-LaiFengLoan/Pods-LaiFengLoan.release.xcconfig"; sourceTree = "<group>"; };
 		651CCDF9635AD0F757F2EC2C /* libPods-LaiFengLoan.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LaiFengLoan.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		709F12E987F3BAA3ED43707D /* Pods-LaiFengLoan.app_cxh.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaiFengLoan.app_cxh.xcconfig"; path = "Pods/Target Support Files/Pods-LaiFengLoan/Pods-LaiFengLoan.app_cxh.xcconfig"; sourceTree = "<group>"; };
+		833F4DE2E06F6FB7485C4695 /* Pods-LaiFengLoan.app_kb.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaiFengLoan.app_kb.xcconfig"; path = "Pods/Target Support Files/Pods-LaiFengLoan/Pods-LaiFengLoan.app_kb.xcconfig"; sourceTree = "<group>"; };
+		92E355C2CC1058330DC998EF /* Pods-LaiFengLoan.app_xds.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaiFengLoan.app_xds.xcconfig"; path = "Pods/Target Support Files/Pods-LaiFengLoan/Pods-LaiFengLoan.app_xds.xcconfig"; sourceTree = "<group>"; };
+		92F6C3106928CFF4D6413AD2 /* Pods-LaiFengLoan.app_xkd.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaiFengLoan.app_xkd.xcconfig"; path = "Pods/Target Support Files/Pods-LaiFengLoan/Pods-LaiFengLoan.app_xkd.xcconfig"; sourceTree = "<group>"; };
 		C418EE642A0C896E51171F2B /* Pods-LaiFengLoan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaiFengLoan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LaiFengLoan/Pods-LaiFengLoan.debug.xcconfig"; sourceTree = "<group>"; };
+		C9D7F16A0471DB6A43341EBF /* Pods-LaiFengLoan.app_mxd.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaiFengLoan.app_mxd.xcconfig"; path = "Pods/Target Support Files/Pods-LaiFengLoan/Pods-LaiFengLoan.app_mxd.xcconfig"; sourceTree = "<group>"; };
+		CB93715E4922E70F23E82353 /* Pods-LaiFengLoan.app_xyd.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaiFengLoan.app_xyd.xcconfig"; path = "Pods/Target Support Files/Pods-LaiFengLoan/Pods-LaiFengLoan.app_xyd.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -425,6 +481,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04DE16A721AFDDEA00672501 /* libz.1.tbd in Frameworks */,
+				0488EE8621C3957000635459 /* libMoxieSDK.a in Frameworks */,
 				04D5594521B7AC4A005760DD /* JSPatchPlatform.framework in Frameworks */,
 				04DE16A521AFDDD500672501 /* JavaScriptCore.framework in Frameworks */,
 				0464BC1521ABD9B700FCEC7D /* QuickLook.framework in Frameworks */,
@@ -492,6 +549,7 @@
 		043897D52192C22D0007F2A7 /* ToolKit */ = {
 			isa = PBXGroup;
 			children = (
+				0488EE6C21C3956F00635459 /* MoxieSDK */,
 				0479AA5C21B64D65006E5017 /* JSPatch */,
 				04EF835521A3EE29000257AB /* AliPay */,
 				04F7A6AD21A2A0D200E549F4 /* TalkingData */,
@@ -579,6 +637,17 @@
 				044BA5502189A48400363D13 /* Main.storyboard */,
 				044BA5532189A48600363D13 /* Assets.xcassets */,
 				044BA5552189A48600363D13 /* LaunchScreen.storyboard */,
+				04EFF4A221C771C500AF5CEF /* LaunchScreen_YB.storyboard */,
+				04EFF49321C74DEA00AF5CEF /* LaunchScreen_CXH.storyboard */,
+				04EFF4A621C775EB00AF5CEF /* LaunchScreen_HLH.storyboard */,
+				04EFF4AA21C777DA00AF5CEF /* LaunchScreen_KB.storyboard */,
+				04EFF4AE21C778D200AF5CEF /* LaunchScreen_YLH.storyboard */,
+				04DFD19221C7817000DC5859 /* LaunchScreen_JDB.storyboard */,
+				04DFD19621C79B4000DC5859 /* LaunchScreen_MXD.storyboard */,
+				04DFD19A21C79D8B00DC5859 /* LaunchScreen_XDS.storyboard */,
+				04DFD19E21C79F5E00DC5859 /* LaunchScreen_XHY.storyboard */,
+				0499664A21C7A21A005C19B7 /* LaunchScreen_XYD.storyboard */,
+				0499664C21C7B5A4005C19B7 /* LaunchScreen_XKD.storyboard */,
 				044BA5582189A48600363D13 /* Info.plist */,
 				044BA5592189A48600363D13 /* main.m */,
 				046145432194625500800226 /* area.plist */,
@@ -839,6 +908,58 @@
 			path = model;
 			sourceTree = "<group>";
 		};
+		0488EE6C21C3956F00635459 /* MoxieSDK */ = {
+			isa = PBXGroup;
+			children = (
+				0488EE6D21C3956F00635459 /* MXView */,
+				0488EE7021C3956F00635459 /* MoxieSDKOperation.h */,
+				0488EE7121C3956F00635459 /* include */,
+				0488EE7421C3956F00635459 /* resources */,
+				0488EE7C21C3956F00635459 /* libMoxieSDK.a */,
+				0488EE7D21C3956F00635459 /* MoxieSDKOperation.m */,
+			);
+			path = MoxieSDK;
+			sourceTree = "<group>";
+		};
+		0488EE6D21C3956F00635459 /* MXView */ = {
+			isa = PBXGroup;
+			children = (
+				0488EE6E21C3956F00635459 /* MoxieStatusView.h */,
+				0488EE6F21C3956F00635459 /* MoxieStatusView.m */,
+			);
+			path = MXView;
+			sourceTree = "<group>";
+		};
+		0488EE7121C3956F00635459 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				0488EE7221C3956F00635459 /* MoxieSDK */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		0488EE7221C3956F00635459 /* MoxieSDK */ = {
+			isa = PBXGroup;
+			children = (
+				0488EE7321C3956F00635459 /* MoxieSDK.h */,
+			);
+			path = MoxieSDK;
+			sourceTree = "<group>";
+		};
+		0488EE7421C3956F00635459 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				0488EE7521C3956F00635459 /* mx_quit@2x.png */,
+				0488EE7621C3956F00635459 /* screenshot_imported@2x.png */,
+				0488EE7721C3956F00635459 /* mx_refresh@2x.png */,
+				0488EE7821C3956F00635459 /* mx_back@2x.png */,
+				0488EE7921C3956F00635459 /* screenshot_next@2x.png */,
+				0488EE7A21C3956F00635459 /* mx_ScanningLine@2x.png */,
+				0488EE7B21C3956F00635459 /* screenshot_header_bg@2x.png */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
 		0495A406218D6F7D00421131 /* Personal */ = {
 			isa = PBXGroup;
 			children = (
@@ -1017,6 +1138,17 @@
 			children = (
 				C418EE642A0C896E51171F2B /* Pods-LaiFengLoan.debug.xcconfig */,
 				649F7E7A5E50C77C93F33942 /* Pods-LaiFengLoan.release.xcconfig */,
+				709F12E987F3BAA3ED43707D /* Pods-LaiFengLoan.app_cxh.xcconfig */,
+				24AC6B6487F4368189575086 /* Pods-LaiFengLoan.app_ylh.xcconfig */,
+				833F4DE2E06F6FB7485C4695 /* Pods-LaiFengLoan.app_kb.xcconfig */,
+				153EC93F6823F4963B03D2AC /* Pods-LaiFengLoan.app_yb.xcconfig */,
+				5B40C37FC0D6D9CDE969D047 /* Pods-LaiFengLoan.app_hlh.xcconfig */,
+				CB93715E4922E70F23E82353 /* Pods-LaiFengLoan.app_xyd.xcconfig */,
+				92F6C3106928CFF4D6413AD2 /* Pods-LaiFengLoan.app_xkd.xcconfig */,
+				17258435546DF9FA433E7F3E /* Pods-LaiFengLoan.app_xhy.xcconfig */,
+				92E355C2CC1058330DC998EF /* Pods-LaiFengLoan.app_xds.xcconfig */,
+				C9D7F16A0471DB6A43341EBF /* Pods-LaiFengLoan.app_mxd.xcconfig */,
+				2665904229100432C6CFE9F0 /* Pods-LaiFengLoan.app_jdb.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1091,12 +1223,16 @@
 				045D7C77219C402500A51281 /* close_cha_h@2x.png in Resources */,
 				045D7C71219C402500A51281 /* touch_focus_x@2x.png in Resources */,
 				044BA5572189A48600363D13 /* LaunchScreen.storyboard in Resources */,
+				04DFD19B21C79D8B00DC5859 /* LaunchScreen_XDS.storyboard in Resources */,
 				045D7C79219C402500A51281 /* close_cha_h.png in Resources */,
+				0488EE8521C3957000635459 /* screenshot_header_bg@2x.png in Resources */,
 				045D7C7F219C402500A51281 /* switch_camera_h@2x.png in Resources */,
+				0488EE8221C3957000635459 /* mx_back@2x.png in Resources */,
 				045D7C6F219C402500A51281 /* flashing_off.png in Resources */,
 				045D7C73219C402500A51281 /* shot.png in Resources */,
 				04F1E3D821907D0A006523AE /* MyOrderDetailTableViewCell.xib in Resources */,
 				045D7C75219C402500A51281 /* flashing_off@2x.png in Resources */,
+				0499664B21C7A21A005C19B7 /* LaunchScreen_XYD.storyboard in Resources */,
 				045D7C76219C402500A51281 /* flashing_auto@2x.png in Resources */,
 				04F1E3BD218FE4F7006523AE /* AuthorizationHead.xib in Resources */,
 				043897D121927F240007F2A7 /* XWMCodeImage.xib in Resources */,
@@ -1105,27 +1241,41 @@
 				045D7C6A219C402400A51281 /* flashing_auto.png in Resources */,
 				046145332194135200800226 /* Resource.bundle in Resources */,
 				045D7C74219C402500A51281 /* camera_line_h@2x.png in Resources */,
+				0488EE8121C3957000635459 /* mx_refresh@2x.png in Resources */,
 				045D7C7E219C402500A51281 /* camera_line_h.png in Resources */,
+				04EFF4A321C771C600AF5CEF /* LaunchScreen_YB.storyboard in Resources */,
+				04DFD19721C79B4000DC5859 /* LaunchScreen_MXD.storyboard in Resources */,
 				045D7C6B219C402400A51281 /* flashing_on.png in Resources */,
 				047BD2DB21A3D7930080662C /* PayAlertView.xib in Resources */,
+				04EFF4AF21C778D300AF5CEF /* LaunchScreen_YLH.storyboard in Resources */,
 				045D7C68219C402400A51281 /* camera_line@2x.png in Resources */,
+				0488EE8021C3957000635459 /* screenshot_imported@2x.png in Resources */,
+				0499664D21C7B5A4005C19B7 /* LaunchScreen_XKD.storyboard in Resources */,
 				045D7C6E219C402400A51281 /* touch_focus_x.png in Resources */,
 				045D7C6C219C402400A51281 /* shot@2x.png in Resources */,
 				04EF835821A3EE29000257AB /* AlipaySDK.bundle in Resources */,
 				045D7C7A219C402500A51281 /* flashing_on@2x.png in Resources */,
+				04EFF4A721C775EB00AF5CEF /* LaunchScreen_HLH.storyboard in Resources */,
 				045D7C72219C402500A51281 /* touch_focus@2x.png in Resources */,
+				04EFF49421C74DEB00AF5CEF /* LaunchScreen_CXH.storyboard in Resources */,
+				0488EE8421C3957000635459 /* mx_ScanningLine@2x.png in Resources */,
 				045D7C7B219C402500A51281 /* switch_camera_h.png in Resources */,
+				04EFF4AB21C777DA00AF5CEF /* LaunchScreen_KB.storyboard in Resources */,
 				045D7C78219C402500A51281 /* Default-568h@2x.png in Resources */,
 				045D7C7D219C402500A51281 /* close_cha.png in Resources */,
 				045D7C80219C402500A51281 /* close_cha@2x.png in Resources */,
+				0488EE8321C3957000635459 /* screenshot_next@2x.png in Resources */,
 				043897F42192C2420007F2A7 /* README.md in Resources */,
+				04DFD19F21C79F5E00DC5859 /* LaunchScreen_XHY.storyboard in Resources */,
 				045D7C67219C402400A51281 /* switch_camera.png in Resources */,
 				04CB2ADD21A6DC4000ADDD20 /* content.json in Resources */,
 				04381EBB21A0136000F27B5C /* MyMessageTableViewCell.xib in Resources */,
 				0413ACDF219952BC00C77134 /* QustionsCell.xib in Resources */,
 				045D7C7C219C402500A51281 /* shot_h.png in Resources */,
+				0488EE7F21C3957000635459 /* mx_quit@2x.png in Resources */,
 				045D7C70219C402500A51281 /* shot_h@2x.png in Resources */,
 				045D7C69219C402400A51281 /* touch_focus.png in Resources */,
+				04DFD19321C7817000DC5859 /* LaunchScreen_JDB.storyboard in Resources */,
 				044BA5522189A48400363D13 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1187,6 +1337,7 @@
 				045D7C38219C0B3800A51281 /* TPLRangeSlider.m in Sources */,
 				045FCE46219D56BD00CD0504 /* OrderPreviewModel.m in Sources */,
 				043897FC2193190F0007F2A7 /* XAlertView.m in Sources */,
+				0488EE8721C3957000635459 /* MoxieSDKOperation.m in Sources */,
 				045D7C81219C402500A51281 /* SCCaptureCameraController.m in Sources */,
 				04A797B9219E92FB00E1E879 /* XRootWebVC.m in Sources */,
 				04B3BAF62191B9D4002C39AF /* ParamModel.m in Sources */,
@@ -1260,6 +1411,7 @@
 				043897ED2192C2420007F2A7 /* GTMBase64.m in Sources */,
 				044BA5772189CA8B00363D13 /* DateHelper.m in Sources */,
 				04B3BAF32191B467002C39AF /* XResponse.m in Sources */,
+				0488EE7E21C3957000635459 /* MoxieStatusView.m in Sources */,
 				0461453C21942A6900800226 /* ContactModel.m in Sources */,
 				047BD2D321A39CB00080662C /* MyMessageModel.m in Sources */,
 				0413ACDB2199524600C77134 /* QUestionsViewController.m in Sources */,
@@ -1333,6 +1485,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
+					"APP_Type=0",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -1386,6 +1539,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "APP_Type=1";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -1403,6 +1557,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C418EE642A0C896E51171F2B /* Pods-LaiFengLoan.debug.xcconfig */;
 			buildSettings = {
+				APP_IDENTIFIER = com.lfxjd.LFLoan;
+				APP_NAME = "来风现金贷";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_ENTITLEMENTS = LaiFengLoan/LaiFengLoan.entitlements;
@@ -1431,6 +1587,7 @@
 					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDIDSDK/OpenLibs",
 					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/OCR",
 					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/TalkingData",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/MoxieSDK",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1471,7 +1628,6 @@
 					"-framework",
 					"\"UIKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.lfxjd.LFLoan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1482,6 +1638,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 649F7E7A5E50C77C93F33942 /* Pods-LaiFengLoan.release.xcconfig */;
 			buildSettings = {
+				APP_IDENTIFIER = com.lfxjd.LFLoan;
+				APP_NAME = "来风现金贷";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_ENTITLEMENTS = LaiFengLoan/LaiFengLoan.entitlements;
@@ -1510,6 +1668,7 @@
 					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDIDSDK/OpenLibs",
 					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/OCR",
 					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/TalkingData",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/MoxieSDK",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1550,13 +1709,1497 @@
 					"-framework",
 					"\"UIKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.lfxjd.LFLoan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
+		};
+		04DFD19021C7808900DC5859 /* APP_JDB */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "APP_Type=7";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = APP_JDB;
+		};
+		04DFD19121C7808900DC5859 /* APP_JDB */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2665904229100432C6CFE9F0 /* Pods-LaiFengLoan.app_jdb.xcconfig */;
+			buildSettings = {
+				APP_IDENTIFIER = com.lfxjd.JiDaiBao;
+				APP_NAME = "急贷宝";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-JDB";
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
+				CODE_SIGN_ENTITLEMENTS = LaiFengLoan/LaiFengLoan.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K36X74J5W3;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDSDK",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDIDSDK",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/AliPay",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/JSPatch",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/LaiFengLoan/Prefix.pch";
+				INFOPLIST_FILE = LaiFengLoan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDSDK/OpenLibs",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDIDSDK/OpenLibs",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/OCR",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/TalkingData",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/MoxieSDK",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"DateTools\"",
+					"-l\"IQKeyboardManager\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"MJExtension\"",
+					"-l\"MJRefresh\"",
+					"-l\"Masonry\"",
+					"-l\"SDCycleScrollView\"",
+					"-l\"SDWebImage\"",
+					"-l\"c++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AMapFoundationKit\"",
+					"-framework",
+					"\"AMapLocationKit\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = APP_JDB;
+		};
+		04DFD19421C7829900DC5859 /* APP_MXD */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "APP_Type=8";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = APP_MXD;
+		};
+		04DFD19521C7829900DC5859 /* APP_MXD */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9D7F16A0471DB6A43341EBF /* Pods-LaiFengLoan.app_mxd.xcconfig */;
+			buildSettings = {
+				APP_IDENTIFIER = com.lfxjd.MengXiangLoan;
+				APP_NAME = "梦想贷";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-MXD";
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
+				CODE_SIGN_ENTITLEMENTS = LaiFengLoan/LaiFengLoan.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EJ59536L25;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDSDK",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDIDSDK",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/AliPay",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/JSPatch",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/LaiFengLoan/Prefix.pch";
+				INFOPLIST_FILE = LaiFengLoan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDSDK/OpenLibs",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDIDSDK/OpenLibs",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/OCR",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/TalkingData",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/MoxieSDK",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"DateTools\"",
+					"-l\"IQKeyboardManager\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"MJExtension\"",
+					"-l\"MJRefresh\"",
+					"-l\"Masonry\"",
+					"-l\"SDCycleScrollView\"",
+					"-l\"SDWebImage\"",
+					"-l\"c++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AMapFoundationKit\"",
+					"-framework",
+					"\"AMapLocationKit\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = APP_MXD;
+		};
+		04DFD19821C79BAD00DC5859 /* APP_XDS */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "APP_Type=9";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = APP_XDS;
+		};
+		04DFD19921C79BAD00DC5859 /* APP_XDS */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92E355C2CC1058330DC998EF /* Pods-LaiFengLoan.app_xds.xcconfig */;
+			buildSettings = {
+				APP_IDENTIFIER = com.lfxjd.XiaoDaiShu;
+				APP_NAME = "小贷鼠";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-XDS";
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
+				CODE_SIGN_ENTITLEMENTS = LaiFengLoan/LaiFengLoan.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K36X74J5W3;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDSDK",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDIDSDK",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/AliPay",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/JSPatch",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/LaiFengLoan/Prefix.pch";
+				INFOPLIST_FILE = LaiFengLoan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDSDK/OpenLibs",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDIDSDK/OpenLibs",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/OCR",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/TalkingData",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/MoxieSDK",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"DateTools\"",
+					"-l\"IQKeyboardManager\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"MJExtension\"",
+					"-l\"MJRefresh\"",
+					"-l\"Masonry\"",
+					"-l\"SDCycleScrollView\"",
+					"-l\"SDWebImage\"",
+					"-l\"c++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AMapFoundationKit\"",
+					"-framework",
+					"\"AMapLocationKit\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = APP_XDS;
+		};
+		04DFD19C21C79E0700DC5859 /* APP_XHY */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "APP_Type=10";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = APP_XHY;
+		};
+		04DFD19D21C79E0700DC5859 /* APP_XHY */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17258435546DF9FA433E7F3E /* Pods-LaiFengLoan.app_xhy.xcconfig */;
+			buildSettings = {
+				APP_IDENTIFIER = com.lfxjd.XiaoHuangYuLoan;
+				APP_NAME = "小黄鱼";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-XHY";
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
+				CODE_SIGN_ENTITLEMENTS = LaiFengLoan/LaiFengLoan.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K36X74J5W3;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDSDK",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDIDSDK",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/AliPay",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/JSPatch",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/LaiFengLoan/Prefix.pch";
+				INFOPLIST_FILE = LaiFengLoan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDSDK/OpenLibs",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDIDSDK/OpenLibs",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/OCR",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/TalkingData",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/MoxieSDK",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"DateTools\"",
+					"-l\"IQKeyboardManager\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"MJExtension\"",
+					"-l\"MJRefresh\"",
+					"-l\"Masonry\"",
+					"-l\"SDCycleScrollView\"",
+					"-l\"SDWebImage\"",
+					"-l\"c++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AMapFoundationKit\"",
+					"-framework",
+					"\"AMapLocationKit\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = APP_XHY;
+		};
+		04DFD1A021C79F9C00DC5859 /* APP_XKD */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "APP_Type=11";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = APP_XKD;
+		};
+		04DFD1A121C79F9C00DC5859 /* APP_XKD */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92F6C3106928CFF4D6413AD2 /* Pods-LaiFengLoan.app_xkd.xcconfig */;
+			buildSettings = {
+				APP_IDENTIFIER = com.lfxjd.XiaoKouLoan;
+				APP_NAME = "小口袋";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-XKD";
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
+				CODE_SIGN_ENTITLEMENTS = LaiFengLoan/LaiFengLoan.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K36X74J5W3;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDSDK",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDIDSDK",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/AliPay",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/JSPatch",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/LaiFengLoan/Prefix.pch";
+				INFOPLIST_FILE = LaiFengLoan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDSDK/OpenLibs",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDIDSDK/OpenLibs",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/OCR",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/TalkingData",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/MoxieSDK",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"DateTools\"",
+					"-l\"IQKeyboardManager\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"MJExtension\"",
+					"-l\"MJRefresh\"",
+					"-l\"Masonry\"",
+					"-l\"SDCycleScrollView\"",
+					"-l\"SDWebImage\"",
+					"-l\"c++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AMapFoundationKit\"",
+					"-framework",
+					"\"AMapLocationKit\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = APP_XKD;
+		};
+		04DFD1A221C7A0E900DC5859 /* APP_XYD */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "APP_Type=12";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = APP_XYD;
+		};
+		04DFD1A321C7A0E900DC5859 /* APP_XYD */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB93715E4922E70F23E82353 /* Pods-LaiFengLoan.app_xyd.xcconfig */;
+			buildSettings = {
+				APP_IDENTIFIER = com.lfxjd.LaiFengLoan;
+				APP_NAME = "鑫易贷";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-XYD";
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
+				CODE_SIGN_ENTITLEMENTS = LaiFengLoan/LaiFengLoan.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EJ59536L25;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDSDK",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDIDSDK",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/AliPay",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/JSPatch",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/LaiFengLoan/Prefix.pch";
+				INFOPLIST_FILE = LaiFengLoan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDSDK/OpenLibs",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDIDSDK/OpenLibs",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/OCR",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/TalkingData",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/MoxieSDK",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"DateTools\"",
+					"-l\"IQKeyboardManager\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"MJExtension\"",
+					"-l\"MJRefresh\"",
+					"-l\"Masonry\"",
+					"-l\"SDCycleScrollView\"",
+					"-l\"SDWebImage\"",
+					"-l\"c++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AMapFoundationKit\"",
+					"-framework",
+					"\"AMapLocationKit\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = APP_XYD;
+		};
+		04EFF49121C749B000AF5CEF /* APP_CXH */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "APP_Type=2";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = APP_CXH;
+		};
+		04EFF49221C749B000AF5CEF /* APP_CXH */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 709F12E987F3BAA3ED43707D /* Pods-LaiFengLoan.app_cxh.xcconfig */;
+			buildSettings = {
+				APP_IDENTIFIER = com.lfxjd.ChaoHengHua;
+				APP_NAME = "潮享花";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-CXH";
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
+				CODE_SIGN_ENTITLEMENTS = LaiFengLoan/LaiFengLoan.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K36X74J5W3;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDSDK",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDIDSDK",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/AliPay",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/JSPatch",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/LaiFengLoan/Prefix.pch";
+				INFOPLIST_FILE = LaiFengLoan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDSDK/OpenLibs",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDIDSDK/OpenLibs",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/OCR",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/TalkingData",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/MoxieSDK",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"DateTools\"",
+					"-l\"IQKeyboardManager\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"MJExtension\"",
+					"-l\"MJRefresh\"",
+					"-l\"Masonry\"",
+					"-l\"SDCycleScrollView\"",
+					"-l\"SDWebImage\"",
+					"-l\"c++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AMapFoundationKit\"",
+					"-framework",
+					"\"AMapLocationKit\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = APP_CXH;
+		};
+		04EFF4A021C7711D00AF5CEF /* APP_YB */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "APP_Type=3";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = APP_YB;
+		};
+		04EFF4A121C7711D00AF5CEF /* APP_YB */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 153EC93F6823F4963B03D2AC /* Pods-LaiFengLoan.app_yb.xcconfig */;
+			buildSettings = {
+				APP_IDENTIFIER = com.ysd.yongbei;
+				APP_NAME = "用呗";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-YB";
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
+				CODE_SIGN_ENTITLEMENTS = LaiFengLoan/LaiFengLoan.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EJ59536L25;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDSDK",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDIDSDK",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/AliPay",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/JSPatch",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/LaiFengLoan/Prefix.pch";
+				INFOPLIST_FILE = LaiFengLoan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDSDK/OpenLibs",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDIDSDK/OpenLibs",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/OCR",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/TalkingData",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/MoxieSDK",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"DateTools\"",
+					"-l\"IQKeyboardManager\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"MJExtension\"",
+					"-l\"MJRefresh\"",
+					"-l\"Masonry\"",
+					"-l\"SDCycleScrollView\"",
+					"-l\"SDWebImage\"",
+					"-l\"c++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AMapFoundationKit\"",
+					"-framework",
+					"\"AMapLocationKit\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = APP_YB;
+		};
+		04EFF4A421C773D600AF5CEF /* APP_HLH */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "APP_Type=4";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = APP_HLH;
+		};
+		04EFF4A521C773D600AF5CEF /* APP_HLH */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B40C37FC0D6D9CDE969D047 /* Pods-LaiFengLoan.app_hlh.xcconfig */;
+			buildSettings = {
+				APP_IDENTIFIER = com.ysd.green;
+				APP_NAME = "海量花";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-HLH";
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
+				CODE_SIGN_ENTITLEMENTS = LaiFengLoan/LaiFengLoan.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EJ59536L25;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDSDK",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDIDSDK",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/AliPay",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/JSPatch",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/LaiFengLoan/Prefix.pch";
+				INFOPLIST_FILE = LaiFengLoan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDSDK/OpenLibs",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDIDSDK/OpenLibs",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/OCR",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/TalkingData",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/MoxieSDK",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"DateTools\"",
+					"-l\"IQKeyboardManager\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"MJExtension\"",
+					"-l\"MJRefresh\"",
+					"-l\"Masonry\"",
+					"-l\"SDCycleScrollView\"",
+					"-l\"SDWebImage\"",
+					"-l\"c++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AMapFoundationKit\"",
+					"-framework",
+					"\"AMapLocationKit\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = APP_HLH;
+		};
+		04EFF4A821C7770D00AF5CEF /* APP_KB */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "APP_Type=5";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = APP_KB;
+		};
+		04EFF4A921C7770D00AF5CEF /* APP_KB */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 833F4DE2E06F6FB7485C4695 /* Pods-LaiFengLoan.app_kb.xcconfig */;
+			buildSettings = {
+				APP_IDENTIFIER = com.lfxjd.KuaiBei;
+				APP_NAME = "快呗";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-KB";
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
+				CODE_SIGN_ENTITLEMENTS = LaiFengLoan/LaiFengLoan.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EJ59536L25;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDSDK",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDIDSDK",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/AliPay",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/JSPatch",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/LaiFengLoan/Prefix.pch";
+				INFOPLIST_FILE = LaiFengLoan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDSDK/OpenLibs",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDIDSDK/OpenLibs",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/OCR",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/TalkingData",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/MoxieSDK",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"DateTools\"",
+					"-l\"IQKeyboardManager\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"MJExtension\"",
+					"-l\"MJRefresh\"",
+					"-l\"Masonry\"",
+					"-l\"SDCycleScrollView\"",
+					"-l\"SDWebImage\"",
+					"-l\"c++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AMapFoundationKit\"",
+					"-framework",
+					"\"AMapLocationKit\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = APP_KB;
+		};
+		04EFF4AC21C7786000AF5CEF /* APP_YLH */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "APP_Type=6";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = APP_YLH;
+		};
+		04EFF4AD21C7786000AF5CEF /* APP_YLH */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24AC6B6487F4368189575086 /* Pods-LaiFengLoan.app_ylh.xcconfig */;
+			buildSettings = {
+				APP_IDENTIFIER = com.sdhoo.lf.youlaihua;
+				APP_NAME = "优来花";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-YLH";
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
+				CODE_SIGN_ENTITLEMENTS = LaiFengLoan/LaiFengLoan.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EJ59536L25;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDSDK",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDIDSDK",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/AliPay",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/JSPatch",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/LaiFengLoan/Prefix.pch";
+				INFOPLIST_FILE = LaiFengLoan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDSDK/OpenLibs",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/UDIDSDK/OpenLibs",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/OCR",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/TalkingData",
+					"$(PROJECT_DIR)/LaiFengLoan/Base/ToolKit/MoxieSDK",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"DateTools\"",
+					"-l\"IQKeyboardManager\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"MJExtension\"",
+					"-l\"MJRefresh\"",
+					"-l\"Masonry\"",
+					"-l\"SDCycleScrollView\"",
+					"-l\"SDWebImage\"",
+					"-l\"c++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AMapFoundationKit\"",
+					"-framework",
+					"\"AMapLocationKit\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = APP_YLH;
 		};
 /* End XCBuildConfiguration section */
 
@@ -1566,6 +3209,17 @@
 			buildConfigurations = (
 				044BA55B2189A48600363D13 /* Debug */,
 				044BA55C2189A48600363D13 /* Release */,
+				04DFD1A221C7A0E900DC5859 /* APP_XYD */,
+				04DFD1A021C79F9C00DC5859 /* APP_XKD */,
+				04DFD19C21C79E0700DC5859 /* APP_XHY */,
+				04DFD19821C79BAD00DC5859 /* APP_XDS */,
+				04DFD19421C7829900DC5859 /* APP_MXD */,
+				04DFD19021C7808900DC5859 /* APP_JDB */,
+				04EFF4AC21C7786000AF5CEF /* APP_YLH */,
+				04EFF4A821C7770D00AF5CEF /* APP_KB */,
+				04EFF4A021C7711D00AF5CEF /* APP_YB */,
+				04EFF4A421C773D600AF5CEF /* APP_HLH */,
+				04EFF49121C749B000AF5CEF /* APP_CXH */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1575,6 +3229,17 @@
 			buildConfigurations = (
 				044BA55E2189A48600363D13 /* Debug */,
 				044BA55F2189A48600363D13 /* Release */,
+				04DFD1A321C7A0E900DC5859 /* APP_XYD */,
+				04DFD1A121C79F9C00DC5859 /* APP_XKD */,
+				04DFD19D21C79E0700DC5859 /* APP_XHY */,
+				04DFD19921C79BAD00DC5859 /* APP_XDS */,
+				04DFD19521C7829900DC5859 /* APP_MXD */,
+				04DFD19121C7808900DC5859 /* APP_JDB */,
+				04EFF4AD21C7786000AF5CEF /* APP_YLH */,
+				04EFF4A921C7770D00AF5CEF /* APP_KB */,
+				04EFF4A121C7711D00AF5CEF /* APP_YB */,
+				04EFF4A521C773D600AF5CEF /* APP_HLH */,
+				04EFF49221C749B000AF5CEF /* APP_CXH */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

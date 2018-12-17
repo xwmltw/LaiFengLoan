@@ -112,7 +112,7 @@ typedef NS_ENUM(NSInteger ,LoanMainRequest) {
         make.width.height.mas_equalTo(40);
     }];
     
-    self.informationView =[UIView gradientViewWithColors:@[XColorWithRGB(122, 176, 247),XColorWithRGB(56, 123, 230)] locations:nil startPoint:CGPointMake(0, 0) endPoint:CGPointMake(1, 0)];
+    self.informationView =[UIView gradientViewWithColors:@[XColorWithRGB(122, 176, 247),AppMainColor] locations:nil startPoint:CGPointMake(0, 0) endPoint:CGPointMake(1, 0)];
     [self.informationView setCornerValue:AdaptationWidth(6)];
     [self.view addSubview:self.informationView];
     [self.informationView mas_makeConstraints:^(MASConstraintMaker *make) {

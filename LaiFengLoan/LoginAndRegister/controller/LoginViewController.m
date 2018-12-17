@@ -293,7 +293,7 @@ typedef NS_ENUM(NSInteger, LoginRequest) {
     UIButton *quickRegister = [[UIButton alloc]init];
     quickRegister.tag = LoginButtonTagQuickRegister;
     [quickRegister.titleLabel setFont:[UIFont fontWithName:@"PingFang SC" size:AdaptationWidth(14)]];
-    [quickRegister setTitleColor:XColorWithRGB(48, 136, 255) forState:UIControlStateNormal];
+    [quickRegister setTitleColor:AppMainColor forState:UIControlStateNormal];
     [quickRegister setTitle:@"快速注册" forState:UIControlStateNormal];
     [quickRegister setImage:[UIImage imageNamed:@"GoRegiter"] forState:UIControlStateNormal];
     [quickRegister addTarget:self action:@selector(btnOnClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -401,7 +401,7 @@ typedef NS_ENUM(NSInteger, LoginRequest) {
     UIButton *quickRegister = [[UIButton alloc]init];
     quickRegister.tag = LoginButtonTagQuickRegister;
     [quickRegister.titleLabel setFont:[UIFont fontWithName:@"PingFang SC" size:AdaptationWidth(14)]];
-    [quickRegister setTitleColor:XColorWithRGB(48, 136, 255) forState:UIControlStateNormal];
+    [quickRegister setTitleColor:AppMainColor forState:UIControlStateNormal];
     [quickRegister setTitle:@"快速注册" forState:UIControlStateNormal];
     [quickRegister setImage:[UIImage imageNamed:@"GoRegiter"] forState:UIControlStateNormal];
     [quickRegister addTarget:self action:@selector(btnOnClick:) forControlEvents:UIControlEventTouchUpInside];
