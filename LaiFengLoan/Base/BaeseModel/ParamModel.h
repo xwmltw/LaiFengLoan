@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-@class BannerAdList;
+@class BannerAdList,VersionInfo;
 
 @interface ParamModel : NSObject
 - (NSString *)getContent;
@@ -40,6 +40,9 @@
 @property (nonatomic ,copy) NSString *notLoginShowCreditMax;
 @property (nonatomic ,copy) NSString *repaymentMethod;
 @property (nonatomic ,copy) NSString *orderJQZMUrl;
+@property (nonatomic ,strong) VersionInfo *versionInfo;
+@property (nonatomic ,copy) NSNumber *decisionType;
+@property (nonatomic ,copy) NSNumber *isNeedAlipayVerify;
 //存储数据
 - (void)setClientGlobalInfoModel;
 + (ClientGlobalInfo *)getClientGlobalInfoModel;
@@ -60,6 +63,30 @@
 //registAgreementUrl  注册协议
 //notLoginShowCreditMax 用户未登录显示的最大可借额度
 //repaymentMethod //还款方式(1,2)  1银行卡2支付宝
+//versionInfo    VersionInfoVo
+//decisionType    string风控引擎类型: 0系统自动审核(悦才风控) 1人工审核(接入白骑士)
+//isNeedAlipayVerify    string是否需要支付宝认证: 1是 0否
+@end
+@interface VersionInfo:ParamModel
+@property (nonatomic ,copy) NSNumber *needForceUpdate;
+@property (nonatomic ,copy) NSString *url;
+@property (nonatomic ,copy) NSNumber *version;
+@property (nonatomic ,copy) NSString *versionDesc;
+//    全局配置接口返回版本自动更新信息
+//
+//    needForceUpdate    integer($int32)
+//    强制升级 1是,0否
+//
+//    url    string
+//    升级地址
+//
+//    version    integer($int32)
+//    版本号
+//
+//    versionDesc    string
+//    版本说明
+//
+//}
 @end
 @interface BannerAdList:ParamModel
 @property (nonatomic ,copy) NSString *adContent;

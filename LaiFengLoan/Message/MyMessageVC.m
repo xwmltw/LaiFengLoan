@@ -41,7 +41,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"订单消息";
+    self.title = @"消息提醒";
     [self createTableViewWithFrame:CGRectZero];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.view);

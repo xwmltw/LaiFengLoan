@@ -17,6 +17,8 @@
 		0413ACE0219952BC00C77134 /* QustionsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0413ACDE219952BC00C77134 /* QustionsCell.m */; };
 		0413ACE42199537F00C77134 /* QuestsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0413ACE32199537F00C77134 /* QuestsModel.m */; };
 		0413ACE721996C5800C77134 /* MyDataVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0413ACE621996C5800C77134 /* MyDataVC.m */; };
+		042D035921D207BA0080830B /* OperatorBQSModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 042D035821D207BA0080830B /* OperatorBQSModel.m */; };
+		042D035C21D248B60080830B /* ZFBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042D035B21D248B60080830B /* ZFBViewController.m */; };
 		04381EB521A0129100F27B5C /* MyMessageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04381EB421A0129100F27B5C /* MyMessageVC.m */; };
 		04381EBA21A0136000F27B5C /* MyMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04381EB821A0136000F27B5C /* MyMessageTableViewCell.m */; };
 		04381EBB21A0136000F27B5C /* MyMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04381EB921A0136000F27B5C /* MyMessageTableViewCell.xib */; };
@@ -178,6 +180,7 @@
 		04F7A6B221A2A10700E549F4 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F7A6B121A2A10700E549F4 /* AdSupport.framework */; };
 		04F7A6B421A2A12D00E549F4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F7A6B321A2A12D00E549F4 /* Security.framework */; };
 		04F7A6B621A2A14D00E549F4 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F7A6B521A2A14D00E549F4 /* libz.tbd */; };
+		04FE94A821CC82E60058C057 /* LzyUISlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FE94A621CC82E50058C057 /* LzyUISlider.m */; };
 		714633F3871C5C7C15A4B4BE /* libPods-LaiFengLoan.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 651CCDF9635AD0F757F2EC2C /* libPods-LaiFengLoan.a */; };
 /* End PBXBuildFile section */
 
@@ -201,6 +204,10 @@
 		0413ACE32199537F00C77134 /* QuestsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuestsModel.m; sourceTree = "<group>"; };
 		0413ACE521996C5800C77134 /* MyDataVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyDataVC.h; sourceTree = "<group>"; };
 		0413ACE621996C5800C77134 /* MyDataVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyDataVC.m; sourceTree = "<group>"; };
+		042D035721D207BA0080830B /* OperatorBQSModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OperatorBQSModel.h; sourceTree = "<group>"; };
+		042D035821D207BA0080830B /* OperatorBQSModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OperatorBQSModel.m; sourceTree = "<group>"; };
+		042D035A21D248B60080830B /* ZFBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZFBViewController.h; sourceTree = "<group>"; };
+		042D035B21D248B60080830B /* ZFBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZFBViewController.m; sourceTree = "<group>"; };
 		04381EB321A0129100F27B5C /* MyMessageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyMessageVC.h; sourceTree = "<group>"; };
 		04381EB421A0129100F27B5C /* MyMessageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyMessageVC.m; sourceTree = "<group>"; };
 		04381EB721A0136000F27B5C /* MyMessageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyMessageTableViewCell.h; sourceTree = "<group>"; };
@@ -459,6 +466,8 @@
 		04F7A6B121A2A10700E549F4 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		04F7A6B321A2A12D00E549F4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		04F7A6B521A2A14D00E549F4 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		04FE94A621CC82E50058C057 /* LzyUISlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LzyUISlider.m; sourceTree = "<group>"; };
+		04FE94A721CC82E50058C057 /* LzyUISlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LzyUISlider.h; sourceTree = "<group>"; };
 		153EC93F6823F4963B03D2AC /* Pods-LaiFengLoan.app_yb.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaiFengLoan.app_yb.xcconfig"; path = "Pods/Target Support Files/Pods-LaiFengLoan/Pods-LaiFengLoan.app_yb.xcconfig"; sourceTree = "<group>"; };
 		17258435546DF9FA433E7F3E /* Pods-LaiFengLoan.app_xhy.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaiFengLoan.app_xhy.xcconfig"; path = "Pods/Target Support Files/Pods-LaiFengLoan/Pods-LaiFengLoan.app_xhy.xcconfig"; sourceTree = "<group>"; };
 		24AC6B6487F4368189575086 /* Pods-LaiFengLoan.app_ylh.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaiFengLoan.app_ylh.xcconfig"; path = "Pods/Target Support Files/Pods-LaiFengLoan/Pods-LaiFengLoan.app_ylh.xcconfig"; sourceTree = "<group>"; };
@@ -885,6 +894,8 @@
 				045D7C84219C425D00A51281 /* BankModel.m */,
 				045FCE44219D56BD00CD0504 /* OrderPreviewModel.h */,
 				045FCE45219D56BD00CD0504 /* OrderPreviewModel.m */,
+				042D035721D207BA0080830B /* OperatorBQSModel.h */,
+				042D035821D207BA0080830B /* OperatorBQSModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -1024,6 +1035,8 @@
 				04F1E3C821904B34006523AE /* OperatorViewController.m */,
 				0444DA072195388500CDDC37 /* OperatorDetailVC.h */,
 				0444DA082195388500CDDC37 /* OperatorDetailVC.m */,
+				042D035A21D248B60080830B /* ZFBViewController.h */,
+				042D035B21D248B60080830B /* ZFBViewController.m */,
 				04F1E3CA219060EA006523AE /* BankViewController.h */,
 				04F1E3CB219060EA006523AE /* BankViewController.m */,
 				045D7C87219C4CD400A51281 /* ScanningBankDetailVC.h */,
@@ -1037,6 +1050,8 @@
 		04F1E3B9218FE46E006523AE /* view */ = {
 			isa = PBXGroup;
 			children = (
+				04FE94A721CC82E50058C057 /* LzyUISlider.h */,
+				04FE94A621CC82E50058C057 /* LzyUISlider.m */,
 				045D7C36219C0B3700A51281 /* TPLRangeSlider.h */,
 				045D7C37219C0B3800A51281 /* TPLRangeSlider.m */,
 				0461453D219439EF00800226 /* XChooseBankView.h */,
@@ -1337,6 +1352,7 @@
 				045D7C38219C0B3800A51281 /* TPLRangeSlider.m in Sources */,
 				045FCE46219D56BD00CD0504 /* OrderPreviewModel.m in Sources */,
 				043897FC2193190F0007F2A7 /* XAlertView.m in Sources */,
+				04FE94A821CC82E60058C057 /* LzyUISlider.m in Sources */,
 				0488EE8721C3957000635459 /* MoxieSDKOperation.m in Sources */,
 				045D7C81219C402500A51281 /* SCCaptureCameraController.m in Sources */,
 				04A797B9219E92FB00E1E879 /* XRootWebVC.m in Sources */,
@@ -1393,6 +1409,7 @@
 				0444DA0C219578D700CDDC37 /* CreditInfoModel.m in Sources */,
 				0444DA062195357600CDDC37 /* OperatorModel.m in Sources */,
 				0413ACE42199537F00C77134 /* QuestsModel.m in Sources */,
+				042D035921D207BA0080830B /* OperatorBQSModel.m in Sources */,
 				0460A4E2218C464600840F1D /* RegisterViewController.m in Sources */,
 				043897F22192C2420007F2A7 /* BasicEncodingRules.m in Sources */,
 				046F912D2199AFCE002D9ACD /* OrderDetailModel.m in Sources */,
@@ -1413,6 +1430,7 @@
 				04B3BAF32191B467002C39AF /* XResponse.m in Sources */,
 				0488EE7E21C3957000635459 /* MoxieStatusView.m in Sources */,
 				0461453C21942A6900800226 /* ContactModel.m in Sources */,
+				042D035C21D248B60080830B /* ZFBViewController.m in Sources */,
 				047BD2D321A39CB00080662C /* MyMessageModel.m in Sources */,
 				0413ACDB2199524600C77134 /* QUestionsViewController.m in Sources */,
 				044BA5862189D0A900363D13 /* UITabBar+MKExtension.m in Sources */,

@@ -9,6 +9,8 @@
 #import "LoanDetailViewController.h"
 #import "BankViewController.h"
 #import "LoanOrderDetailVC.h"
+#import "XAlertView.h"
+#import "LzyUISlider.h"
 typedef NS_ENUM(NSInteger, LoanDetailBtnTag) {
     LoanDetailBtnTagBack = 500,
     LoanDetailBtnTagLoan,
@@ -26,7 +28,7 @@ typedef NS_ENUM(NSInteger, LoanDetailBtnTag) {
 {
     UILabel *available;
     UILabel *creditlabel;
-    UISlider *slider;
+    LzyUISlider *slider;
     UILabel * sliderlab;
     NSNumber *statusType;
     UIButton *selectMoneyBtn;
@@ -126,7 +128,7 @@ typedef NS_ENUM(NSInteger, LoanDetailBtnTag) {
         make.top.mas_equalTo(line2.mas_bottom).offset(AdaptationWidth(30));
     }];
     
-    if (self.creditInfoModel.isFirstLoan.integerValue) {
+    if (self.creditInfoModel.creditStatus.integerValue != 2) {
         if (self.clientGlobalInfo.firstLoanAmtFixedType.integerValue == 2){
             statusType = @1;
         }else{
@@ -142,10 +144,11 @@ typedef NS_ENUM(NSInteger, LoanDetailBtnTag) {
     if (statusType.integerValue == 1) {
         
         
-        slider = [[UISlider alloc]init];
+        slider = [[LzyUISlider alloc]init];
         slider.minimumValue = self.creditInfoModel.isFirstLoan.integerValue ?  [self.clientGlobalInfo.firstLoanAmtMin intValue]:[self.clientGlobalInfo.notFirstLoanAmtMin intValue];
         slider.maximumValue = [self.creditInfoModel.creditAmt intValue];
         slider.value = [self.creditInfoModel.creditAmt intValue];
+//        slider.value = [self.clientGlobalInfo.firstLoanAmtMin intValue];
         [slider setContinuous:YES];
         slider.minimumTrackTintColor =XColorWithRGB(26, 169, 251);
         slider.maximumTrackTintColor = XColorWithRGB(228, 228, 228);
@@ -180,7 +183,7 @@ typedef NS_ENUM(NSInteger, LoanDetailBtnTag) {
         }];
         
         sliderlab = [[UILabel alloc]init];
-        [sliderlab setText:self.creditInfoModel.isFirstLoan.integerValue ? self.clientGlobalInfo.firstLoanAmtMin:self.clientGlobalInfo.notFirstLoanAmtMin ];
+        [sliderlab setText:self.creditInfoModel.creditAmt.description];
         [sliderlab setFont:[UIFont systemFontOfSize:AdaptationWidth(14)]];
         [sliderlab setTextColor:LabelMainColor];
         [self.view addSubview:sliderlab];
@@ -191,15 +194,15 @@ typedef NS_ENUM(NSInteger, LoanDetailBtnTag) {
     }else{
         NSArray *btnAry = [NSArray array];
         NSMutableArray *loanAmtAry = [NSMutableArray array];
-        if (self.creditInfoModel.isFirstLoan.integerValue == 1) {
+        if (self.creditInfoModel.creditStatus.integerValue != 2) {
            btnAry  = [self.clientGlobalInfo.firstLoanAmtFixedDesc componentsSeparatedByString:@","];
-            if (self.clientGlobalInfo.firstLoanAmtFixedSupportUserCreditAmt.length) {
+            if ([self.clientGlobalInfo.firstLoanAmtFixedSupportUserCreditAmt doubleValue] > 0) {
                 [loanAmtAry addObject:self.clientGlobalInfo.firstLoanAmtFixedSupportUserCreditAmt];
             }
             [loanAmtAry addObjectsFromArray:btnAry];
         }else{
             btnAry  = [self.clientGlobalInfo.notFirstLoanAmtFixedDesc componentsSeparatedByString:@","];
-            if (self.clientGlobalInfo.notFirstLoanAmtFixedSupportUserCreditAmt.length) {
+            if ([self.clientGlobalInfo.notFirstLoanAmtFixedSupportUserCreditAmt doubleValue] > 0) {
                 [loanAmtAry addObject:self.clientGlobalInfo.notFirstLoanAmtFixedSupportUserCreditAmt];
             }
             [loanAmtAry addObjectsFromArray:btnAry];
@@ -449,12 +452,12 @@ typedef NS_ENUM(NSInteger, LoanDetailBtnTag) {
     [self setNewSliderValue:slider andAccuracy:self.creditInfoModel.isFirstLoan.integerValue ? self.clientGlobalInfo.firstLoanAmtFixedDesc.integerValue :self.clientGlobalInfo.notFirstLoanAmtFixedDesc.integerValue] ;
    
 //    sliderlab.text = [NSString stringWithFormat:@"%d",(int)sender.value];
- 
+//    [self setNewSliderValue:slider andAccuracy:500];
 }
 -(void)setNewSliderValue:(UISlider *)slider andAccuracy:(float)accuracy
 {
     // 滑动条的 宽
-    float width = ScreenWidth - 2*AdaptationWidth(37) ;
+    float width = AdaptationWidth(302) ;
     // 如： 用户想每滑动一次 增加100的量 每次滑块需要滑动的宽
     float slideWidth = width*accuracy/slider.maximumValue ;
     // 在滑动条中 滑块的位置 是根据 value值 显示在屏幕上的 那么 把目前滑块的宽 加上用户新滑动一次的宽 转换成value值
@@ -466,9 +469,11 @@ typedef NS_ENUM(NSInteger, LoanDetailBtnTag) {
     float value =  newSlideWidth/width*slider.maximumValue ;
     // 取整
     int d = (int)(value/accuracy) ;
+    int c = (int)slider.minimumValue/accuracy;
+    int b = d - c;
     
     // 因为从0滑到100后在往回滑 即使滑到最左边 还是显示100 应该是算法有点问题 这里就不优化算法了 针对这种特殊情况做些改变
-    if(d>2)
+    if(b>2)
     {
         
         slider.value= d*accuracy ;
@@ -476,17 +481,17 @@ typedef NS_ENUM(NSInteger, LoanDetailBtnTag) {
     }
     else
     {
-        if(d==0 || slider.value==0)
+        if(b==0 || slider.value==0)
         {
             slider.value = 0 ;
         }
-        else if(d==1)
+        else if(b==1)
         {
-            slider.value = accuracy ;
+            slider.value = d*accuracy ;
         }
-        else if(d==2)
+        else if(b==2)
         {
-            slider.value = 2*accuracy ;
+            slider.value = d*accuracy ;
         }
         sliderlab.text =  [NSString stringWithFormat:@"%li元", (long) slider.value] ;
     }
@@ -503,9 +508,23 @@ typedef NS_ENUM(NSInteger, LoanDetailBtnTag) {
         vc.stageTimeunitCnt = [NSNumber numberWithDouble:[selectDate doubleValue]] ;
         [self.navigationController pushViewController:vc animated:YES];
     }else{
-        BankViewController *vc = [[BankViewController alloc]init];
-        vc.creditInfoModel = self.creditInfoModel;
-        [self.navigationController pushViewController:vc animated:YES];
+        [XAlertView alertWithTitle:@"通知" message:@"您还未绑定银行卡，先去绑定银行卡吧" cancelButtonTitle:@"取消" confirmButtonTitle:@"确定" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
+            switch (buttonIndex) {
+                case 1:
+                {
+                    BankViewController *vc = [[BankViewController alloc]init];
+                    vc.creditInfoModel = self.creditInfoModel;
+                    [self.navigationController pushViewController:vc animated:YES];
+                    
+                    
+                }
+                    break;
+                    
+                default:
+                    break;
+            }
+        }];
+       
     }
 }
 - (void)didReceiveMemoryWarning {

@@ -410,25 +410,31 @@ typedef NS_ENUM(NSInteger ,BankRequest) {
         case BankRequestGetInfo:
             
             break;
-        case BankRequestCode:
+        case BankRequestCode:{
+            self.bankModel.bankAccountId = response.data[@"bankAccountId"];
+            self.accStepStatus = response.data[@"accStepStatus"];
+            if (self.accStepStatus.integerValue != 3) {
+                [self setHudWithName:@"提交的数据有误" Time:1.5 andType:1];
+                return;
+            }
             [self beginCountDown];
-            [self setHudWithName:@"发送成功"Time:1 andType:1];
             
-            self.bankModel.bankAccountId = response.data[@"bankAccountId"];
-            self.accStepStatus = response.data[@"accStepStatus"];
+            
+        }
             break;
-        case BankRequestCodeAgain:
+        case BankRequestCodeAgain:{
             [self beginCountDown];
             [self setHudWithName:@"发送成功"Time:1 andType:1];
             self.bankModel.bankAccountId = response.data[@"bankAccountId"];
             self.accStepStatus = response.data[@"accStepStatus"];
+        }
             break;
-        case BankRequestPostInfo:
+        case BankRequestPostInfo:{
             [self setHudWithName:@"认证成功"Time:1 andType:1];
             [self.navigationController popViewControllerAnimated:YES];
+        }
             break;
-            
-            
+
         default:
             break;
     }

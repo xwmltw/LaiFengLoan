@@ -192,6 +192,10 @@ typedef NS_ENUM(NSInteger ,ScanningBankDetailRequest) {
                 [self setHudWithName:@"请输入银行卡号" Time:0.5 andType:1];
                 return;
             }
+            if (bankName.text.length == 0) {
+                [self setHudWithName:@"请输入银行卡名称" Time:0.5 andType:1];
+                return;
+            }
             XBlockExec(self.block,bankName.text,bankNumer.text,self.model.bankCode);
             [self.navigationController popViewControllerAnimated:YES];
             
@@ -226,6 +230,8 @@ typedef NS_ENUM(NSInteger ,ScanningBankDetailRequest) {
 - (void)chooseThing:(NSString *)thing pickView:(XChooseBankView *)pickView row:(NSInteger)row
 {
     bankName.text = thing;
+    self.model.bankName = thing;
+    self.model.bankCode = self.dataSourceArr[row][@"bankCode"];
 }
 
 #pragma mark - UITextFieldDelegate

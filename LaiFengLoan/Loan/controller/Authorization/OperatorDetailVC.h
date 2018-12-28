@@ -8,7 +8,12 @@
 
 #import "XBaseViewController.h"
 #import "OperatorModel.h"
+#import "OperatorBQSModel.h"
+#import "CreditInfoModel.h"
 @interface OperatorDetailVC : XBaseViewController
 @property (nonatomic, strong) OperatorModel *model;
+@property (nonatomic, strong) OperatorBQSModel *BQSmodel;
+@property (nonatomic ,strong) CreditInfoModel *creditInfoModel;
 @property (nonatomic ,copy) NSNumber *isFromVC;
+@property (nonatomic ,copy) NSNumber *BQSStatus;
 @end

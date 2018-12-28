@@ -11,6 +11,8 @@
 @interface CreditInfoModel : NSObject
 @property (nonatomic, copy) NSNumber *creditAmt;
 @property (nonatomic, copy) NSNumber *creditStatus;
+@property (nonatomic, copy) NSNumber *alipayStatus;
+@property (nonatomic, copy) NSNumber *hasCreateOrder;
 @property (nonatomic, copy) NSNumber *isFirstLoan;
 @property (nonatomic, copy) NSString *loginCode;
 @property (nonatomic, copy) NSNumber *scheduleStatus;
@@ -30,6 +32,8 @@
 //creditStatus    integer($int32)
 //授信状态：// 0未授信 1授信中 2已授信 3拒绝 4驳回
 //
+//alipayStatus    integer($int32)支付宝认证状态：支付宝认证状态, 0未认证 1已认证 2已过期
+//hasCreateOrder    integer($int32)是否存在审核中订单: 1是 0否
 //loginCode    string
 //用户手机号
 //

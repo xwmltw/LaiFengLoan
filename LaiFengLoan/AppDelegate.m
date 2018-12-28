@@ -13,6 +13,7 @@
 #import <AMapLocationKit/AMapLocationKit.h>
 #import "UserLocation.h"
 #import <JSPatchPlatform/JSPatch.h>
+#import "MoxieSDK.h"
 @interface AppDelegate ()
 
 @end
@@ -44,6 +45,11 @@
     [AMapServices sharedServices].apiKey = AMapKey;
     [[UserLocation sharedInstance]UserLocation];
     
+    [JSPatch setupCallback:^(JPCallbackType type, NSDictionary *data, NSError *error) {
+        if (type == JPCallbackTypeJSException) {
+            MyLog(@"JSPatch---更新失败：%@", data[@"msg"]);
+        }
+    }];
     [JSPatch startWithAppKey:JSPatchId];
     [JSPatch setupRSAPublicKey:JSPatchRSAPublicKey];
     [JSPatch sync];
@@ -151,7 +157,7 @@
 
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+    [[MoxieSDK shared] applicationWillEnterForeground:application];
 }
 
 

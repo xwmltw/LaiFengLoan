@@ -11,6 +11,16 @@
 #import "XCountDownButton.h"
 #import "XAlertView.h"
 #import "LoanMainVC.h"
+#import "ZFBViewController.h"
+#import "LoanDetailViewController.h"
+typedef NS_ENUM(NSInteger ,OperatorDetailRequest) {
+    OperatorDetailRequestPostVerify,
+    OperatorDetailRequestBQSLogin,
+    OperatorDetailRequestBQSSendAuthSMS,
+    OperatorDetailRequestBQSSendLoginSMS,
+    OperatorDetailRequestBQSVerifyAuthSMS,
+};
+
 @interface OperatorDetailVC ()
 
 @end
@@ -34,7 +44,7 @@
     [self.view addSubview:headView];
     
     UILabel *label = [[UILabel alloc] init];
-    label.text = [NSString stringWithFormat:@"发送短信到手机 %@",[self.model.operatorPhone stringByReplacingCharactersInRange:NSMakeRange(3, 4) withString:@"****"]];
+    label.text = [NSString stringWithFormat:@"发送短信到手机 %@",[[UserInfo sharedInstance].phoneName stringByReplacingCharactersInRange:NSMakeRange(3, 4) withString:@"****"]];
     label.textColor = LabelShallowColor;
     label.font = [UIFont fontWithName:@"PingFang SC" size:AdaptationWidth(16)];
     [self.view addSubview:label];
@@ -111,9 +121,25 @@
 #pragma mark - 验证码事件
 - (void)getVerificationCodeClick:(XCountDownButton *)sender
 {
-    self.model.type = @"RESEND_CAPTCHA";
     [self beginCountDown];
-    [self prepareDataWithCount:0];
+    if (self.clientGlobalInfo.decisionType.integerValue == 0) {
+        self.model.type = @"RESEND_CAPTCHA";
+        [self prepareDataWithCount:OperatorDetailRequestPostVerify];
+    }else{
+        switch (self.BQSStatus.integerValue) {
+            case 11006:
+                [self prepareDataWithCount:OperatorDetailRequestBQSSendLoginSMS];
+                break;
+            case 11007:
+                [self prepareDataWithCount:OperatorDetailRequestBQSSendAuthSMS];
+                break;
+            
+                
+            default:
+                break;
+        }
+    }
+    
     
 }
 - (void)beginCountDown{
@@ -132,70 +158,184 @@
     if (!_verificationText.text.length) {
         [self setHudWithName:@"请输入验证法" Time:1 andType:1];
     }
-    self.model.captcha = _verificationText.text;
-    self.model.type = @"SUBMIT_CAPTCHA";
-    [self prepareDataWithCount:0];
+    if (self.clientGlobalInfo.decisionType.integerValue == 0) {
+        self.model.captcha = _verificationText.text;
+        self.model.type = @"SUBMIT_CAPTCHA";
+        [self prepareDataWithCount:OperatorDetailRequestPostVerify];
+    }else{
+        self.BQSmodel.operatorPhone = [UserInfo sharedInstance].phoneName;
+        self.BQSmodel.smsCode = _verificationText.text;
+        if (self.BQSStatus.integerValue == 11005) {
+            [self prepareDataWithCount:OperatorDetailRequestBQSVerifyAuthSMS];
+        }else{
+            [self prepareDataWithCount:OperatorDetailRequestBQSLogin];
+        }
+        
+    }
+    
 }
 #pragma  mark -UITextField事件
 - (void)textFieldDidChange:(UITextField *)text{
     
 }
 - (void)setRequestParams{
-    self.cmd = XPostOperatorVerify;
-    self.dict = [self.model mj_keyValues];
-    
-}
-- (void)requestSuccessWithDictionary:(XResponse *)response{
-
-    switch ([response.data[@"process_code"] integerValue]) {
-        case 10008:
-        {
-            [XAlertView alertWithTitle:@"通知" message:@"您的授信资料已收到，我们会尽快完成授信审核。" cancelButtonTitle:@"" confirmButtonTitle:@"返回首页" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
-                for (UIViewController *controller in self.navigationController.viewControllers) {
-                    if ([controller isKindOfClass:[LoanMainVC class]]) {
-                        LoanMainVC *vc = (LoanMainVC *)controller;
-                        [self.navigationController popToViewController:vc animated:YES];
-                    }
-                }
-            }];
-            return;
-        }
+    switch (self.requestCount) {
+        case OperatorDetailRequestPostVerify:
+            self.cmd = XPostOperatorVerify;
+            self.dict = [self.model mj_keyValues];
             break;
-        case 10001:
-        {
-            [self setHudWithName:@"再次输入短信验证码" Time:1 andType:1];
-            return;
-        }
+        case OperatorDetailRequestBQSLogin:
+            self.cmd = XOperatorLogin;
+            self.dict = [self.BQSmodel mj_keyValues];
             break;
-        case 10004:
-        {
-            [self setHudWithName:@"短信验证码错误" Time:1 andType:1];
-            return;
-        }
+        case OperatorDetailRequestBQSSendAuthSMS:
+            self.cmd = XOperatorSendAuthSMS;
+            self.dict = [self.BQSmodel mj_keyValues];
             break;
-        case 10006:
-        {
-            [self setHudWithName:@"短信验证码失效系统已自动重新下发" Time:1 andType:1];
-            return;
-        }
+        case OperatorDetailRequestBQSSendLoginSMS:
+            self.cmd = XOperatorSendLoginSMS;
+            self.dict = [self.BQSmodel mj_keyValues];
             break;
-        case 10002:{
-//            [self prepareDataWithCount:0];
-        }
-            break;
-        case 10003:
-        case 10007:{
-            [self setHudWithName:@"密码错误" Time:1 andType:1];
-            return;
-        }
+        case OperatorDetailRequestBQSVerifyAuthSMS:
+            self.cmd = XOperatorVerifyLoginSMS;
+            self.dict = [self.BQSmodel mj_keyValues];
             break;
         default:
             break;
     }
-    [self setHudWithName:response.rspMsg Time:1 andType:1];
+    
     
 }
+- (void)requestSuccessWithDictionary:(XResponse *)response{
 
+    switch (self.requestCount) {
+        case OperatorDetailRequestPostVerify:
+            {
+                switch ([response.data[@"process_code"] integerValue]) {
+                    case 10008:
+                    {
+                        [XAlertView alertWithTitle:@"通知" message:@"您的授信资料已收到，我们会尽快完成授信审核。" cancelButtonTitle:@"" confirmButtonTitle:@"返回首页" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
+                            for (UIViewController *controller in self.navigationController.viewControllers) {
+                                if ([controller isKindOfClass:[LoanMainVC class]]) {
+                                    LoanMainVC *vc = (LoanMainVC *)controller;
+                                    [self.navigationController popToViewController:vc animated:YES];
+                                }
+                            }
+                        }];
+                        return;
+                    }
+                        break;
+                    case 10001:
+                    {
+                        [self setHudWithName:@"再次输入短信验证码" Time:1 andType:1];
+                        return;
+                    }
+                        break;
+                    case 10004:
+                    {
+                        [self setHudWithName:@"短信验证码错误" Time:1 andType:1];
+                        return;
+                    }
+                        break;
+                    case 10006:
+                    {
+                        [self setHudWithName:@"短信验证码失效系统已自动重新下发" Time:1 andType:1];
+                        return;
+                    }
+                        break;
+                    case 10002:{
+                        //            [self prepareDataWithCount:0];
+                    }
+                        break;
+                    case 10003:
+                    case 10007:{
+                        [self setHudWithName:@"密码错误" Time:1 andType:1];
+                        return;
+                    }
+                        break;
+                    default:
+                        break;
+                }
+                [self setHudWithName:response.rspMsg Time:1 andType:1];
+            }
+            break;
+        case OperatorDetailRequestBQSLogin:
+        case OperatorDetailRequestBQSVerifyAuthSMS:
+        {
+            if (self.clientGlobalInfo.isNeedAlipayVerify.integerValue == 1 && self.creditInfoModel.alipayStatus.integerValue != 1) {
+                ZFBViewController *vc = [[ZFBViewController alloc]init];
+                
+                [self.navigationController pushViewController:vc animated:YES];
+            }else{
+                if (self.creditInfoModel.hasCreateOrder.integerValue == 1) {
+                    [XAlertView alertWithTitle:@"通知" message:@"您的授信资料已收到，我们会尽快完成授信审核。" cancelButtonTitle:@"" confirmButtonTitle:@"返回首页" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
+                        for (UIViewController *controller in self.navigationController.viewControllers) {
+                            if ([controller isKindOfClass:[LoanMainVC class]]) {
+                                LoanMainVC *vc = (LoanMainVC *)controller;
+                                [self.navigationController popToViewController:vc animated:YES];
+                            }
+                        }
+                    }];
+                }else{
+                    LoanDetailViewController *vc = [[LoanDetailViewController alloc]init];
+                    vc.creditInfoModel = self.creditInfoModel;
+                    [self.navigationController pushViewController:vc animated:YES];
+                }
+            }
+        }
+            break;
+        case OperatorDetailRequestBQSSendAuthSMS:
+            [self setHudWithName:response.rspMsg Time:1 andType:1];
+            break;
+        case OperatorDetailRequestBQSSendLoginSMS:
+            [self setHudWithName:response.rspMsg Time:1 andType:1];
+            break;
+        
+        default:
+            break;
+    }
+    
+    
+    
+}
+- (void)requestFaildWithDictionary:(XResponse *)response{
+    switch (self.requestCount) {
+        case OperatorDetailRequestBQSLogin:
+        case OperatorDetailRequestBQSSendAuthSMS:
+        case OperatorDetailRequestBQSSendLoginSMS:
+        case OperatorDetailRequestBQSVerifyAuthSMS:
+        {
+            self.BQSStatus = response.rspCode;
+            switch (response.rspCode.integerValue) {
+                case 11004:
+                case 11005:{
+//                    [self setHudWithName:response.rspMsg Time:2 andType:1];
+                }
+                    break;
+                case 11006:{
+//                    [self prepareDataWithCount:OperatorDetailRequestBQSSendLoginSMS];
+                }
+                    break;
+                case 11007:{
+//                    [self prepareDataWithCount:OperatorDetailRequestBQSSendAuthSMS];
+                }
+                    break;
+                    
+                case 11008:
+//                    [self setHudWithName:response.rspMsg Time:2 andType:1];
+                    break;
+                    
+                default:
+                    break;
+            }
+        }
+            break;
+            
+        default:
+            break;
+    }
+    [self setHudWithName:response.rspMsg Time:2 andType:1];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

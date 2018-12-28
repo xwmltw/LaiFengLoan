@@ -19,8 +19,10 @@ static NSString *const TalkingData_ChannelId = @"AppStore";
 
 #if (APP_Type == 0)
 
-#define SERVICEURL @"pd-mapi.91qnd.com" // 测试环境
-//#define SERVICEURL @"http://mapi.lf.sdhoo.me" // 阿里测试环境
+#define SERVICEURL @"http://pd-mapi.91qnd.com" // 测试环境
+//#define SERVICEURL @"http://192.168.5.66:8053" // 从秦测试环境
+//#define SERVICEURL @"http://192.168.5.126:8053" // 测试环境
+
 
 static NSString *const AppName = @"来风现金贷";
 static NSString *const AppScheme = @"LaiFengXJD";
@@ -28,8 +30,8 @@ static NSString *const AMapKey = @"7021cdb14ec5bdc9f52b5b420512f3db";
 static NSString *const TalkingData_AppID =   @"";
 #elif (APP_Type == 1)
 
-#define SERVICEURL @"http://mapi.lf.sdhoo.me" //正式环境
-
+//#define SERVICEURL @"http://mapi.lf.sdhoo.me" //正式环境
+#define SERVICEURL @"http://pd-mapi.91qnd.com" // 测试环境
 static NSString *const AppName = @"来风现金贷";
 static NSString *const AppScheme = @"LaiFengXJD";
 static NSString *const TalkingData_AppID =   @"969A998745F14C05B8634C3B9ACB872D";
@@ -164,8 +166,8 @@ static NSString *const XAliPaySucceed = @"AliPaySucceed";
 #define XGetContactVerify       @"/mapi/user/get_contact_info"             /*!< 获取联系人信息*/
 #define XGetBaseVerify          @"/mapi/user/get_base_info"                /*!< 获取基本信息*/
 #define XPostBaseVerify         @"/mapi/user/post_base_info"               /*!< 提交基本信息*/
-#define XPostOperatorVerify     @"/mapi/operator/request_report"           /*!< 提交运营商信息*/
-#define XGetOperatorVerify      @"/mapi/operator/request_info"             /*!< 请求运营商信息*/
+#define XPostOperatorVerify     @"/mapi/operator/v2/request_report"           /*!< 提交运营商信息*/
+#define XGetOperatorVerify      @"/mapi/operator/v2/request_info"             /*!< 请求运营商信息*/
 
 #define XGetBankList            @"/mapi/bank/get_bank_list"                /*!< 获取银行卡列表*/
 #define XGetUserBankList        @"/mapi/bank/get_bind_card_list"            /*!< 获取用户绑定银行卡列表*/
@@ -189,17 +191,20 @@ static NSString *const XAliPaySucceed = @"AliPaySucceed";
 
 #define XGetPreviewOrder        @"/mapi/order/preview_order"              /*!< 订单预览*/
 #define XPostConfirmOrder       @"/mapi/order/confirm_order"              /*!< 提交订单*/
+#define XPostConfirmOrderNocredit       @"/mapi/order/confirm_order_nocredit"              /*!< 提交订单(授信通过之前)*/
+
 
 #define XGetMessageList         @"/mapi/message/get_message_list"          /*!< 获取消息列表*/
 
-#define XGetAlipayParam         @"/data/getAlipayParam"
-#define XPostAlipayParam        @"/data/postAlipayParam"
+#define XGetAlipayParam         @"/mapi/alipay/getAlipayParam"
+#define XPostAlipayParam        @"/mapi/alipay/postAlipayParam"
 #define XGetTaoBaoParam         @"/data/getTaoBaoParam"
 #define XPostTaoBaoParam        @"/data/postTaoBaoParam"
 
-
-
-
+#define XOperatorLogin          @"/mapi/operator/bqs/do_login"
+#define XOperatorSendAuthSMS    @"/mapi/operator/bqs/do_send_auth_sms"
+#define XOperatorSendLoginSMS   @"/mapi/operator/bqs/do_send_login_sms"
+#define XOperatorVerifyLoginSMS @"/mapi/operator/bqs/do_verify_auth_sms"
 
 
 

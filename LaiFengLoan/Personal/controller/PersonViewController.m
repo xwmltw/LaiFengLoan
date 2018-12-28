@@ -68,7 +68,6 @@ typedef NS_ENUM(NSInteger, PersonalRequest) {
 }
 - (void)setData{
     self.cellTitleAry = [NSArray arrayWithObjects:@"修改密码",@"常见问题",@"意见反馈",@"关于我们",@"联系客服", nil];
-
     self.btnAry = [NSMutableArray array];
     [self.btnAry addObject:@(PersonalBtnTagMyData)];
      [self.btnAry addObject:@(PersonalBtnTagMyOrder)];
@@ -231,7 +230,7 @@ typedef NS_ENUM(NSInteger, PersonalRequest) {
                     [creditStatusLab setTextColor:LabelMainColor];
                     break;
                 case 1:
-                    [creditStatusLab setText:@"授信状态：授信中"];
+                    [creditStatusLab setText:@"授信状态：审核中"];
                     [creditStatusLab setTextColor:LabelMainColor];
                     break;
                 case 3:

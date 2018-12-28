@@ -20,6 +20,8 @@
 #import "XRootWebVC.h"
 #import "MyMessageVC.h"
 #import "MyOrderDetailVC.h"
+#import "XDeviceHelper.h"
+#import "ZFBViewController.h"
 typedef NS_ENUM(NSInteger, LoanMainBtnTag) {
     LoanMainBtnTagMY = 105,
     LoanMainBtnTagMessage,
@@ -66,8 +68,26 @@ typedef NS_ENUM(NSInteger ,LoanMainRequest) {
     [self initHeaderUI];
     
 //    [XNotificationCenter addObserver:self selector:@selector(notificationCreditInfo:) name:XUpdateCreditInfo object:nil];
+    
+    [self updataVersionInfo];
 }
-
+- (void)updataVersionInfo{
+     if (self.clientGlobalInfo.versionInfo.version.integerValue > [XDeviceHelper getAppIntVersion]){
+         if (self.clientGlobalInfo.versionInfo.needForceUpdate.integerValue == 1) {
+             [XAlertView alertWithTitle:@"更新通知" message:self.clientGlobalInfo.versionInfo.versionDesc cancelButtonTitle:nil confirmButtonTitle:@"更新" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
+                 if (buttonIndex == 1) {
+                     [[UIApplication sharedApplication]openURL:[NSURL URLWithString:self.clientGlobalInfo.versionInfo.url]];
+                 }
+             }];
+         }else{
+             [XAlertView alertWithTitle:@"更新通知" message:self.clientGlobalInfo.versionInfo.versionDesc cancelButtonTitle:@"取消" confirmButtonTitle:@"更新" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
+                if (buttonIndex == 1) {
+                    [[UIApplication sharedApplication]openURL:[NSURL URLWithString:self.clientGlobalInfo.versionInfo.url]];
+                }
+            }];
+         }
+    }
+}
 - (void)initHeaderUI{
     [self.clientGlobalInfo.bannerAdList enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
 
@@ -250,54 +270,109 @@ typedef NS_ENUM(NSInteger ,LoanMainRequest) {
                 [self getBlackLogin:self];
             }
 
+            if (self.creditInfoModel.scheduleStatus.integerValue != 5 || self.creditInfoModel.alipayStatus.integerValue != 1) {
             
-            if (self.creditInfoModel.scheduleStatus.integerValue != 5) {
                 switch (self.creditInfoModel.scheduleStatus.integerValue) {
                     case 1:
                     {
-                        IdentityViewController *vc = [[IdentityViewController alloc]init];
-                        vc.creditInfoModel = self.creditInfoModel;
-                        [self.navigationController pushViewController:vc animated:YES];
+                        [XAlertView alertWithTitle:@"通知" message:@"您还未身份认证，请先去身份认证吧" cancelButtonTitle:@"取消" confirmButtonTitle:@"确定" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
+                            if (buttonIndex == 1) {
+                                IdentityViewController *vc = [[IdentityViewController alloc]init];
+                                vc.creditInfoModel = self.creditInfoModel;
+                                [self.navigationController pushViewController:vc animated:YES];
+                            }
+                        }];
+                       
                     }
                         break;
                     case 2:
                     {
-                        ContactViewController *vc = [[ContactViewController alloc]init];
-                        [self.navigationController pushViewController:vc animated:YES];
+                        [XAlertView alertWithTitle:@"通知" message:@"您还未联系人信息认证，请先去联系人信息认证吧" cancelButtonTitle:@"取消" confirmButtonTitle:@"确定" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
+                            if (buttonIndex == 1) {
+                                ContactViewController *vc = [[ContactViewController alloc]init];
+                                [self.navigationController pushViewController:vc animated:YES];
+                            }
+                        }];
                     }
                         break;
                     case 3:
                     {
-                        BaseViewController *vc = [[BaseViewController alloc]init];
-                        [self.navigationController pushViewController:vc animated:YES];
+                        [XAlertView alertWithTitle:@"通知" message:@"您还未基本信息认证，请先去基本信息认证吧" cancelButtonTitle:@"取消" confirmButtonTitle:@"确定" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
+                            if (buttonIndex == 1) {
+                                BaseViewController *vc = [[BaseViewController alloc]init];
+                                [self.navigationController pushViewController:vc animated:YES];
+                            }
+                        }];
                     }
                         break;
                     case 4:
                     {
-                        OperatorViewController *vc = [[OperatorViewController alloc]init];
-                        [self.navigationController pushViewController:vc animated:YES];
+                        [XAlertView alertWithTitle:@"通知" message:@"您还未运营商认证，请先去运营商认证吧" cancelButtonTitle:@"取消" confirmButtonTitle:@"确定" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
+                            if (buttonIndex == 1) {
+                                OperatorViewController *vc = [[OperatorViewController alloc]init];
+                                [self.navigationController pushViewController:vc animated:YES];
+                            }
+                        }];
                     }
                         break;
+                    case 5:{
+                        if (self.creditInfoModel.alipayStatus.integerValue != 1 && self.clientGlobalInfo.isNeedAlipayVerify.integerValue == 1) {
+                            [XAlertView alertWithTitle:@"通知" message:@"您还未支付宝认证，请先去支付宝认证吧" cancelButtonTitle:@"取消" confirmButtonTitle:@"确定" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
+                                if (buttonIndex == 1) {
+                                    ZFBViewController *vc = [[ZFBViewController alloc]init];
+                                    [self.navigationController pushViewController:vc animated:YES];
+                                }
+                            }];
+                        }else{
+                            LoanDetailViewController *vc = [[LoanDetailViewController alloc]init];
+                            vc.creditInfoModel = self.creditInfoModel;
+                            [self.navigationController pushViewController:vc animated:YES];
+                        }
+                    }
+                        break;
+                    case 6:{
+                        if (self.clientGlobalInfo.isNeedAlipayVerify.integerValue == 1) {
+                            [XAlertView alertWithTitle:@"通知" message:@"您还未支付宝认证，请先去支付宝认证吧" cancelButtonTitle:@"取消" confirmButtonTitle:@"确定" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
+                                if (buttonIndex == 1) {
+                                    ZFBViewController *vc = [[ZFBViewController alloc]init];
+                                    [self.navigationController pushViewController:vc animated:YES];
+                                }
+                            }];
+                        }
+                        else{
+                            LoanDetailViewController *vc = [[LoanDetailViewController alloc]init];
+                            vc.creditInfoModel = self.creditInfoModel;
+                            [self.navigationController pushViewController:vc animated:YES];
+                        }
                         
+                    }
+                        break;
                     default:
                         break;
                 }
+                
                 return;
             }
             switch (self.creditInfoModel.creditStatus.integerValue) {
                 case 0:{
-                    [self prepareDataWithCount:LoanMainRequestPostCreditInfo];
+//                    [self prepareDataWithCount:LoanMainRequestPostCreditInfo];
+                    LoanDetailViewController *vc = [[LoanDetailViewController alloc]init];
+                    vc.creditInfoModel = self.creditInfoModel;
+                    [self.navigationController pushViewController:vc animated:YES];
                 }
                     break;
                 case 1:{
-                    [XAlertView alertWithTitle:@"温馨提示" message:@"正在授信中" cancelButtonTitle:@"" confirmButtonTitle:@"知道了" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
+                    [XAlertView alertWithTitle:@"通知" message:@"正在授信中" cancelButtonTitle:@"" confirmButtonTitle:@"确定" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
                         
                     }];
                 }
                     break;
                 case 2:{
                     if (!self.creditInfoModel.useAmt.integerValue) {
-                        [self setHudWithName:@"可用额度不足" Time:1 andType:1];
+                        [XAlertView alertWithTitle:@"通知" message:@"您的可用额度不足，请调整借款金额" cancelButtonTitle:@"取消" confirmButtonTitle:@"确定" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
+                            
+                        }];
+                        
                         return;
                     }
                     LoanDetailViewController *vc = [[LoanDetailViewController alloc]init];
@@ -307,7 +382,7 @@ typedef NS_ENUM(NSInteger ,LoanMainRequest) {
                     break;
                 case 3:
                 {
-                    [XAlertView alertWithTitle:@"温馨提示" message:@"是否重新提交授信" cancelButtonTitle:@"取消" confirmButtonTitle:@"前往" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
+                    [XAlertView alertWithTitle:@"通知" message:@"是否重新提交授信" cancelButtonTitle:@"取消" confirmButtonTitle:@"确定" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
                         switch (buttonIndex) {
                             case 1:
                             {
@@ -316,7 +391,7 @@ typedef NS_ENUM(NSInteger ,LoanMainRequest) {
                                 [self prepareDataWithCount:LoanMainRequestPostCreditInfo];
                             }
                                 break;
-                                
+
                             default:
                                 break;
                         }
@@ -325,7 +400,7 @@ typedef NS_ENUM(NSInteger ,LoanMainRequest) {
                     break;
                 case 4:
                 {
-                    [XAlertView alertWithTitle:@"温馨提示" message:@"是否重新提交授信" cancelButtonTitle:@"取消" confirmButtonTitle:@"前往" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
+                    [XAlertView alertWithTitle:@"温馨提示" message:@"是否重新提交授信" cancelButtonTitle:@"取消" confirmButtonTitle:@"确定" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
                         switch (buttonIndex) {
                             case 1:
                             {
@@ -335,7 +410,7 @@ typedef NS_ENUM(NSInteger ,LoanMainRequest) {
                                 
                             }
                                 break;
-                                
+
                             default:
                                 break;
                         }
@@ -356,47 +431,101 @@ typedef NS_ENUM(NSInteger ,LoanMainRequest) {
             }
             if (self.creditInfoModel.scheduleStatus.integerValue != 5) {
                 switch (self.creditInfoModel.scheduleStatus.integerValue) {
+                    
                     case 1:
                     {
-                        IdentityViewController *vc = [[IdentityViewController alloc]init];
-                        vc.creditInfoModel = self.creditInfoModel;
-                        [self.navigationController pushViewController:vc animated:YES];
+                        [XAlertView alertWithTitle:@"通知" message:@"您还未身份认证，请先去身份认证吧" cancelButtonTitle:@"取消" confirmButtonTitle:@"确定" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
+                            if (buttonIndex == 1) {
+                                IdentityViewController *vc = [[IdentityViewController alloc]init];
+                                vc.creditInfoModel = self.creditInfoModel;
+                                [self.navigationController pushViewController:vc animated:YES];
+                            }
+                        }];
                     }
                         break;
                     case 2:
                     {
-                        ContactViewController *vc = [[ContactViewController alloc]init];
-                        [self.navigationController pushViewController:vc animated:YES];
+                        [XAlertView alertWithTitle:@"通知" message:@"您还未联系人信息认证，请先去联系人信息认证吧" cancelButtonTitle:@"取消" confirmButtonTitle:@"确定" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
+                            if (buttonIndex == 1) {
+                                ContactViewController *vc = [[ContactViewController alloc]init];
+                                [self.navigationController pushViewController:vc animated:YES];
+                            }
+                        }];
                     }
                         break;
                     case 3:
                     {
-                        BaseViewController *vc = [[BaseViewController alloc]init];
-                        [self.navigationController pushViewController:vc animated:YES];
+                        [XAlertView alertWithTitle:@"通知" message:@"您还未基本信息认证，请先去基本信息认证吧" cancelButtonTitle:@"取消" confirmButtonTitle:@"确定" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
+                            if (buttonIndex == 1) {
+                                BaseViewController *vc = [[BaseViewController alloc]init];
+                                [self.navigationController pushViewController:vc animated:YES];
+                            }
+                        }];
                     }
                         break;
                     case 4:
                     {
-                        OperatorViewController *vc = [[OperatorViewController alloc]init];
-                        [self.navigationController pushViewController:vc animated:YES];
+                        [XAlertView alertWithTitle:@"通知" message:@"您还未运营商认证，请先去运营商认证吧" cancelButtonTitle:@"取消" confirmButtonTitle:@"确定" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
+                            if (buttonIndex == 1) {
+                                OperatorViewController *vc = [[OperatorViewController alloc]init];
+                                [self.navigationController pushViewController:vc animated:YES];
+                            }
+                        }];
                     }
                         break;
-                        
+                    case 5:{
+                        if (self.creditInfoModel.alipayStatus.integerValue != 1 && self.clientGlobalInfo.isNeedAlipayVerify.integerValue == 1) {
+                            [XAlertView alertWithTitle:@"通知" message:@"您还未支付宝认证，请先去支付宝认证吧" cancelButtonTitle:@"取消" confirmButtonTitle:@"确定" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
+                                if (buttonIndex == 1) {
+                                    ZFBViewController *vc = [[ZFBViewController alloc]init];
+                                    [self.navigationController pushViewController:vc animated:YES];
+                                }
+                            }];
+                        }else{
+                            LoanDetailViewController *vc = [[LoanDetailViewController alloc]init];
+                            vc.creditInfoModel = self.creditInfoModel;
+                            [self.navigationController pushViewController:vc animated:YES];
+                        }
+                    }
+                        break;
+                    case 6:{
+                        if (self.clientGlobalInfo.isNeedAlipayVerify.integerValue == 1) {
+                            [XAlertView alertWithTitle:@"通知" message:@"您还未支付宝认证，请先去支付宝认证吧" cancelButtonTitle:@"取消" confirmButtonTitle:@"确定" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
+                                if (buttonIndex == 1) {
+                                    ZFBViewController *vc = [[ZFBViewController alloc]init];
+                                    [self.navigationController pushViewController:vc animated:YES];
+                                }
+                            }];
+                        }
+                        else{
+                            LoanDetailViewController *vc = [[LoanDetailViewController alloc]init];
+                            vc.creditInfoModel = self.creditInfoModel;
+                            [self.navigationController pushViewController:vc animated:YES];
+                        }
+                    }
+                        break;
                     default:
                         break;
                 }
                 return;
             }
             switch (self.creditInfoModel.creditStatus.integerValue) {
+                case 0:{
+                    //                    [self prepareDataWithCount:LoanMainRequestPostCreditInfo];
+                    LoanDetailViewController *vc = [[LoanDetailViewController alloc]init];
+                    vc.creditInfoModel = self.creditInfoModel;
+                    [self.navigationController pushViewController:vc animated:YES];
+                }
+                    break;
                 case 1:{
-                    [XAlertView alertWithTitle:@"温馨提示" message:@"正在授信中" cancelButtonTitle:@"" confirmButtonTitle:@"知道了" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
+                    [XAlertView alertWithTitle:@"通知" message:@"您的授信正在审核中，请耐心等待" cancelButtonTitle:@"" confirmButtonTitle:@"确定" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
                         
                     }];
                 }
                     break;
                 case 2:{
                     if (!self.creditInfoModel.waitPayAmt.doubleValue) {
-                        [XAlertView alertWithTitle:@"温馨提示" message:@"您没有需要还款的订单。" cancelButtonTitle:@"" confirmButtonTitle:@"知道了" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
+                        [XAlertView alertWithTitle:@"通知" message:@"您没有需要还款的订单。" cancelButtonTitle:@"" confirmButtonTitle:@"确定" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
                             
                         }];
                         return;
@@ -410,7 +539,7 @@ typedef NS_ENUM(NSInteger ,LoanMainRequest) {
                     break;
                 case 3:
                 {
-                    [XAlertView alertWithTitle:@"温馨提示" message:@"是否重新提交授信" cancelButtonTitle:@"取消" confirmButtonTitle:@"前往" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
+                    [XAlertView alertWithTitle:@"通知" message:@"是否重新提交授信" cancelButtonTitle:@"取消" confirmButtonTitle:@"确定" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
                         switch (buttonIndex) {
                             case 1:
                             {
@@ -419,7 +548,7 @@ typedef NS_ENUM(NSInteger ,LoanMainRequest) {
                                 
                             }
                                 break;
-                                
+
                             default:
                                 break;
                         }
@@ -428,7 +557,7 @@ typedef NS_ENUM(NSInteger ,LoanMainRequest) {
                     break;
                 case 4:
                 {
-                    [XAlertView alertWithTitle:@"温馨提示" message:@"是否重新提交授信" cancelButtonTitle:@"取消" confirmButtonTitle:@"前往" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
+                    [XAlertView alertWithTitle:@"通知" message:@"是否重新提交授信" cancelButtonTitle:@"取消" confirmButtonTitle:@"确定" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
                         switch (buttonIndex) {
                             case 1:
                             {
@@ -436,7 +565,7 @@ typedef NS_ENUM(NSInteger ,LoanMainRequest) {
                                 
                             }
                                 break;
-                                
+
                             default:
                                 break;
                         }
@@ -487,10 +616,11 @@ typedef NS_ENUM(NSInteger ,LoanMainRequest) {
                     pendPay.text = @"系统自动审核稍等片刻，不要离开";
                 }else{
                     eduLab.text = @"最高可借(元)额度";
-                    self.amountLab.text = self.clientGlobalInfo.riskCreditAmtMax;
+//                    self.amountLab.text = self.clientGlobalInfo.riskCreditAmtMax;
+                    self.amountLab.text = self.creditInfoModel.useAmt.description;
                     pendPay.text = @"额度高   |  审核简单   |   放款快";
-                    [getBtn setTitle:@"获取额度" forState:UIControlStateNormal];
-                    [loanBtn setTitle:@"我要借款" forState:UIControlStateNormal];
+                    [getBtn setTitle:@"我要借款" forState:UIControlStateNormal];
+                    [loanBtn setTitle:@"立即还款" forState:UIControlStateNormal];
                     [loanBtn setBorderWidth:1 andColor:AppMainColor];
                     [loanBtn setCornerValue:AdaptationWidth(22)];
                     [loanBtn setTitleColor:AppMainColor forState:UIControlStateNormal];
@@ -519,7 +649,7 @@ typedef NS_ENUM(NSInteger ,LoanMainRequest) {
         case LoanMainRequestPostCreditInfo:{
             switch ([response.data[@"creditStatus"] integerValue]) {
                 case 1:
-                    [self setHudWithName:@"授信中" Time:1 andType:1];
+                    [self setHudWithName:@"审核中" Time:1 andType:1];
                     break;
                 case 3:
                     {
@@ -534,11 +664,11 @@ typedef NS_ENUM(NSInteger ,LoanMainRequest) {
                     }
                     break;
                 case 0:{
-                    [self setHudWithName:@"未授信" Time:1 andType:1];
+                    [self setHudWithName:@"未审核" Time:1 andType:1];
                 }
                     break;
                 case 2:{
-                    [self setHudWithName:@"已授信" Time:1 andType:1];
+                    [self setHudWithName:@"已审核" Time:1 andType:1];
                 }
                     break;
                 default:

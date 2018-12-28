@@ -25,8 +25,10 @@ MJCodingImplementation
     if (token.length > 0) {
         self.accessToken = token;
     }
+    
     [XCacheHelper saveByNSKeyedUnarchiverWith:self fileName:userInfo isCanClear:YES];
 }
+
 - (UserInfo *)getUserInfo{
     userInfoModel = [XCacheHelper getByNSKeyedUnarchiver:userInfo withClass:[UserInfo class] isCanClear:YES];
     return userInfoModel;

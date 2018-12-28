@@ -11,12 +11,16 @@
 #import "XAlertView.h"
 #import "MyOrderFlowVC.h"
 #import "XRootWebVC.h"
+#import "CreditInfoModel.h"
 typedef NS_ENUM(NSInteger ,LoanOrderRequest) {
     LoanOrderRequestPreview,
     LoanOrderRequestPost,
+    LoanOrderRequestPostNocredit,
+    LoanOrderRequestGetCredit,
 };
 @interface LoanOrderDetailVC ()
 @property (nonatomic ,strong) OrderPreviewModel *orderPreviewModel;
+@property (nonatomic ,strong) CreditInfoModel *creditInfoModel;
 @end
 
 @implementation LoanOrderDetailVC
@@ -180,8 +184,8 @@ typedef NS_ENUM(NSInteger ,LoanOrderRequest) {
                 [self setHudWithName:@"若无异议请先勾选合同" Time:1 andType:1];
                 return;
             }
-            
-            [self prepareDataWithCount:LoanOrderRequestPost];
+            [self prepareDataWithCount:LoanOrderRequestGetCredit];
+           
         }
             break;
             
@@ -200,7 +204,16 @@ typedef NS_ENUM(NSInteger ,LoanOrderRequest) {
             self.cmd = XPostConfirmOrder;
             self.dict = [NSDictionary dictionaryWithObjectsAndKeys:self.orderPreviewModel.orderAmt,@"orderAmt",self.orderPreviewModel.orderNo,@"orderNo",self.orderPreviewModel.stageTimeunitCnt,@"stageTimeunitCnt", nil];
             break;
-            
+        case LoanOrderRequestGetCredit:{
+            self.cmd = XGetCreditInfoVerify;
+            self.dict = [NSDictionary dictionary];
+        }
+            break;
+        case LoanOrderRequestPostNocredit:{
+            self.cmd = XPostConfirmOrderNocredit;
+            self.dict = [NSDictionary dictionaryWithObjectsAndKeys:self.orderPreviewModel.orderAmt,@"orderAmt",self.orderPreviewModel.orderNo,@"orderNo",self.orderPreviewModel.stageTimeunitCnt,@"stageTimeunitCnt", nil];
+        }
+            break;
         default:
             break;
     }
@@ -224,7 +237,19 @@ typedef NS_ENUM(NSInteger ,LoanOrderRequest) {
             }];
         }
             break;
+        case LoanOrderRequestGetCredit:{
+            self.creditInfoModel = [CreditInfoModel mj_objectWithKeyValues:response.data];
+            if (self.creditInfoModel.creditStatus.integerValue == 2) {
+                [self prepareDataWithCount:LoanOrderRequestPost];
+            }else{
+                [self prepareDataWithCount:LoanOrderRequestPostNocredit];
+            }
+        }
+            break;
+        case LoanOrderRequestPostNocredit:{
             
+        }
+            break;
         default:
             break;
     }
@@ -234,6 +259,12 @@ typedef NS_ENUM(NSInteger ,LoanOrderRequest) {
         _orderPreviewModel = [[OrderPreviewModel alloc]init];
     }
     return _orderPreviewModel;
+}
+- (CreditInfoModel *)creditInfoModel{
+    if (!_creditInfoModel) {
+        _creditInfoModel = [[CreditInfoModel alloc]init];
+    }
+    return _creditInfoModel;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

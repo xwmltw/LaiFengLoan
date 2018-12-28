@@ -16,15 +16,23 @@
 #import "ContactViewController.h"
 #import "BaseViewController.h"
 #import "CreditInfoModel.h"
+#import "LoanDetailViewController.h"
+#import "OperatorBQSModel.h"
+#import "ZFBViewController.h"
 typedef NS_ENUM(NSInteger, OperatorRequest) {
     OperatorRequestGetInfo,
     OperatorRequestPostInfo,
     OperatorRequestCreditInfo,
+    OperatorRequestBQSLogin,
+    OperatorRequestBQSSendAuthSMS,
+    OperatorRequestBQSSendLoginSMS,
+    OperatorRequestBQSVerifyAuthSMS,
 };
 @interface OperatorViewController ()<XChooseBankPickerViewDelegate>
 @property (nonatomic, strong) OperatorModel *operatorModel;
 @property (nonatomic, strong) XChooseBankView *pickerView;
 @property (nonatomic ,strong) CreditInfoModel *creditInfoModel;
+@property (nonatomic ,strong) OperatorBQSModel *operatorBQSModel;
 @end
 
 @implementation OperatorViewController
@@ -42,9 +50,14 @@ typedef NS_ENUM(NSInteger, OperatorRequest) {
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"运营商认证";
+    self.title = @"授信认证";
     [self initUI];
-    [self prepareDataWithCount:OperatorRequestGetInfo];
+    if (self.clientGlobalInfo.decisionType.integerValue == 0) {
+        [self prepareDataWithCount:OperatorRequestGetInfo];
+    }else{
+        telTF.text  = [UserInfo sharedInstance].phoneName;
+    }
+    
     
 }
 - (void)initUI{
@@ -64,6 +77,18 @@ typedef NS_ENUM(NSInteger, OperatorRequest) {
     [self.view addSubview:headView];
 
     
+    UILabel *yysLab = [[UILabel alloc] init];
+    yysLab.text = @"运营商认证";
+    yysLab.textColor = LabelMainColor;
+    yysLab.font = [UIFont fontWithName:@"PingFang SC" size:AdaptationWidth(18)];
+    [self.view addSubview:yysLab];
+    [yysLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.view).offset(AdaptationWidth(18));
+        make.top.mas_equalTo(headView.mas_bottom).offset(AdaptationWidth(22));
+ 
+    }];
+    
+    
     telTF = [[UITextField alloc]init];
   
     telTF.enabled = NO;
@@ -75,7 +100,7 @@ typedef NS_ENUM(NSInteger, OperatorRequest) {
     [self.view addSubview:telTF];
     [telTF mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(self.view).offset(AdaptationWidth(-18));
-        make.top.mas_equalTo(headView.mas_bottom).offset(AdaptationWidth(22));
+        make.top.mas_equalTo(yysLab.mas_bottom).offset(AdaptationWidth(22));
         make.height.mas_equalTo(AdaptationWidth(50));
     }];
     
@@ -190,10 +215,17 @@ typedef NS_ENUM(NSInteger, OperatorRequest) {
                 [self setHudWithName:@"请输入服务密码" Time:1 andType:1];
                 return;
             }
+            if (self.clientGlobalInfo.decisionType.integerValue == 0) {
+                self.operatorModel.operatorPhone = telTF.text;
+                self.operatorModel.operatorPassword = pwdTF.text;
+            }else{
+                self.operatorBQSModel.operatorPhone = telTF.text;
+                self.operatorBQSModel.operatorPassword = pwdTF.text;
+            }
             
-            self.operatorModel.operatorPhone = telTF.text;
-            self.operatorModel.operatorPassword = pwdTF.text;
             [self prepareDataWithCount:OperatorRequestCreditInfo];
+            
+            
         }
             break;
         case 102:
@@ -232,6 +264,11 @@ typedef NS_ENUM(NSInteger, OperatorRequest) {
             self.dict = [NSDictionary dictionary];
         }
             break;
+        case OperatorRequestBQSLogin:{
+            self.cmd = XOperatorLogin;
+            self.dict = [NSDictionary dictionaryWithObjectsAndKeys:telTF.text,@"operatorPhone",pwdTF.text,@"operatorPassword", nil];
+        }
+            break;
         default:
             break;
     }
@@ -250,14 +287,41 @@ typedef NS_ENUM(NSInteger, OperatorRequest) {
             switch ([response.data[@"process_code"] integerValue]) {
                 case 10008:
                 {
-                    [XAlertView alertWithTitle:@"通知" message:@"您的授信资料已收到，我们会尽快完成授信审核。" cancelButtonTitle:@"" confirmButtonTitle:@"返回首页" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
-                        for (UIViewController *controller in self.navigationController.viewControllers) {
-                            if ([controller isKindOfClass:[LoanMainVC class]]) {
-                                LoanMainVC *vc = (LoanMainVC *)controller;
-                                [self.navigationController popToViewController:vc animated:YES];
-                            }
+                    if (self.clientGlobalInfo.isNeedAlipayVerify.integerValue == 1 && self.creditInfoModel.alipayStatus.integerValue != 1) {
+                        ZFBViewController *vc = [[ZFBViewController alloc]init];
+                        
+                        [self.navigationController pushViewController:vc animated:YES];
+                    }else{
+                        if (self.creditInfoModel.hasCreateOrder.integerValue == 1) {
+                            [XAlertView alertWithTitle:@"通知" message:@"您的授信资料已收到，我们会尽快完成授信审核。" cancelButtonTitle:@"" confirmButtonTitle:@"返回首页" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
+                                for (UIViewController *controller in self.navigationController.viewControllers) {
+                                    if ([controller isKindOfClass:[LoanMainVC class]]) {
+                                        LoanMainVC *vc = (LoanMainVC *)controller;
+                                        [self.navigationController popToViewController:vc animated:YES];
+                                    }
+                                }
+                            }];
+                        }else{
+                            LoanDetailViewController *vc = [[LoanDetailViewController alloc]init];
+                            vc.creditInfoModel = self.creditInfoModel;
+                            [self.navigationController pushViewController:vc animated:YES];
                         }
-                    }];
+                    }
+//                    if (self.creditInfoModel.hasCreateOrder.integerValue == 1) {
+//                        [XAlertView alertWithTitle:@"通知" message:@"您的授信资料已收到，我们会尽快完成授信审核。" cancelButtonTitle:@"" confirmButtonTitle:@"返回首页" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
+//                            for (UIViewController *controller in self.navigationController.viewControllers) {
+//                                if ([controller isKindOfClass:[LoanMainVC class]]) {
+//                                    LoanMainVC *vc = (LoanMainVC *)controller;
+//                                    [self.navigationController popToViewController:vc animated:YES];
+//                                }
+//                            }
+//                        }];
+//                    }else{
+//                        LoanDetailViewController *vc = [[LoanDetailViewController alloc]init];
+//                        vc.creditInfoModel = self.creditInfoModel;
+//                        [self.navigationController pushViewController:vc animated:YES];
+//                    }
+                    
                     return;
                 }
                     break;
@@ -295,19 +359,87 @@ typedef NS_ENUM(NSInteger, OperatorRequest) {
                 default:
                     break;
             }
-            [self prepareDataWithCount:OperatorRequestPostInfo];
+            if (self.clientGlobalInfo.decisionType.integerValue == 0) {
+                [self prepareDataWithCount:OperatorRequestPostInfo];
+            }else{
+                [self prepareDataWithCount:OperatorRequestBQSLogin];
+            }
+            
+        }
+            break;
+        case OperatorRequestBQSLogin:{
+            if (self.clientGlobalInfo.isNeedAlipayVerify.integerValue == 1 && self.creditInfoModel.alipayStatus.integerValue != 1) {
+                ZFBViewController *vc = [[ZFBViewController alloc]init];
+                
+                [self.navigationController pushViewController:vc animated:YES];
+            }else{
+                if (self.creditInfoModel.hasCreateOrder.integerValue == 1) {
+                    [XAlertView alertWithTitle:@"通知" message:@"您的授信资料已收到，我们会尽快完成授信审核。" cancelButtonTitle:@"" confirmButtonTitle:@"返回首页" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
+                        for (UIViewController *controller in self.navigationController.viewControllers) {
+                            if ([controller isKindOfClass:[LoanMainVC class]]) {
+                                LoanMainVC *vc = (LoanMainVC *)controller;
+                                [self.navigationController popToViewController:vc animated:YES];
+                            }
+                        }
+                    }];
+                }else{
+                    LoanDetailViewController *vc = [[LoanDetailViewController alloc]init];
+                    vc.creditInfoModel = self.creditInfoModel;
+                    [self.navigationController pushViewController:vc animated:YES];
+                }
+            }
+            
         }
             break;
         default:
             break;
-    }
     
+    }
+}
+- (void)requestFaildWithDictionary:(XResponse *)response{
+    switch (self.requestCount) {
+        case OperatorRequestBQSLogin:
+        {
+            self.operatorBQSModel.reqId = response.rspMsg;
+            switch (response.rspCode.integerValue) {
+                case 11004:
+                case 11005:
+                {
+                    OperatorDetailVC *vc = [[OperatorDetailVC alloc]init];
+                    vc.BQSmodel = self.operatorBQSModel;
+                    vc.BQSStatus = response.rspCode;
+                    vc.creditInfoModel = self.creditInfoModel;
+                    [self.navigationController pushViewController:vc animated:YES];
+                }
+                    break;
+
+                case 11008:
+//                    [self setHudWithName:response.rspMsg Time:2 andType:1];
+                    break;
+                    
+                default:
+                    break;
+            }
+            return;
+        }
+            break;
+            
+        default:
+            break;
+    }
+    [self setHudWithName:response.rspMsg Time:2 andType:1];
 }
 - (OperatorModel *)operatorModel{
     if (!_operatorModel) {
         _operatorModel = [[OperatorModel alloc]init];
     }
     return _operatorModel;
+}
+- (OperatorBQSModel *)operatorBQSModel{
+    if (!_operatorBQSModel) {
+        _operatorBQSModel = [[OperatorBQSModel alloc]init];
+    }
+    return _operatorBQSModel;
 }
 - (CreditInfoModel *)creditInfoModel{
     if (!_creditInfoModel) {

@@ -12,6 +12,7 @@
 @property(nonatomic,copy)NSString *phoneName;
 @property(nonatomic,copy)NSString *password;
 @property(nonatomic,copy)NSString *accessToken;
+
 + (instancetype)sharedInstance;
 
 //存储用户登录信息

@@ -11,6 +11,7 @@
 #import "ContactViewController.h"
 #import "BaseViewController.h"
 #import "OperatorViewController.h"
+#import "ZFBViewController.h"
 @interface MyDataVC ()
 @property (nonatomic ,strong) CreditInfoModel *creditInfoModel;
 @end
@@ -31,6 +32,9 @@
     
 }
 - (NSInteger )tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if (self.clientGlobalInfo.isNeedAlipayVerify.integerValue == 1) {
+        return 5;
+    }
     return 4;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -64,7 +68,9 @@
             case 3:
                  label.text = @"运营商信息";
                 break;
-                
+            case 4:
+                label.text = @"支付宝信息";
+                break;
                 
             default:
                 break;
@@ -118,6 +124,7 @@
                 OperatorViewController *vc = [[OperatorViewController alloc]init];
                 vc.isFromVC = @1;
                 [self.navigationController pushViewController:vc animated:YES];
+                return;
             }
             if (self.creditInfoModel.scheduleStatus.integerValue == 1) {
                 [self setHudWithName:@"请先进行身份证认证" Time:1.5 andType:1];
@@ -130,8 +137,33 @@
             }
         }
             break;
-            
-            
+         case 4:
+        {
+            if (self.creditInfoModel.scheduleStatus.integerValue == 1) {
+                [self setHudWithName:@"请先进行身份证认证" Time:1.5 andType:1];
+                return;
+            }
+            if (self.creditInfoModel.scheduleStatus.integerValue == 2) {
+                [self setHudWithName:@"请先进行联系人信息认证" Time:1.5 andType:1];
+                return;
+            }
+            if (self.creditInfoModel.scheduleStatus.integerValue == 3) {
+                [self setHudWithName:@"请先进行基本信息认证" Time:1.5 andType:1];
+                return;
+            }
+            if (self.creditInfoModel.scheduleStatus.integerValue == 4) {
+                [self setHudWithName:@"请先进行运营商信息认证" Time:1.5 andType:1];
+                return;
+            }
+            if (self.creditInfoModel.alipayStatus.integerValue == 1) {
+                [self setHudWithName:@"您已授权，无需重复提交" Time:1.5 andType:1];
+                return;
+            }
+            ZFBViewController *vc = [[ZFBViewController alloc]init];
+            vc.isFromVC = @1;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
         default:
             break;
     }
