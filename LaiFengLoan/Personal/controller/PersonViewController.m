@@ -18,6 +18,7 @@
 #import "QUestionsViewController.h"
 #import "MyDataVC.h"
 #import "MyOrderDetailVC.h"
+#import "XAlertView.h"
 typedef NS_ENUM(NSInteger,PersonalBtnTag) {
     PersonalBtnTagBack = 400,
     PersonalBtnTagLogin,
@@ -448,6 +449,12 @@ typedef NS_ENUM(NSInteger, PersonalRequest) {
         case PersonalBtnTagMyData:{
             if (![[UserInfo sharedInstance]isSignIn]) {
                 [self getBlackLogin:self];
+            }
+            if (self.creditInfoModel.hasBlack.integerValue == 1) {
+                [XAlertView alertWithTitle:@"通知" message:@"您的个人信息异常" cancelButtonTitle:nil confirmButtonTitle:@"确定" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
+                    
+                }];
+                return;
             }
             MyDataVC *vc = [[MyDataVC alloc]init];
             [self.navigationController pushViewController:vc animated:YES];

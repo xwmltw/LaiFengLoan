@@ -26,6 +26,11 @@
 @property (nonatomic ,copy) NSNumber *syspayAmt;
 @property (nonatomic ,copy) NSString *syspayBankCardNo;
 @property (nonatomic ,strong) NSArray *orderNodeInfoList;
+@property (nonatomic ,copy) NSNumber *hasExtension;
+@property (nonatomic ,copy) NSNumber *waitingAmt;
+@property (nonatomic ,copy) NSNumber *extensionDueRepayDate;
+@property (nonatomic ,copy) NSNumber *extensionAmt;
+@property (nonatomic ,copy) NSNumber *extensionStatus;
 @end
 //dueRepayAmt    number($double)
 //到期还款金额
@@ -70,3 +75,6 @@
 //放款金额
 //syspayBankCardNo    string
 //到账卡号
+//hasExtension    integer($int32)是否展期
+//waitingAmt 待还金额(waitingAmt  )
+//extensionStatus    integer($int32)展期还款状态:0创建,1还款成功,2待还款,3还款失败,4还款中,97退单(预留)

@@ -254,6 +254,25 @@ typedef NS_ENUM(NSInteger ,LoanOrderRequest) {
             break;
     }
 }
+-(void)requestFaildWithDictionary:(XResponse *)response{
+    switch (self.requestCount) {
+        case LoanOrderRequestPostNocredit:
+        case LoanOrderRequestPost:{
+            if (response.rspCode.integerValue == 1002 ) {
+                [XAlertView alertWithTitle:@"通知" message:@"个人信息异常，暂时无法借款" cancelButtonTitle:nil confirmButtonTitle:@"确定" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
+                    
+                }];
+                return;
+            }
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
+    [self setHudWithName:response.rspMsg Time:2 andType:1];
+}
 - (OrderPreviewModel *)orderPreviewModel{
     if (!_orderPreviewModel) {
         _orderPreviewModel = [[OrderPreviewModel alloc]init];

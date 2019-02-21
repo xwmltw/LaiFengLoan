@@ -17,7 +17,8 @@
 - (void)setOrderListModel:(OrderListModel *)orderListModel{
     self.firstLab.text = [NSString stringWithFormat:@"借款金额：%@元",orderListModel.orderAmt.description];
     self.fourLab.text = [NSString stringWithFormat:@"订单编号：%@",orderListModel.orderNo.description];
-    [self.paybtn setCornerValue:10];
+    [self.paybtn setCornerValue:5];
+    [self.nextPayBtn setCornerValue:5];
     if(orderListModel.repayStatus.integerValue == 3){
         self.faleLab.hidden = NO;;
     }else{
@@ -33,12 +34,19 @@
             self.twoLab.text = [NSString stringWithFormat:@"借款期限：%@",orderListModel.stageTimeunitCnt.description];
             self.threeLab.hidden = YES;
             self.paybtn.hidden = YES;
+            self.nextPayBtn.hidden = YES;
+            self.orderTopLayout.constant = 70;
+            self.lineTopLayout.constant = 65;
+            self.extensionImage.hidden = YES;
         }
             break;
         case 4:
         {
+            self.orderTopLayout.constant = 81.5;
+            self.lineTopLayout.constant = 110;
             self.threeLab.hidden = NO;
             self.paybtn.hidden = NO;
+        
             if (orderListModel.repayStatus.integerValue == 4) {
                 [self.paybtn setBackgroundColor:LineColor];
                 [self.paybtn setTitle:@"还款中" forState:UIControlStateNormal];
@@ -46,10 +54,24 @@
             }else{
                 self.paybtn.enabled = YES;
                 [self.paybtn setBackgroundColor:AppMainColor];
-                [self.paybtn setTitle:@"去还款" forState:UIControlStateNormal];
+                [self.paybtn setTitle:@"立即还款" forState:UIControlStateNormal];
             }
+            if (orderListModel.extensionStatus.integerValue == 1 ||orderListModel.extensionStatus.integerValue == 2 ||orderListModel.extensionStatus.integerValue == 4 || orderListModel.repayStatus.integerValue == 4 || orderListModel.overDueDays.integerValue > 0) {
+                [self.nextPayBtn setBackgroundColor:LineColor];
+                self.nextPayBtn.userInteractionEnabled = NO;
+            }else{
+                [self.nextPayBtn setBackgroundColor:XColorWithRGB(56, 123, 230)];
+                self.nextPayBtn.userInteractionEnabled = YES;
+            }
+            
+            if (orderListModel.hasExtension.integerValue == 1) {
+                self.extensionImage.hidden = NO;
+            }else{
+                self.extensionImage.hidden = YES;
+            }
+            
             self.twoLab.text = [NSString stringWithFormat:@"还款日期：%@",[DateHelper getDateFromTimeNumber:orderListModel.dueRepayDate withFormat:@"yyyy-MM-dd"]];
-            self.threeLab.text = [NSString stringWithFormat:@"还款金额：%@元",orderListModel.repayAmt.description];
+            self.threeLab.text = [NSString stringWithFormat:@"待还金额：%@元",orderListModel.waitingAmt.description];
         }
             break;
             
@@ -108,7 +130,9 @@
     
 }
 - (IBAction)payBtnOnClick:(UIButton *)sender {
-    XBlockExec(self.block,self.row);
+    if (self.block) {
+        self.block(self.row, sender);
+    }
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

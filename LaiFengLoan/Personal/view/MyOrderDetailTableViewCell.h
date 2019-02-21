@@ -14,10 +14,14 @@
 @property (weak, nonatomic) IBOutlet UILabel *threeLab;
 @property (weak, nonatomic) IBOutlet UILabel *fourLab;
 @property (weak, nonatomic) IBOutlet UIImageView *stateImage;
+@property (weak, nonatomic) IBOutlet UIImageView *extensionImage;
 @property (weak, nonatomic) IBOutlet UIButton *paybtn;
+@property (weak, nonatomic) IBOutlet UIButton *nextPayBtn;
 @property (weak, nonatomic) IBOutlet UILabel *faleLab;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *orderTopLayout;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *lineTopLayout;
 @property (nonatomic ,strong) OrderListModel *orderListModel;
-@property (nonatomic ,assign) MyOrderState orderState;
-@property (nonatomic ,copy) XBlock block;
+@property (nonatomic ,assign) MyOrderState  orderState;
+@property (nonatomic ,copy) XDoubleBlock block;
 @property (nonatomic ,copy) NSNumber *row;
 @end

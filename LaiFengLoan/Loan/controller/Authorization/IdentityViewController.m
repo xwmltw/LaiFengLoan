@@ -12,6 +12,7 @@
 #import "UDIDSafeDataDefine.h"
 #import "IdentifyModel.h"
 #import "ContactViewController.h"
+#import "XAlertView.h"
 typedef NS_ENUM(NSInteger,IdentityRequest) {
     IdentityRequestGetInfo,
     IdentityRequestPostInfo,
@@ -24,6 +25,7 @@ typedef NS_ENUM(NSInteger,IdentityRequest) {
 @property (nonatomic, strong) IdentifyModel *identifyModel;
 @property (nonatomic, strong) UIView *informationView;
 @property (nonatomic, strong) NSDictionary *userDic;
+@property (nonatomic, copy) NSNumber *redCode;
 @end
 
 @implementation IdentityViewController
@@ -205,7 +207,12 @@ typedef NS_ENUM(NSInteger,IdentityRequest) {
     }
 }
 - (void)btnOnClick:(UIButton *)btn{
-   
+    if (self.redCode.integerValue == 1002) {
+        [XAlertView alertWithTitle:@"通知" message:@"个人信息异常，暂时无法认证。" cancelButtonTitle:nil confirmButtonTitle:@"确定" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
+            
+        }];
+        return;
+    }
     [self prepareDataWithCount:IdentityRequestGetInfo];
 }
 -(void)BarbuttonClick:(UIButton *)button{
@@ -262,7 +269,16 @@ typedef NS_ENUM(NSInteger,IdentityRequest) {
             break;
     }
 }
-
+-(void)requestFaildWithDictionary:(XResponse *)response{
+    if (response.rspCode.integerValue == 1002 && self.requestCount == IdentityRequestPostInfo) {
+        self.redCode = @(1002);
+        [XAlertView alertWithTitle:@"通知" message:@"个人信息异常，暂时无法认证。" cancelButtonTitle:nil confirmButtonTitle:@"确定" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
+            
+        }];
+        return;
+    }
+    [self setHudWithName:response.rspMsg Time:2 andType:1];
+}
 - (IdentifyModel *)identifyModel{
     if (!_identifyModel) {
         _identifyModel = [[IdentifyModel alloc]init];

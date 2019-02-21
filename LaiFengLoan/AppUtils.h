@@ -132,7 +132,35 @@ static NSString *const AppName = @"鑫易贷";
 static NSString *const AppScheme = @"XinYiDai";
 static NSString *const TalkingData_AppID =   @"2138E87340F64502BAF22FB2B413BE72";
 static NSString *const AMapKey = @"fd7016bdd0be18a5ddf2ebc27ddd0783";
+
+#elif (APP_Type == 13)
+
+#define SERVICEURL @"http://mapi.51taomidai.com"
+
+static NSString *const AppName = @"淘米贷";
+static NSString *const AppScheme = @"TaoMiDai";
+static NSString *const TalkingData_AppID = @"82306D92A127431A8B9A44B92124B88A";
+static NSString *const AMapKey = @"a5641abd529ff2008c99b5af36c27e04";
+
+#elif (APP_Type == 14)
+
+#define SERVICEURL @"http://jlh-mapi.pdl001.com/"
+
+static NSString *const AppName = @"借来花";
+static NSString *const AppScheme = @"JieLaiHua";
+static NSString *const TalkingData_AppID = @"08183576B4E649AFA88804A94A301660";
+static NSString *const AMapKey = @"1ed69b869fc89bbfe987f365726a7020";
+
+#elif (APP_Type == 15)
+
+#define SERVICEURL @"http://xed-mapi.pdl001.com/"
+
+static NSString *const AppName = @"小鹅贷";
+static NSString *const AppScheme = @"XiaoEDai";
+static NSString *const TalkingData_AppID = @"D43781A023814B2E8D07C51939256FA1";
+static NSString *const AMapKey = @"cbbadb404889eab46938f4edce16dc52";
 #endif
+
 
 /** JSPatch*/
 static NSString *const JSPatchId = @"ea6f4017d1244661";
@@ -187,7 +215,7 @@ static NSString *const XAliPaySucceed = @"AliPaySucceed";
 #define XGetOrderList           @"/mapi/order/get_order_list"             /*!< 获取订单列表*/
 #define XGetOrderCntInf         @"/mapi/order/get_order_cnt_inf"          /*!< 获取订单列表统计数据*/
 #define XRepayOrder             @"/mapi/order/repay_order"                 /*!< 订单还款*/
-
+#define XExtensionOrder         @"/mapi/order/repay_extension"              /*!< 展期订单还款*/
 
 #define XGetPreviewOrder        @"/mapi/order/preview_order"              /*!< 订单预览*/
 #define XPostConfirmOrder       @"/mapi/order/confirm_order"              /*!< 提交订单*/

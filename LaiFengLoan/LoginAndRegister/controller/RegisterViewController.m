@@ -14,6 +14,7 @@
 #import "UserLocation.h"
 #import "PersonViewController.h"
 #import "LoanMainVC.h"
+#import "XAlertView.h"
 typedef NS_ENUM(NSInteger , RegisterBtnTag) {
     RegisterBtnTagRegist,
     RegisterBtnTagAgreement,
@@ -400,6 +401,15 @@ typedef NS_ENUM(NSInteger , RegisterRequest) {
         default:
             break;
     }
+}
+-(void)requestFaildWithDictionary:(XResponse *)response{
+    if (response.rspCode.integerValue == 1002 && self.requestCount == RegisterRequestCodeImage) {
+        [XAlertView alertWithTitle:@"通知" message:@"个人信息异常" cancelButtonTitle:nil confirmButtonTitle:@"确定" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
+        
+        }];
+        return;
+    }
+    [self setHudWithName:response.rspMsg Time:2 andType:1];
 }
 #pragma mark - lan
 - (UIView *)alertView{

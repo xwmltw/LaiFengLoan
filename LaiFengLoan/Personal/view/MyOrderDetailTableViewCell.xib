@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -55,21 +55,6 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personal_cellGo" translatesAutoresizingMaskIntoConstraints="NO" id="1zO-WS-Q1i">
                         <rect key="frame" x="338" y="40" width="28" height="28"/>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpD-eT-kdo">
-                        <rect key="frame" x="306" y="91" width="60" height="20"/>
-                        <color key="backgroundColor" red="0.2196078431372549" green="0.4823529411764706" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="20" id="Op0-72-weP"/>
-                            <constraint firstAttribute="width" constant="60" id="sBj-dy-ULw"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <state key="normal" title="去还款">
-                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        </state>
-                        <connections>
-                            <action selector="payBtnOnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="j1w-yK-MWB"/>
-                        </connections>
-                    </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="已逾期-state" translatesAutoresizingMaskIntoConstraints="NO" id="JEM-QF-PjU">
                         <rect key="frame" x="165" y="16.5" width="45" height="20"/>
                     </imageView>
@@ -79,49 +64,90 @@
                         <color key="textColor" red="1" green="0.27450980392156865" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" tag="651" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pkq-Bc-Qwd">
+                        <rect key="frame" x="230" y="91" width="61" height="20"/>
+                        <color key="backgroundColor" red="0.2196078431372549" green="0.4823529411764706" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="0tX-Ty-CSS"/>
+                            <constraint firstAttribute="width" constant="61" id="UAG-B6-U4Z"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <state key="normal" title="下期再还">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <connections>
+                            <action selector="payBtnOnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="jP3-LP-gnl"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="650" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpD-eT-kdo">
+                        <rect key="frame" x="301" y="91" width="65" height="20"/>
+                        <color key="backgroundColor" red="0.2196078431372549" green="0.4823529411764706" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="65" id="W3G-Ob-ZaR"/>
+                            <constraint firstAttribute="height" constant="20" id="dVx-CP-YzV"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <state key="normal" title="立即还款">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <connections>
+                            <action selector="payBtnOnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="j1w-yK-MWB"/>
+                        </connections>
+                    </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="已展期-state" translatesAutoresizingMaskIntoConstraints="NO" id="JeX-L1-hPJ">
+                        <rect key="frame" x="218" y="16.5" width="45" height="20"/>
+                    </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="bottom" secondItem="pkq-Bc-Qwd" secondAttribute="bottom" constant="16.5" id="2cv-MC-nZK"/>
                     <constraint firstItem="p9e-F9-hlj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="18" id="5bo-Vk-hef"/>
                     <constraint firstItem="IY7-EC-NoX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="5uM-dD-Ica"/>
                     <constraint firstItem="0UP-wL-d7b" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="6AX-hE-Hcb"/>
                     <constraint firstItem="3gz-YU-FrB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="859-gw-epC"/>
                     <constraint firstAttribute="trailing" secondItem="3gz-YU-FrB" secondAttribute="trailing" id="9OI-JE-LTS"/>
-                    <constraint firstAttribute="bottom" secondItem="I8g-Y3-VOr" secondAttribute="bottom" constant="18" id="9qc-Yf-CVf"/>
                     <constraint firstItem="1zO-WS-Q1i" firstAttribute="leading" secondItem="rkr-gA-ZRO" secondAttribute="trailing" constant="1" id="AF5-UO-4fP"/>
                     <constraint firstItem="IY7-EC-NoX" firstAttribute="top" secondItem="0UP-wL-d7b" secondAttribute="bottom" constant="4" id="AIU-cG-5I7"/>
                     <constraint firstItem="I8g-Y3-VOr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="Brp-UP-5Pl"/>
+                    <constraint firstAttribute="trailing" secondItem="dpD-eT-kdo" secondAttribute="trailing" constant="36" id="Hqb-7A-A3N"/>
+                    <constraint firstAttribute="bottom" secondItem="dpD-eT-kdo" secondAttribute="bottom" constant="16.5" id="Jaj-do-ipT"/>
+                    <constraint firstItem="JeX-L1-hPJ" firstAttribute="centerY" secondItem="JEM-QF-PjU" secondAttribute="centerY" id="K3U-zM-eJN"/>
                     <constraint firstItem="3gz-YU-FrB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Nwa-je-8Lf"/>
                     <constraint firstItem="1zO-WS-Q1i" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="-10" id="NzG-ab-x1k"/>
                     <constraint firstItem="0UP-wL-d7b" firstAttribute="top" secondItem="p9e-F9-hlj" secondAttribute="bottom" constant="4" id="UNJ-LG-gy3"/>
                     <constraint firstAttribute="trailing" secondItem="1zO-WS-Q1i" secondAttribute="trailing" constant="36" id="Vn5-9S-SaM"/>
-                    <constraint firstItem="dpD-eT-kdo" firstAttribute="centerY" secondItem="I8g-Y3-VOr" secondAttribute="centerY" id="WOW-Zv-Igd"/>
                     <constraint firstItem="JEM-QF-PjU" firstAttribute="centerY" secondItem="p9e-F9-hlj" secondAttribute="centerY" id="Wrg-tg-z4n"/>
+                    <constraint firstItem="qBi-fi-fTk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="85" id="aPR-wb-Tep"/>
+                    <constraint firstItem="JeX-L1-hPJ" firstAttribute="leading" secondItem="JEM-QF-PjU" secondAttribute="trailing" constant="8" id="ceL-5W-Z6b"/>
                     <constraint firstAttribute="bottom" secondItem="3gz-YU-FrB" secondAttribute="bottom" id="dzh-Td-zj9"/>
+                    <constraint firstItem="I8g-Y3-VOr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="92.5" id="huH-bg-vZG"/>
                     <constraint firstItem="p9e-F9-hlj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="icf-Zj-Re5"/>
-                    <constraint firstAttribute="trailing" secondItem="dpD-eT-kdo" secondAttribute="trailing" constant="36" id="mdv-pC-yKI"/>
+                    <constraint firstItem="dpD-eT-kdo" firstAttribute="leading" secondItem="pkq-Bc-Qwd" secondAttribute="trailing" constant="10" id="lEj-O0-8on"/>
                     <constraint firstItem="rkr-gA-ZRO" firstAttribute="centerY" secondItem="1zO-WS-Q1i" secondAttribute="centerY" id="nYc-55-pD2"/>
                     <constraint firstItem="qBi-fi-fTk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="rd5-3e-Ubt"/>
                     <constraint firstItem="JEM-QF-PjU" firstAttribute="leading" secondItem="p9e-F9-hlj" secondAttribute="trailing" constant="10" id="wSL-Z8-kfU"/>
-                    <constraint firstItem="dpD-eT-kdo" firstAttribute="top" secondItem="qBi-fi-fTk" secondAttribute="bottom" constant="5" id="wsM-KY-fat"/>
                     <constraint firstAttribute="trailing" secondItem="qBi-fi-fTk" secondAttribute="trailing" constant="36" id="x7E-e2-cHi"/>
-                    <constraint firstItem="dpD-eT-kdo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="I8g-Y3-VOr" secondAttribute="trailing" constant="10" id="zjo-Bj-9rQ"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="extensionImage" destination="JeX-L1-hPJ" id="dY8-bB-7rT"/>
                 <outlet property="faleLab" destination="rkr-gA-ZRO" id="JIb-9H-oEs"/>
                 <outlet property="firstLab" destination="p9e-F9-hlj" id="5Qp-Rg-jFe"/>
                 <outlet property="fourLab" destination="I8g-Y3-VOr" id="jsW-1j-1Tr"/>
+                <outlet property="lineTopLayout" destination="aPR-wb-Tep" id="AJa-3W-hzR"/>
+                <outlet property="nextPayBtn" destination="pkq-Bc-Qwd" id="QOb-GA-CZA"/>
+                <outlet property="orderTopLayout" destination="huH-bg-vZG" id="hPI-BI-iFD"/>
                 <outlet property="paybtn" destination="dpD-eT-kdo" id="S1M-gZ-mpO"/>
                 <outlet property="stateImage" destination="JEM-QF-PjU" id="OYC-Wn-g4G"/>
                 <outlet property="threeLab" destination="IY7-EC-NoX" id="1uW-uO-sPS"/>
                 <outlet property="twoLab" destination="0UP-wL-d7b" id="aYI-rk-589"/>
             </connections>
-            <point key="canvasLocation" x="6" y="7"/>
+            <point key="canvasLocation" x="4.7999999999999998" y="6.2968515742128943"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="personal_cellGo" width="28" height="28"/>
         <image name="personal_headbg" width="375" height="130"/>
+        <image name="已展期-state" width="45" height="20"/>
         <image name="已逾期-state" width="45" height="20"/>
     </resources>
 </document>

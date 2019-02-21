@@ -19,6 +19,11 @@
 @property (nonatomic ,copy) NSNumber *repayStatus;
 @property (nonatomic ,copy) NSNumber *repayTime;
 @property (nonatomic ,copy) NSNumber *stageTimeunitCnt;
+@property (nonatomic ,copy) NSNumber *hasExtension;
+@property (nonatomic ,copy) NSNumber *waitingAmt;
+@property (nonatomic ,copy) NSNumber *extensionDueRepayDate;
+@property (nonatomic ,copy) NSNumber *extensionAmt;
+@property (nonatomic ,copy) NSNumber *extensionStatus;
 @end
 //dueRepayDate    integer($int64)
 //应还款日期
@@ -47,3 +52,8 @@
 //
 //stageTimeunitCnt    integer($int32)
 //借款(周期)天数
+//hasExtension    integer($int32)是否展期
+//waitingAmt    number($double)待还金额
+//extensionDueRepayDate 展期时间
+//extensionAmt 展期服务费
+//extensionStatus    integer($int32)展期还款状态:0创建,1还款成功,2待还款,3还款失败,4还款中,97退单(预留)

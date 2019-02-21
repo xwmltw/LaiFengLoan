@@ -269,7 +269,12 @@ typedef NS_ENUM(NSInteger ,LoanMainRequest) {
             if (![[UserInfo sharedInstance]isSignIn]) {
                 [self getBlackLogin:self];
             }
-
+            if (self.creditInfoModel.hasBlack.integerValue == 1) {
+                [XAlertView alertWithTitle:@"通知" message:@"个人信息异常，暂时无法借款" cancelButtonTitle:nil confirmButtonTitle:@"确定" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
+                    
+                }];
+                return;
+            }
             if (self.creditInfoModel.scheduleStatus.integerValue != 5 || self.creditInfoModel.alipayStatus.integerValue != 1) {
             
                 switch (self.creditInfoModel.scheduleStatus.integerValue) {
@@ -316,6 +321,21 @@ typedef NS_ENUM(NSInteger ,LoanMainRequest) {
                     }
                         break;
                     case 5:{
+                        if (self.creditInfoModel.operatorStatus.integerValue == 1) {
+                            [XAlertView alertWithTitle:@"通知" message:@"运营商认证正在认证中，请稍后" cancelButtonTitle:@"取消" confirmButtonTitle:@"确定" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
+                                
+                            }];
+                            return;
+                        }
+                        if (self.creditInfoModel.operatorStatus.integerValue != 2) {
+                            [XAlertView alertWithTitle:@"通知" message:@"您还未运营商认证或已过期，请先去运营商认证吧" cancelButtonTitle:@"取消" confirmButtonTitle:@"确定" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
+                                if (buttonIndex == 1) {
+                                    OperatorViewController *vc = [[OperatorViewController alloc]init];
+                                    [self.navigationController pushViewController:vc animated:YES];
+                                }
+                            }];
+                            return;
+                        }
                         if (self.creditInfoModel.alipayStatus.integerValue != 1 && self.clientGlobalInfo.isNeedAlipayVerify.integerValue == 1) {
                             [XAlertView alertWithTitle:@"通知" message:@"您还未支付宝认证，请先去支付宝认证吧" cancelButtonTitle:@"取消" confirmButtonTitle:@"确定" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
                                 if (buttonIndex == 1) {
@@ -375,6 +395,7 @@ typedef NS_ENUM(NSInteger ,LoanMainRequest) {
                         
                         return;
                     }
+                    
                     LoanDetailViewController *vc = [[LoanDetailViewController alloc]init];
                     vc.creditInfoModel = self.creditInfoModel;
                     [self.navigationController pushViewController:vc animated:YES];
@@ -429,6 +450,12 @@ typedef NS_ENUM(NSInteger ,LoanMainRequest) {
             if (![[UserInfo sharedInstance]isSignIn]) {
                 [self getBlackLogin:self];
             }
+            if (self.creditInfoModel.hasBlack.integerValue == 1) {
+                [XAlertView alertWithTitle:@"通知" message:@"个人信息异常，暂时无法借款" cancelButtonTitle:nil confirmButtonTitle:@"确定" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
+                    
+                }];
+                return;
+            }
             if (self.creditInfoModel.scheduleStatus.integerValue != 5) {
                 switch (self.creditInfoModel.scheduleStatus.integerValue) {
                     
@@ -474,6 +501,23 @@ typedef NS_ENUM(NSInteger ,LoanMainRequest) {
                     }
                         break;
                     case 5:{
+                        
+                        if (self.creditInfoModel.operatorStatus.integerValue == 1) {
+                            [XAlertView alertWithTitle:@"通知" message:@"运营商认证正在认证中，请稍后" cancelButtonTitle:@"取消" confirmButtonTitle:@"确定" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
+                                
+                            }];
+                            return;
+                        }
+                        if (self.creditInfoModel.operatorStatus.integerValue != 2) {
+                            [XAlertView alertWithTitle:@"通知" message:@"您还未运营商认证或已过期，请先去运营商认证吧" cancelButtonTitle:@"取消" confirmButtonTitle:@"确定" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
+                                if (buttonIndex == 1) {
+                                    OperatorViewController *vc = [[OperatorViewController alloc]init];
+                                    [self.navigationController pushViewController:vc animated:YES];
+                                }
+                            }];
+                            return;
+                        }
+                        
                         if (self.creditInfoModel.alipayStatus.integerValue != 1 && self.clientGlobalInfo.isNeedAlipayVerify.integerValue == 1) {
                             [XAlertView alertWithTitle:@"通知" message:@"您还未支付宝认证，请先去支付宝认证吧" cancelButtonTitle:@"取消" confirmButtonTitle:@"确定" viewController:self completion:^(UIAlertAction *action, NSInteger buttonIndex) {
                                 if (buttonIndex == 1) {

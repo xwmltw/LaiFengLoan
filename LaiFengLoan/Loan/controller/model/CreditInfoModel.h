@@ -21,6 +21,7 @@
 @property (nonatomic, copy) NSNumber *waitPayAmt;
 @property (nonatomic, copy) NSNumber *operatorStatus;
 @property (nonatomic, copy) NSNumber *mesSmallRedoint;
+@property (nonatomic, copy) NSNumber *hasBlack;
 @end
 //creditAmt    number($double)
 //授信额度
@@ -53,4 +54,5 @@
 //当前用户是否首借(第一次借款): 1是 0否
 //operatorStatus    integer($int32)
 //运营商认证状态：0未认证 1认证中 2已认证3认证失败
+//hasBlack 是不是黑名单 1是 0不是
 //}

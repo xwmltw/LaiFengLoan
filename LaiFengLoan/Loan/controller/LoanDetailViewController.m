@@ -197,13 +197,13 @@ typedef NS_ENUM(NSInteger, LoanDetailBtnTag) {
         if (self.creditInfoModel.creditStatus.integerValue != 2) {
            btnAry  = [self.clientGlobalInfo.firstLoanAmtFixedDesc componentsSeparatedByString:@","];
             if ([self.clientGlobalInfo.firstLoanAmtFixedSupportUserCreditAmt doubleValue] > 0) {
-                [loanAmtAry addObject:self.clientGlobalInfo.firstLoanAmtFixedSupportUserCreditAmt];
+                [loanAmtAry addObject:self.creditInfoModel.useAmt.description];
             }
             [loanAmtAry addObjectsFromArray:btnAry];
         }else{
             btnAry  = [self.clientGlobalInfo.notFirstLoanAmtFixedDesc componentsSeparatedByString:@","];
             if ([self.clientGlobalInfo.notFirstLoanAmtFixedSupportUserCreditAmt doubleValue] > 0) {
-                [loanAmtAry addObject:self.clientGlobalInfo.notFirstLoanAmtFixedSupportUserCreditAmt];
+                [loanAmtAry addObject:self.creditInfoModel.useAmt.description];
             }
             [loanAmtAry addObjectsFromArray:btnAry];
         }
@@ -250,8 +250,14 @@ typedef NS_ENUM(NSInteger, LoanDetailBtnTag) {
                 make.width.mas_equalTo(AdaptationWidth(80));
             }];
             if (loanAmtAry.count == 2) {
-                selectMoney = selectMoneyBtn2.titleLabel.text;
-                selectMoneyBtn2.selected = YES;
+                if ([selectMoneyBtn2.titleLabel.text doubleValue] > [selectMoneyBtn.titleLabel.text doubleValue]) {
+                    selectMoney = selectMoneyBtn2.titleLabel.text;
+                    selectMoneyBtn2.selected = YES;
+                }else{
+                    selectMoney = selectMoneyBtn.titleLabel.text;
+                    selectMoneyBtn.selected = YES;
+                }
+                
             }
            
         }
@@ -275,8 +281,17 @@ typedef NS_ENUM(NSInteger, LoanDetailBtnTag) {
             }];
             
             if (loanAmtAry.count == 3) {
-                selectMoney = selectMoneyBtn3.titleLabel.text;
-                selectMoneyBtn3.selected = YES;
+                if ([selectMoneyBtn3.titleLabel.text doubleValue] > [selectMoneyBtn.titleLabel.text doubleValue] && [selectMoneyBtn3.titleLabel.text doubleValue] > [selectMoneyBtn2.titleLabel.text doubleValue]) {
+                    selectMoney = selectMoneyBtn3.titleLabel.text;
+                    selectMoneyBtn3.selected = YES;
+                }else if ([selectMoneyBtn2.titleLabel.text doubleValue] > [selectMoneyBtn.titleLabel.text doubleValue]){
+                    selectMoney = selectMoneyBtn2.titleLabel.text;
+                    selectMoneyBtn2.selected = YES;
+                }else{
+                    selectMoney = selectMoneyBtn.titleLabel.text;
+                    selectMoneyBtn.selected = YES;
+                }
+                
             }
         }
         

@@ -13,15 +13,19 @@
 #import "DateHelper.h"
 #import "PayAlertView.h"
 #import <AlipaySDK/AlipaySDK.h>
-
+#import "ExtensionView.h"
+#import "ImmediateView.h"
 typedef NS_ENUM(NSInteger ,MyOrderFlowRequset) {
     MyOrderFlowRequsetGetInfo,
     MyOrderFlowRequsetPay,
+    MyOrderFlowRequsetExtensionPay,
 };
 
-@interface MyOrderFlowVC ()<PayAlertBtnDelegate>
+@interface MyOrderFlowVC ()<PayAlertBtnDelegate,ExtensionBtnDelegate,ImmediateViewBtnDelegate>
 @property (nonatomic ,strong) OrderDetailModel *orderDetailModel;
 @property (nonatomic ,strong) UIView *bgView;
+@property (nonatomic ,strong) ExtensionView *extensionView;
+@property (nonatomic ,strong) ImmediateView *immediateView;
 @end
 
 @implementation MyOrderFlowVC
@@ -29,6 +33,9 @@ typedef NS_ENUM(NSInteger ,MyOrderFlowRequset) {
     PayAlertView *alert;
     NSNumber *repayType;
     UIButton *autBtn;
+    UIButton *extensionBtn;
+    NSNumber *isExtension;
+    NSString *newPayMoney;
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -234,7 +241,7 @@ typedef NS_ENUM(NSInteger ,MyOrderFlowRequset) {
     
 }
 - (UIView *)creatFoooterView{
-    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, AdaptationWidth(126))];
+    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, AdaptationWidth(150))];
     autBtn = [[UIButton alloc]init];
     autBtn.tag = 101;
     
@@ -253,10 +260,41 @@ typedef NS_ENUM(NSInteger ,MyOrderFlowRequset) {
     [autBtn addTarget:self action:@selector(btnOnClick:) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:autBtn];
     [autBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.mas_equalTo(view);
+        make.top.mas_equalTo(view).offset(20);
+        make.centerX.mas_equalTo(view);
         make.height.mas_equalTo(AdaptationWidth(43));
         make.width.mas_equalTo(AdaptationWidth(250));
     }];
+    
+    if (self.clientGlobalInfo.hasExtension.integerValue == 1) {
+       extensionBtn= [[UIButton alloc]init];
+        extensionBtn.tag = 103;
+        [extensionBtn setCornerValue:AdaptationWidth(22)];
+        
+     
+        if (self.orderDetailModel.extensionStatus.integerValue == 1 ||self.orderDetailModel.extensionStatus.integerValue == 2 ||self.orderDetailModel.extensionStatus.integerValue == 4 || self.orderDetailModel.repayStatus.integerValue == 4 || self.orderDetailModel.overDueDays.integerValue > 0) {
+            [extensionBtn setTitle:@"下期再还" forState:UIControlStateNormal];
+            [extensionBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [extensionBtn setBackgroundColor:LineColor];
+            [extensionBtn setBorderWidth:1 andColor:LineColor];
+            extensionBtn.enabled = NO;
+        }else{
+            extensionBtn.enabled = YES;
+            [extensionBtn setTitle:@"下期再还" forState:UIControlStateNormal];
+            [extensionBtn setTitleColor:AppMainColor forState:UIControlStateNormal];
+            [extensionBtn setBackgroundColor:[UIColor whiteColor]];
+            [extensionBtn setBorderWidth:1 andColor:AppMainColor];
+        }
+        [extensionBtn addTarget:self action:@selector(btnOnClick:) forControlEvents:UIControlEventTouchUpInside];
+        [view addSubview:extensionBtn];
+        [extensionBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(autBtn.mas_bottom).offset(20);
+            make.centerX.mas_equalTo(view);
+            make.height.mas_equalTo(AdaptationWidth(43));
+            make.width.mas_equalTo(AdaptationWidth(250));
+        }];
+    }
+    
     return view;
 }
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -325,7 +363,10 @@ typedef NS_ENUM(NSInteger ,MyOrderFlowRequset) {
     switch (btn.tag) {
         case 101:
         {
-            self.bgView.hidden = NO;
+            self.immediateView.hidden = NO;
+            self.immediateView.payMoney = self.orderDetailModel.waitingAmt;
+            self.immediateView.payMoneyLab.text = [NSString stringWithFormat:@"￥%@",self.orderDetailModel.waitingAmt.description];
+            isExtension = @2;
         }
             break;
         case 102:
@@ -351,6 +392,14 @@ typedef NS_ENUM(NSInteger ,MyOrderFlowRequset) {
             [self presentViewController:alert animated:YES completion:nil];
             
 
+        }
+            break;
+        case 103:{
+            isExtension = @1;
+            self.extensionView.hidden = NO;
+            [self.extensionView.oldDateBtn setTitle:[NSString stringWithFormat:@"原款日期\n%@",[DateHelper getDateFromTimeNumber:self.orderDetailModel.dueRepayDate withFormat:@"MM月dd日"]] forState:UIControlStateNormal];
+            [self.extensionView.nowDateBtn setTitle:[NSString stringWithFormat:@"新款日期\n%@",[DateHelper getDateFromTimeNumber:self.orderDetailModel.extensionDueRepayDate withFormat:@"MM月dd日"]] forState:UIControlStateNormal];
+            self.extensionView.poundageLab.text = [NSString stringWithFormat:@"￥%@",self.orderDetailModel.extensionAmt.description];
         }
             break;
         default:
@@ -394,8 +443,86 @@ typedef NS_ENUM(NSInteger ,MyOrderFlowRequset) {
             }else{
                 repayType = @1;
             }
-            [self prepareDataWithCount:MyOrderFlowRequsetPay];
+            if (isExtension.integerValue == 1) {
+                [self prepareDataWithCount:MyOrderFlowRequsetExtensionPay];
+            }else{
+                [self prepareDataWithCount:MyOrderFlowRequsetPay];
+            }
             self.bgView.hidden = YES;
+        }
+            break;
+        case 605:{
+            if (isExtension.integerValue == 1) {
+                self.extensionView.hidden = NO;
+            }else{
+                self.immediateView.hidden = NO;
+            }
+            self.bgView.hidden = YES;
+        }
+            break;
+        default:
+            break;
+    }
+}
+- (void)extensionBtnOnClick:(UIButton *)btn{
+    switch (btn.tag) {
+        case 700:
+            self.extensionView.hidden = YES;
+            break;
+        case 701:
+            
+            break;
+        case 702:
+            
+            break;
+        case 703:{
+            
+            self.bgView.hidden = NO;
+            self.extensionView.hidden = YES;
+        }
+            break;
+            
+        default:
+            break;
+    }
+}
+- (void)ImmediateViewBtnOnClick:(UIButton *)btn{
+    switch (btn.tag) {
+        case 800:
+            self.immediateView.hidden = YES;
+            break;
+        case 801:
+            if (btn.selected == NO) {
+                btn.selected = YES;
+                UIButton *part = (UIButton *)[self.view viewWithTag:802];
+                part.selected = NO;
+            }
+            break;
+        case 802:
+            if (btn.selected == NO) {
+                btn.selected = YES;
+                UIButton *all = (UIButton *)[self.view viewWithTag:801];
+                all.selected = NO;
+            }
+            break;
+        case 803:{
+            UIButton *all = (UIButton *)[self.view viewWithTag:801];
+            UIButton *part = (UIButton *)[self.view viewWithTag:802];
+            if (all.selected == NO && part.selected == NO) {
+                [self setHudWithName:@"请选择还款方式" Time:1.5 andType:1];
+                return;
+            }
+            if (all.selected == YES) {
+                newPayMoney = self.orderDetailModel.waitingAmt.description;
+            }else{
+                newPayMoney = self.immediateView.partMoney.text;
+                if (newPayMoney.length == 0) {
+                    [self setHudWithName:@"请输入部分还款金额" Time:1.5 andType:1];
+                    return;
+                }
+            }
+            self.bgView.hidden = NO;
+            self.immediateView.hidden = YES;
         }
             break;
             
@@ -411,7 +538,12 @@ typedef NS_ENUM(NSInteger ,MyOrderFlowRequset) {
             break;
         case MyOrderFlowRequsetPay:{
             self.cmd = XRepayOrder;
-            self.dict  = [NSDictionary dictionaryWithObjectsAndKeys:self.orderDetailModel.orderNo,@"orderNo",repayType,@"repayChnnlType",self.orderDetailModel.repayPlanId,@"repayPlanId", nil];
+            self.dict  = [NSDictionary dictionaryWithObjectsAndKeys:self.orderDetailModel.orderNo,@"orderNo",repayType,@"repayChnnlType",self.orderDetailModel.repayPlanId,@"repayPlanId",newPayMoney,@"repayAmt", nil];
+        }
+            break;
+        case MyOrderFlowRequsetExtensionPay:{
+            self.cmd = XExtensionOrder;
+            self.dict = [NSDictionary dictionaryWithObjectsAndKeys:self.orderDetailModel.orderNo,@"orderNo",repayType,@"repayChnnlType",self.orderDetailModel.repayPlanId,@"repayPlanId", nil];
         }
             break;
         default:
@@ -443,6 +575,27 @@ typedef NS_ENUM(NSInteger ,MyOrderFlowRequset) {
             }
             break;
         case MyOrderFlowRequsetPay:{
+            if (repayType.integerValue == 2) {
+                [[AlipaySDK defaultService]payOrder:response.data[@"prepayInf"] fromScheme:AppScheme callback:^(NSDictionary *resultDic) {
+                    NSString *stauts = resultDic[@"resultStatus"];
+                    if ([stauts isEqualToString:@"9000"]) {
+                        [self setHudWithName:@"支付成功" Time:2 andType:1];
+                        
+                        [self prepareDataWithCount:MyOrderFlowRequsetGetInfo];
+                        
+                        return;
+                    }
+                    
+                    [self setHudWithName:@"支付失败" Time:2 andType:1];
+                }];
+                return;
+            }
+            
+            [self setHudWithName:@"提交成功" Time:2 andType:1];
+            [self prepareDataWithCount:MyOrderFlowRequsetGetInfo];
+        }
+            break;
+        case MyOrderFlowRequsetExtensionPay:{
             if (repayType.integerValue == 2) {
                 [[AlipaySDK defaultService]payOrder:response.data[@"prepayInf"] fromScheme:AppScheme callback:^(NSDictionary *resultDic) {
                     NSString *stauts = resultDic[@"resultStatus"];
@@ -515,6 +668,28 @@ typedef NS_ENUM(NSInteger ,MyOrderFlowRequset) {
         
     }
     return _bgView;
+}
+- (ExtensionView *)extensionView{
+    if (!_extensionView) {
+        _extensionView = [[ExtensionView alloc]initWithFrame:CGRectZero];
+        _extensionView.delegate = self;
+        [self.view addSubview:_extensionView];
+        [_extensionView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(self.view);
+        }];
+    }
+    return _extensionView;
+}
+- (ImmediateView *)immediateView{
+    if (!_immediateView) {
+        _immediateView = [[ImmediateView alloc]initWithFrame:CGRectZero];
+        _immediateView.delegate = self;
+        [self.view addSubview:_immediateView];
+        [_immediateView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(self.view);
+        }];
+    }
+    return _immediateView;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

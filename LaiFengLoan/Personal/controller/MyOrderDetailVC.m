@@ -12,21 +12,28 @@
 #import "PageQueryModel.h"
 #import "PayAlertView.h"
 #import <AlipaySDK/AlipaySDK.h>
-
+#import "ExtensionView.h"
+#import "DateHelper.h"
+#import "ImmediateView.h"
 typedef NS_ENUM(NSInteger ,MyOrderDetailRequest) {
     MyOrderDetailRequestList,
     MyOrderDetailRequestPay,
+    MyOrderDetailRequestExtensionPay,
 };
-@interface MyOrderDetailVC ()<PayAlertBtnDelegate>
+@interface MyOrderDetailVC ()<PayAlertBtnDelegate,ExtensionBtnDelegate,ImmediateViewBtnDelegate>
 @property (nonatomic ,strong) PageQueryModel *pageQueryModel;
 @property (nonatomic ,strong) UIView *bgView;
 @property (nonatomic ,strong) OrderListModel *orderListModel;
+@property (nonatomic ,strong) ExtensionView *extensionView;
+@property (nonatomic ,strong) ImmediateView *immediateView;
 @end
 
 @implementation MyOrderDetailVC
 {
     PayAlertView *alert;
-    NSNumber *repayType;
+    NSNumber *repayType;//支付方式
+    NSNumber *isExtension;
+    NSString *newPayMoney;
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -95,7 +102,7 @@ typedef NS_ENUM(NSInteger ,MyOrderDetailRequest) {
 
     switch (self.orderState) {
         case MyOrderStateCleared:
-            return 128;
+            return 153;
             break;
             
         default:
@@ -111,13 +118,30 @@ typedef NS_ENUM(NSInteger ,MyOrderDetailRequest) {
 //        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.orderState = self.orderState;
+        if (self.clientGlobalInfo.hasExtension.integerValue == 1) {
+            cell.nextPayBtn.hidden = NO;
+        }else{
+            cell.nextPayBtn.hidden = YES;
+        }
         cell.orderListModel = [OrderListModel mj_objectWithKeyValues:self.dataSourceArr[indexPath.row]];
         cell.row = @(indexPath.row);
         WEAKSELF
 //        [OrderListModel mj_objectWithKeyValues:self.dataSourceArr[0]];
-        cell.block = ^(NSNumber *row) {
-            weakSelf.bgView.hidden = NO;
+        cell.block = ^(NSNumber *row , UIButton *btn) {
             weakSelf.orderListModel = [OrderListModel mj_objectWithKeyValues:self.dataSourceArr[row.integerValue]];
+            if (btn.tag == 650) {
+                weakSelf.immediateView.hidden = NO;
+                weakSelf.immediateView.payMoney = weakSelf.orderListModel.waitingAmt;
+                weakSelf.immediateView.payMoneyLab.text = [NSString stringWithFormat:@"￥%@",weakSelf.orderListModel.waitingAmt.description];
+                isExtension = @2;
+            }else{
+                isExtension = @1;
+                weakSelf.extensionView.hidden = NO;
+                [weakSelf.extensionView.oldDateBtn setTitle:[NSString stringWithFormat:@"原款日期\n%@",[DateHelper getDateFromTimeNumber:weakSelf.orderListModel.dueRepayDate withFormat:@"MM月dd日"]] forState:UIControlStateNormal];
+                [weakSelf.extensionView.nowDateBtn setTitle:[NSString stringWithFormat:@"新款日期\n%@",[DateHelper getDateFromTimeNumber:weakSelf.orderListModel.extensionDueRepayDate withFormat:@"MM月dd日"]] forState:UIControlStateNormal];
+                weakSelf.extensionView.poundageLab.text = [NSString stringWithFormat:@"￥%@",weakSelf.orderListModel.extensionAmt.description];
+            }
+            
         };
         
     }
@@ -164,8 +188,87 @@ typedef NS_ENUM(NSInteger ,MyOrderDetailRequest) {
             }else{
                 repayType = @1;
             }
-            [self prepareDataWithCount:MyOrderDetailRequestPay];
+            if (isExtension.integerValue == 1) {
+                [self prepareDataWithCount:MyOrderDetailRequestExtensionPay];
+            }else{
+                [self prepareDataWithCount:MyOrderDetailRequestPay];
+            }
+            
             self.bgView.hidden = YES;
+        }
+            break;
+        case 605:{
+            if (isExtension.integerValue == 1) {
+                self.extensionView.hidden = NO;
+            }else{
+                self.immediateView.hidden = NO;
+            }
+            self.bgView.hidden = YES;
+        }
+            break;
+        default:
+            break;
+    }
+}
+- (void)extensionBtnOnClick:(UIButton *)btn{
+    switch (btn.tag) {
+        case 700:
+            self.extensionView.hidden = YES;
+            break;
+        case 701:
+            
+            break;
+        case 702:
+            
+            break;
+        case 703:{
+            
+            self.bgView.hidden = NO;
+            self.extensionView.hidden = YES;
+        }
+            break;
+            
+        default:
+            break;
+    }
+}
+- (void)ImmediateViewBtnOnClick:(UIButton *)btn{
+    switch (btn.tag) {
+        case 800:
+            self.immediateView.hidden = YES;
+            break;
+        case 801:
+            if (btn.selected == NO) {
+                btn.selected = YES;
+                UIButton *part = (UIButton *)[self.view viewWithTag:802];
+                part.selected = NO;
+            }
+            break;
+        case 802:
+            if (btn.selected == NO) {
+                btn.selected = YES;
+                UIButton *all = (UIButton *)[self.view viewWithTag:801];
+                all.selected = NO;
+            }
+            break;
+        case 803:{
+            UIButton *all = (UIButton *)[self.view viewWithTag:801];
+            UIButton *part = (UIButton *)[self.view viewWithTag:802];
+            if (all.selected == NO && part.selected == NO) {
+                [self setHudWithName:@"请选择还款方式" Time:1.5 andType:1];
+                return;
+            }
+            if (all.selected == YES) {
+                newPayMoney = self.orderListModel.waitingAmt.description;
+            }else{
+                newPayMoney = self.immediateView.partMoney.text;
+                if (newPayMoney.length == 0) {
+                    [self setHudWithName:@"请输入部分还款金额" Time:1.5 andType:1];
+                    return;
+                }
+            }
+            self.bgView.hidden = NO;
+            self.immediateView.hidden = YES;
         }
             break;
             
@@ -194,9 +297,13 @@ typedef NS_ENUM(NSInteger ,MyOrderDetailRequest) {
             break;
         case MyOrderDetailRequestPay:{
             self.cmd = XRepayOrder;
-            self.dict  = [NSDictionary dictionaryWithObjectsAndKeys:self.orderListModel.orderNo,@"orderNo",repayType,@"repayChnnlType",self.orderListModel.repayPlanId,@"repayPlanId", nil];
+            self.dict  = [NSDictionary dictionaryWithObjectsAndKeys:self.orderListModel.orderNo,@"orderNo",repayType,@"repayChnnlType",self.orderListModel.repayPlanId,@"repayPlanId",newPayMoney,@"repayAmt", nil];
         }
             break;
+        case MyOrderDetailRequestExtensionPay:{
+            self.cmd = XExtensionOrder;
+            self.dict = [NSDictionary dictionaryWithObjectsAndKeys:self.orderListModel.orderNo,@"orderNo",repayType,@"repayChnnlType",self.orderListModel.repayPlanId,@"repayPlanId", nil];
+        }
         default:
             break;
     }
@@ -214,6 +321,29 @@ typedef NS_ENUM(NSInteger ,MyOrderDetailRequest) {
             [self.tableView reloadData];
             break;
         case MyOrderDetailRequestPay:{
+            if (repayType.integerValue == 2) {
+                [[AlipaySDK defaultService]payOrder:response.data[@"prepayInf"] fromScheme:AppScheme callback:^(NSDictionary *resultDic) {
+                    NSString *stauts = resultDic[@"resultStatus"];
+                    if ([stauts isEqualToString:@"9000"]) {
+                        [self setHudWithName:@"支付成功" Time:2 andType:1];
+                        [self.dataSourceArr removeAllObjects];
+                        self.pageQueryModel.page = @(1);
+                        [self prepareDataWithCount:MyOrderDetailRequestList];
+                        
+                        return;
+                    }
+                    
+                    [self setHudWithName:@"支付失败" Time:2 andType:1];
+                }];
+                return;
+            }
+            [self setHudWithName:@"提交成功" Time:2 andType:1];
+            [self.dataSourceArr removeAllObjects];
+            self.pageQueryModel.page = @(1);
+            [self prepareDataWithCount:MyOrderDetailRequestList];
+        }
+            break;
+        case MyOrderDetailRequestExtensionPay:{
             if (repayType.integerValue == 2) {
                 [[AlipaySDK defaultService]payOrder:response.data[@"prepayInf"] fromScheme:AppScheme callback:^(NSDictionary *resultDic) {
                     NSString *stauts = resultDic[@"resultStatus"];
@@ -297,7 +427,28 @@ typedef NS_ENUM(NSInteger ,MyOrderDetailRequest) {
     }
     return _bgView;
 }
-
+- (ExtensionView *)extensionView{
+    if (!_extensionView) {
+        _extensionView = [[ExtensionView alloc]initWithFrame:CGRectZero];
+        _extensionView.delegate = self;
+        [self.view addSubview:_extensionView];
+        [_extensionView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(self.view);
+        }];
+    }
+    return _extensionView;
+}
+- (ImmediateView *)immediateView{
+    if (!_immediateView) {
+        _immediateView = [[ImmediateView alloc]initWithFrame:CGRectZero];
+        _immediateView.delegate = self;
+        [self.view addSubview:_immediateView];
+        [_immediateView mas_makeConstraints:^(MASConstraintMaker *make) {
+           make.edges.equalTo(self.view);
+        }];
+    }
+    return _immediateView;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
