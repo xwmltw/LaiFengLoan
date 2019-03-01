@@ -11,7 +11,7 @@
 @interface OrderListModel : NSObject
 @property (nonatomic ,copy) NSNumber *dueRepayDate;
 @property (nonatomic ,copy) NSNumber *orderAmt;
-@property (nonatomic ,copy) NSNumber *orderNo;
+@property (nonatomic ,copy) NSString *orderNo;
 @property (nonatomic ,copy) NSNumber *overDueAmt;
 @property (nonatomic ,copy) NSNumber *overDueDays;
 @property (nonatomic ,copy) NSNumber *repayAmt;
@@ -24,6 +24,8 @@
 @property (nonatomic ,copy) NSNumber *extensionDueRepayDate;
 @property (nonatomic ,copy) NSNumber *extensionAmt;
 @property (nonatomic ,copy) NSNumber *extensionStatus;
+@property (nonatomic ,copy) NSNumber *hasPartRepay;
+@property (nonatomic ,copy) NSString *originalOrderNo;
 @end
 //dueRepayDate    integer($int64)
 //应还款日期
@@ -57,3 +59,5 @@
 //extensionDueRepayDate 展期时间
 //extensionAmt 展期服务费
 //extensionStatus    integer($int32)展期还款状态:0创建,1还款成功,2待还款,3还款失败,4还款中,97退单(预留)
+//hasPartRepay; 是否已部分还款
+//originalOrderNo; 原始订单编号

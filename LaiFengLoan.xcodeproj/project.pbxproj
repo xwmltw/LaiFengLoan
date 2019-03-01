@@ -1552,7 +1552,7 @@
 			buildSettings = {
 				APP_IDENTIFIER = com.lfxjd.XiaoEDai;
 				APP_NAME = "小鹅贷";
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-KB";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_ENTITLEMENTS = LaiFengLoan/LaiFengLoan.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1688,7 +1688,7 @@
 			buildSettings = {
 				APP_IDENTIFIER = com.lfxjd.JieLaiHua;
 				APP_NAME = "借来花";
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-KB";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_ENTITLEMENTS = LaiFengLoan/LaiFengLoan.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1883,7 +1883,7 @@
 			buildSettings = {
 				APP_IDENTIFIER = com.lfxjd.LFLoan;
 				APP_NAME = "来风现金贷";
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-KB";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_ENTITLEMENTS = LaiFengLoan/LaiFengLoan.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1965,7 +1965,7 @@
 			buildSettings = {
 				APP_IDENTIFIER = com.lfxjd.LFLoan;
 				APP_NAME = "来风现金贷";
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-KB";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_ENTITLEMENTS = LaiFengLoan/LaiFengLoan.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -2101,7 +2101,7 @@
 			buildSettings = {
 				APP_IDENTIFIER = com.lfxjd.TaoMiDai;
 				APP_NAME = "淘米贷";
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-KB";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_ENTITLEMENTS = LaiFengLoan/LaiFengLoan.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -2237,7 +2237,7 @@
 			buildSettings = {
 				APP_IDENTIFIER = com.lfxjd.JiDaiBao;
 				APP_NAME = "急贷宝";
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-KB";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_ENTITLEMENTS = LaiFengLoan/LaiFengLoan.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -2373,7 +2373,7 @@
 			buildSettings = {
 				APP_IDENTIFIER = com.lfxjd.MengXiangLoan;
 				APP_NAME = "梦想贷";
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-KB";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_ENTITLEMENTS = LaiFengLoan/LaiFengLoan.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -2509,7 +2509,7 @@
 			buildSettings = {
 				APP_IDENTIFIER = com.lfxjd.XiaoDaiShu;
 				APP_NAME = "小贷鼠";
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-KB";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_ENTITLEMENTS = LaiFengLoan/LaiFengLoan.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -2645,7 +2645,7 @@
 			buildSettings = {
 				APP_IDENTIFIER = com.lfxjd.XiaoHuangYuLoan;
 				APP_NAME = "小黄鱼";
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-KB";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_ENTITLEMENTS = LaiFengLoan/LaiFengLoan.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -2781,7 +2781,7 @@
 			buildSettings = {
 				APP_IDENTIFIER = com.lfxjd.XiaoKouLoan;
 				APP_NAME = "小口袋";
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-KB";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_ENTITLEMENTS = LaiFengLoan/LaiFengLoan.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -2917,7 +2917,7 @@
 			buildSettings = {
 				APP_IDENTIFIER = com.lfxjd.LaiFengLoan;
 				APP_NAME = "鑫易贷";
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-KB";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_ENTITLEMENTS = LaiFengLoan/LaiFengLoan.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -3053,7 +3053,7 @@
 			buildSettings = {
 				APP_IDENTIFIER = com.lfxjd.ChaoHengHua;
 				APP_NAME = "潮享花";
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-KB";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_ENTITLEMENTS = LaiFengLoan/LaiFengLoan.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -3189,7 +3189,7 @@
 			buildSettings = {
 				APP_IDENTIFIER = com.ysd.yongbei;
 				APP_NAME = "用呗";
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-KB";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_ENTITLEMENTS = LaiFengLoan/LaiFengLoan.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -3325,7 +3325,7 @@
 			buildSettings = {
 				APP_IDENTIFIER = com.ysd.green;
 				APP_NAME = "海量花";
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-KB";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_ENTITLEMENTS = LaiFengLoan/LaiFengLoan.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -3461,7 +3461,7 @@
 			buildSettings = {
 				APP_IDENTIFIER = com.lfxjd.KuaiBei;
 				APP_NAME = "快呗";
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-KB";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_ENTITLEMENTS = LaiFengLoan/LaiFengLoan.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -3597,7 +3597,7 @@
 			buildSettings = {
 				APP_IDENTIFIER = com.sdhoo.lf.youlaihua;
 				APP_NAME = "优来花";
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-KB";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_ENTITLEMENTS = LaiFengLoan/LaiFengLoan.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

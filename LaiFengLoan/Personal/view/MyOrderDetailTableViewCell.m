@@ -8,15 +8,17 @@
 
 #import "MyOrderDetailTableViewCell.h"
 #import "DateHelper.h"
+
 @implementation MyOrderDetailTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
 }
+
 - (void)setOrderListModel:(OrderListModel *)orderListModel{
     self.firstLab.text = [NSString stringWithFormat:@"借款金额：%@元",orderListModel.orderAmt.description];
-    self.fourLab.text = [NSString stringWithFormat:@"订单编号：%@",orderListModel.orderNo.description];
+    self.fourLab.text = [NSString stringWithFormat:@"订单编号：%@",orderListModel.orderNo];
     [self.paybtn setCornerValue:5];
     [self.nextPayBtn setCornerValue:5];
     if(orderListModel.repayStatus.integerValue == 3){
@@ -56,12 +58,12 @@
                 [self.paybtn setBackgroundColor:AppMainColor];
                 [self.paybtn setTitle:@"立即还款" forState:UIControlStateNormal];
             }
-            if (orderListModel.extensionStatus.integerValue == 1 ||orderListModel.extensionStatus.integerValue == 2 ||orderListModel.extensionStatus.integerValue == 4 || orderListModel.repayStatus.integerValue == 4 || orderListModel.overDueDays.integerValue > 0) {
+            if (orderListModel.extensionStatus.integerValue == 1 ||orderListModel.extensionStatus.integerValue == 2 ||orderListModel.extensionStatus.integerValue == 4 || orderListModel.repayStatus.integerValue == 4 || orderListModel.overDueDays.integerValue > 0 || orderListModel.hasPartRepay.integerValue == 1) {
                 [self.nextPayBtn setBackgroundColor:LineColor];
-                self.nextPayBtn.userInteractionEnabled = NO;
+//                self.nextPayBtn.userInteractionEnabled = NO;
             }else{
                 [self.nextPayBtn setBackgroundColor:XColorWithRGB(56, 123, 230)];
-                self.nextPayBtn.userInteractionEnabled = YES;
+//                self.nextPayBtn.userInteractionEnabled = YES;
             }
             
             if (orderListModel.hasExtension.integerValue == 1) {

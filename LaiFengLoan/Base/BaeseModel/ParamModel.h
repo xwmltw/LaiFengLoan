@@ -44,6 +44,7 @@
 @property (nonatomic ,copy) NSNumber *decisionType;
 @property (nonatomic ,copy) NSNumber *isNeedAlipayVerify;
 @property (nonatomic ,copy) NSNumber *hasExtension;
+@property (nonatomic ,copy) NSString *extensionAgreementUrl;
 //存储数据
 - (void)setClientGlobalInfoModel;
 + (ClientGlobalInfo *)getClientGlobalInfoModel;
@@ -68,6 +69,7 @@
 //decisionType    string风控引擎类型: 0系统自动审核(悦才风控) 1人工审核(接入白骑士)
 //isNeedAlipayVerify    string是否需要支付宝认证: 1是 0否
 //hasExtension    integer($int32)是否开启展期: 1是 0否
+//extensionAgreementUrl  展期协议
 @end
 @interface VersionInfo:ParamModel
 @property (nonatomic ,copy) NSNumber *needForceUpdate;

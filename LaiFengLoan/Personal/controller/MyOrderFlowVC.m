@@ -272,12 +272,11 @@ typedef NS_ENUM(NSInteger ,MyOrderFlowRequset) {
         [extensionBtn setCornerValue:AdaptationWidth(22)];
         
      
-        if (self.orderDetailModel.extensionStatus.integerValue == 1 ||self.orderDetailModel.extensionStatus.integerValue == 2 ||self.orderDetailModel.extensionStatus.integerValue == 4 || self.orderDetailModel.repayStatus.integerValue == 4 || self.orderDetailModel.overDueDays.integerValue > 0) {
+        if (self.orderDetailModel.extensionStatus.integerValue == 1 ||self.orderDetailModel.extensionStatus.integerValue == 2 ||self.orderDetailModel.extensionStatus.integerValue == 4 || self.orderDetailModel.repayStatus.integerValue == 4 || self.orderDetailModel.overDueDays.integerValue > 0 || self.orderDetailModel.hasPartRepay.integerValue == 1) {
             [extensionBtn setTitle:@"下期再还" forState:UIControlStateNormal];
             [extensionBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             [extensionBtn setBackgroundColor:LineColor];
             [extensionBtn setBorderWidth:1 andColor:LineColor];
-            extensionBtn.enabled = NO;
         }else{
             extensionBtn.enabled = YES;
             [extensionBtn setTitle:@"下期再还" forState:UIControlStateNormal];
@@ -363,9 +362,10 @@ typedef NS_ENUM(NSInteger ,MyOrderFlowRequset) {
     switch (btn.tag) {
         case 101:
         {
-            self.immediateView.hidden = NO;
-            self.immediateView.payMoney = self.orderDetailModel.waitingAmt;
-            self.immediateView.payMoneyLab.text = [NSString stringWithFormat:@"￥%@",self.orderDetailModel.waitingAmt.description];
+//            self.immediateView.hidden = NO;
+//            self.immediateView.payMoney = self.orderDetailModel.waitingAmt;
+//            self.immediateView.payMoneyLab.text = [NSString stringWithFormat:@"￥%@",self.orderDetailModel.waitingAmt.description];
+            self.bgView.hidden = NO;
             isExtension = @2;
         }
             break;
@@ -384,10 +384,19 @@ typedef NS_ENUM(NSInteger ,MyOrderFlowRequset) {
             UIAlertAction *action3 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                 
             }];
+            UIAlertAction *action4 = [UIAlertAction actionWithTitle:@"借款展期协议" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                XRootWebVC *vc = [[XRootWebVC alloc]init];
+                vc.url = [NSString stringWithFormat:@"%@%@",self.clientGlobalInfo.extensionAgreementUrl,self.orderDetailModel.orderNo];
+                [self.navigationController pushViewController:vc animated:YES];
+            }];
+            
+            
+            
             [alert addAction:action1];
             if (self.orderState == MyOrderStateRefuse) {
                 [alert addAction:action2];
             }
+            [alert addAction:action4];
             [alert addAction:action3];
             [self presentViewController:alert animated:YES completion:nil];
             
@@ -395,11 +404,16 @@ typedef NS_ENUM(NSInteger ,MyOrderFlowRequset) {
         }
             break;
         case 103:{
-            isExtension = @1;
-            self.extensionView.hidden = NO;
-            [self.extensionView.oldDateBtn setTitle:[NSString stringWithFormat:@"原款日期\n%@",[DateHelper getDateFromTimeNumber:self.orderDetailModel.dueRepayDate withFormat:@"MM月dd日"]] forState:UIControlStateNormal];
-            [self.extensionView.nowDateBtn setTitle:[NSString stringWithFormat:@"新款日期\n%@",[DateHelper getDateFromTimeNumber:self.orderDetailModel.extensionDueRepayDate withFormat:@"MM月dd日"]] forState:UIControlStateNormal];
-            self.extensionView.poundageLab.text = [NSString stringWithFormat:@"￥%@",self.orderDetailModel.extensionAmt.description];
+            
+            if (self.orderDetailModel.extensionStatus.integerValue == 1 ||self.orderDetailModel.extensionStatus.integerValue == 2 ||self.orderDetailModel.extensionStatus.integerValue == 4 || self.orderDetailModel.repayStatus.integerValue == 4 || self.orderDetailModel.overDueDays.integerValue > 0 || self.orderDetailModel.hasPartRepay.integerValue == 1) {
+                [self setHudWithName:@"已部分还款订单不能申请展期，请联系客服人员" Time:1 andType:1];
+            }else{
+                isExtension = @1;
+                self.extensionView.hidden = NO;
+                [self.extensionView.oldDateBtn setTitle:[NSString stringWithFormat:@"原款日期\n%@",[DateHelper getDateFromTimeNumber:self.orderDetailModel.dueRepayDate withFormat:@"MM月dd日"]] forState:UIControlStateNormal];
+                [self.extensionView.nowDateBtn setTitle:[NSString stringWithFormat:@"新款日期\n%@",[DateHelper getDateFromTimeNumber:self.orderDetailModel.extensionDueRepayDate withFormat:@"MM月dd日"]] forState:UIControlStateNormal];
+                self.extensionView.poundageLab.text = [NSString stringWithFormat:@"￥%@",self.orderDetailModel.extensionAmt.description];
+            }
         }
             break;
         default:
@@ -454,10 +468,9 @@ typedef NS_ENUM(NSInteger ,MyOrderFlowRequset) {
         case 605:{
             if (isExtension.integerValue == 1) {
                 self.extensionView.hidden = NO;
-            }else{
-                self.immediateView.hidden = NO;
+                self.bgView.hidden = YES;
             }
-            self.bgView.hidden = YES;
+            
         }
             break;
         default:
@@ -476,12 +489,27 @@ typedef NS_ENUM(NSInteger ,MyOrderFlowRequset) {
             
             break;
         case 703:{
-            
+            UIButton *select = (UIButton *)[self.view viewWithTag:704];
+            if (select.selected != YES) {
+                [self setHudWithName:@"请阅读并同意《借款展期协议》" Time:1.5 andType:1];
+                return;
+            }
             self.bgView.hidden = NO;
             self.extensionView.hidden = YES;
         }
             break;
+        case 704:{
             
+            btn.selected = !btn.selected;
+        }
+            break;
+        case 705:{
+            XRootWebVC *vc = [[XRootWebVC alloc]init];
+            vc.url = [NSString stringWithFormat:@"%@%@",self.clientGlobalInfo.extensionAgreementUrl,self.orderDetailModel.orderNo];
+            [self.navigationController pushViewController:vc animated:YES];
+            
+        }
+            break;
         default:
             break;
     }
@@ -538,7 +566,7 @@ typedef NS_ENUM(NSInteger ,MyOrderFlowRequset) {
             break;
         case MyOrderFlowRequsetPay:{
             self.cmd = XRepayOrder;
-            self.dict  = [NSDictionary dictionaryWithObjectsAndKeys:self.orderDetailModel.orderNo,@"orderNo",repayType,@"repayChnnlType",self.orderDetailModel.repayPlanId,@"repayPlanId",newPayMoney,@"repayAmt", nil];
+            self.dict  = [NSDictionary dictionaryWithObjectsAndKeys:self.orderDetailModel.orderNo,@"orderNo",repayType,@"repayChnnlType",self.orderDetailModel.repayPlanId,@"repayPlanId",self.orderDetailModel.repayAmt,@"repayAmt", nil];
         }
             break;
         case MyOrderFlowRequsetExtensionPay:{
@@ -580,13 +608,12 @@ typedef NS_ENUM(NSInteger ,MyOrderFlowRequset) {
                     NSString *stauts = resultDic[@"resultStatus"];
                     if ([stauts isEqualToString:@"9000"]) {
                         [self setHudWithName:@"支付成功" Time:2 andType:1];
-                        
-                        [self prepareDataWithCount:MyOrderFlowRequsetGetInfo];
-                        
-                        return;
+         
+                    }else{
+                        [self setHudWithName:@"支付失败" Time:2 andType:1];
                     }
                     
-                    [self setHudWithName:@"支付失败" Time:2 andType:1];
+                    [self prepareDataWithCount:MyOrderFlowRequsetGetInfo];
                 }];
                 return;
             }

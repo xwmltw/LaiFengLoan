@@ -15,6 +15,7 @@
 #import "ExtensionView.h"
 #import "DateHelper.h"
 #import "ImmediateView.h"
+#import "XRootWebVC.h"
 typedef NS_ENUM(NSInteger ,MyOrderDetailRequest) {
     MyOrderDetailRequestList,
     MyOrderDetailRequestPay,
@@ -130,16 +131,23 @@ typedef NS_ENUM(NSInteger ,MyOrderDetailRequest) {
         cell.block = ^(NSNumber *row , UIButton *btn) {
             weakSelf.orderListModel = [OrderListModel mj_objectWithKeyValues:self.dataSourceArr[row.integerValue]];
             if (btn.tag == 650) {
-                weakSelf.immediateView.hidden = NO;
-                weakSelf.immediateView.payMoney = weakSelf.orderListModel.waitingAmt;
-                weakSelf.immediateView.payMoneyLab.text = [NSString stringWithFormat:@"￥%@",weakSelf.orderListModel.waitingAmt.description];
-                isExtension = @2;
+//                weakSelf.immediateView.hidden = NO;
+//                weakSelf.immediateView.payMoney = weakSelf.orderListModel.waitingAmt;
+//                weakSelf.immediateView.payMoneyLab.text = [NSString stringWithFormat:@"￥%@",weakSelf.orderListModel.waitingAmt.description];
+                
+                    self.bgView.hidden = NO;
+                    isExtension = @2;
+               
             }else{
-                isExtension = @1;
-                weakSelf.extensionView.hidden = NO;
-                [weakSelf.extensionView.oldDateBtn setTitle:[NSString stringWithFormat:@"原款日期\n%@",[DateHelper getDateFromTimeNumber:weakSelf.orderListModel.dueRepayDate withFormat:@"MM月dd日"]] forState:UIControlStateNormal];
-                [weakSelf.extensionView.nowDateBtn setTitle:[NSString stringWithFormat:@"新款日期\n%@",[DateHelper getDateFromTimeNumber:weakSelf.orderListModel.extensionDueRepayDate withFormat:@"MM月dd日"]] forState:UIControlStateNormal];
-                weakSelf.extensionView.poundageLab.text = [NSString stringWithFormat:@"￥%@",weakSelf.orderListModel.extensionAmt.description];
+                if (weakSelf.orderListModel.extensionStatus.integerValue == 1 ||weakSelf.orderListModel.extensionStatus.integerValue == 2 ||weakSelf.orderListModel.extensionStatus.integerValue == 4 || weakSelf.orderListModel.repayStatus.integerValue == 4 || weakSelf.orderListModel.overDueDays.integerValue > 0 || weakSelf.orderListModel.hasPartRepay.integerValue == 1) {
+                    [self setHudWithName:@"已部分还款的订单不能申请展期，请联系客服人员" Time:1 andType:1];
+                }else{
+                    isExtension = @1;
+                    weakSelf.extensionView.hidden = NO;
+                    [weakSelf.extensionView.oldDateBtn setTitle:[NSString stringWithFormat:@"原款日期\n%@",[DateHelper getDateFromTimeNumber:weakSelf.orderListModel.dueRepayDate withFormat:@"MM月dd日"]] forState:UIControlStateNormal];
+                    [weakSelf.extensionView.nowDateBtn setTitle:[NSString stringWithFormat:@"新款日期\n%@",[DateHelper getDateFromTimeNumber:weakSelf.orderListModel.extensionDueRepayDate withFormat:@"MM月dd日"]] forState:UIControlStateNormal];
+                    weakSelf.extensionView.poundageLab.text = [NSString stringWithFormat:@"￥%@",weakSelf.orderListModel.extensionAmt.description];
+                }
             }
             
         };
@@ -200,10 +208,9 @@ typedef NS_ENUM(NSInteger ,MyOrderDetailRequest) {
         case 605:{
             if (isExtension.integerValue == 1) {
                 self.extensionView.hidden = NO;
-            }else{
-                self.immediateView.hidden = NO;
+                self.bgView.hidden = YES;
             }
-            self.bgView.hidden = YES;
+            
         }
             break;
         default:
@@ -222,11 +229,28 @@ typedef NS_ENUM(NSInteger ,MyOrderDetailRequest) {
             
             break;
         case 703:{
-            
+            UIButton *select = (UIButton *)[self.view viewWithTag:704];
+            if (select.selected != YES) {
+                [self setHudWithName:@"请阅读并同意《借款展期协议》" Time:1.5 andType:1];
+                return;
+            }
             self.bgView.hidden = NO;
             self.extensionView.hidden = YES;
         }
             break;
+        case 704:{
+            btn.selected = !btn.selected;
+           
+        }
+            break;
+        case 705:{
+            XRootWebVC *vc = [[XRootWebVC alloc]init];
+            vc.url = [NSString stringWithFormat:@"%@%@",self.clientGlobalInfo.extensionAgreementUrl,self.orderListModel.orderNo];
+            [self.navigationController pushViewController:vc animated:YES];
+            
+        }
+            break;
+            
             
         default:
             break;
@@ -326,14 +350,13 @@ typedef NS_ENUM(NSInteger ,MyOrderDetailRequest) {
                     NSString *stauts = resultDic[@"resultStatus"];
                     if ([stauts isEqualToString:@"9000"]) {
                         [self setHudWithName:@"支付成功" Time:2 andType:1];
-                        [self.dataSourceArr removeAllObjects];
-                        self.pageQueryModel.page = @(1);
-                        [self prepareDataWithCount:MyOrderDetailRequestList];
-                        
-                        return;
+
+                    }else{
+                        [self setHudWithName:@"支付失败" Time:2 andType:1];
                     }
-                    
-                    [self setHudWithName:@"支付失败" Time:2 andType:1];
+                    [self.dataSourceArr removeAllObjects];
+                    self.pageQueryModel.page = @(1);
+                    [self prepareDataWithCount:MyOrderDetailRequestList];
                 }];
                 return;
             }

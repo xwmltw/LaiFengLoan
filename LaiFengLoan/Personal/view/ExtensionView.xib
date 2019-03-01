@@ -16,10 +16,10 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZV1-2s-EeI">
-                    <rect key="frame" x="19" y="150" width="337.5" height="367"/>
+                    <rect key="frame" x="19" y="130" width="337.5" height="407"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="展期头部" translatesAutoresizingMaskIntoConstraints="NO" id="Kvu-Od-2ob">
-                            <rect key="frame" x="0.0" y="0.0" width="337.5" height="125"/>
+                            <rect key="frame" x="0.0" y="0.0" width="337.5" height="114"/>
                         </imageView>
                         <button opaque="NO" tag="700" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghl-bK-e7o">
                             <rect key="frame" x="301.5" y="12" width="24" height="24"/>
@@ -29,13 +29,13 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="——  展期还款  ——" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QoQ-mM-KxW">
-                            <rect key="frame" x="96" y="130" width="145" height="19.5"/>
+                            <rect key="frame" x="96" y="119" width="145" height="19.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <color key="textColor" red="0.13333333333333333" green="0.22745098039215686" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" tag="702" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RSZ-WD-QW3">
-                            <rect key="frame" x="197" y="165" width="111.5" height="92"/>
+                            <rect key="frame" x="197" y="173" width="111.5" height="101.5"/>
                             <color key="backgroundColor" red="0.396078431372549" green="0.63137254901960782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal" title="新还款日">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -45,7 +45,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" tag="703" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDf-II-X9K">
-                            <rect key="frame" x="42" y="327" width="253" height="30"/>
+                            <rect key="frame" x="42" y="315.5" width="253" height="30"/>
                             <color key="backgroundColor" red="0.396078431372549" green="0.63137254901960782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal" title="立即展期">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -55,13 +55,13 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥10.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86n-Iz-aAc">
-                            <rect key="frame" x="197" y="265" width="53" height="18"/>
+                            <rect key="frame" x="255.5" y="282.5" width="53" height="18"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <color key="textColor" red="0.13333333333333333" green="0.22745098039215686" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" tag="701" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7z7-fW-JNu">
-                            <rect key="frame" x="28.5" y="165" width="111.5" height="92"/>
+                            <rect key="frame" x="28.5" y="173" width="111.5" height="101.5"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal" title="原还款日">
                                 <color key="titleColor" red="0.13333333333333333" green="0.22745098039215686" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
@@ -71,9 +71,37 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="展期还款手续费：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHm-Qg-bHS">
-                            <rect key="frame" x="28.5" y="265" width="123" height="18"/>
+                            <rect key="frame" x="28.5" y="282.5" width="123" height="18"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <color key="textColor" red="0.13333333333333333" green="0.22745098039215686" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" tag="704" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6dE-fc-OHf">
+                            <rect key="frame" x="42" y="353.5" width="15" height="15"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="15" id="TvZ-4a-ZuS"/>
+                                <constraint firstAttribute="width" constant="15" id="hUW-zl-p8S"/>
+                            </constraints>
+                            <state key="normal" image="立即按钮未选中"/>
+                            <state key="selected" image="协议选择"/>
+                            <connections>
+                                <action selector="btnOnClick:" destination="Azr-wT-KQO" eventType="touchUpInside" id="kkS-h1-IQu"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="705" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oji-X1-qri">
+                            <rect key="frame" x="161" y="346.5" width="115" height="29"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="《借款展期协议》">
+                                <color key="titleColor" red="0.396078431372549" green="0.63137254901960782" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="btnOnClick:" destination="Azr-wT-KQO" eventType="touchUpInside" id="sz9-uK-xTY"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已阅读，并同意" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCe-gx-DDX">
+                            <rect key="frame" x="59" y="352.5" width="100" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.34901960784313724" green="0.38823529411764707" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -82,26 +110,32 @@
                         <constraint firstItem="QoQ-mM-KxW" firstAttribute="top" secondItem="Kvu-Od-2ob" secondAttribute="bottom" constant="5" id="0NG-2R-4dK"/>
                         <constraint firstItem="DDf-II-X9K" firstAttribute="width" secondItem="ZV1-2s-EeI" secondAttribute="width" multiplier="0.75" id="12h-2i-Xpi"/>
                         <constraint firstItem="7z7-fW-JNu" firstAttribute="centerX" secondItem="ZV1-2s-EeI" secondAttribute="centerX" multiplier="0.5" id="1PH-7Q-SJ9"/>
-                        <constraint firstAttribute="bottom" secondItem="DDf-II-X9K" secondAttribute="bottom" constant="10" id="40t-vA-tpr"/>
-                        <constraint firstItem="7z7-fW-JNu" firstAttribute="centerY" secondItem="ZV1-2s-EeI" secondAttribute="centerY" multiplier="1.15" id="8Jr-Qz-Ha6"/>
+                        <constraint firstItem="DDf-II-X9K" firstAttribute="top" secondItem="86n-Iz-aAc" secondAttribute="bottom" constant="15" id="7lm-as-6UU"/>
+                        <constraint firstItem="7z7-fW-JNu" firstAttribute="centerY" secondItem="ZV1-2s-EeI" secondAttribute="centerY" multiplier="1.1" id="8Jr-Qz-Ha6"/>
+                        <constraint firstItem="lCe-gx-DDX" firstAttribute="leading" secondItem="6dE-fc-OHf" secondAttribute="trailing" constant="2" id="9RE-Yn-g93"/>
                         <constraint firstItem="7z7-fW-JNu" firstAttribute="height" secondItem="ZV1-2s-EeI" secondAttribute="height" multiplier="0.25" id="AiO-Vm-BlE"/>
-                        <constraint firstItem="86n-Iz-aAc" firstAttribute="leading" secondItem="RSZ-WD-QW3" secondAttribute="leading" id="B4V-3N-Oue"/>
-                        <constraint firstItem="Kvu-Od-2ob" firstAttribute="height" secondItem="ZV1-2s-EeI" secondAttribute="height" multiplier="0.34" id="G6w-0t-Rym"/>
+                        <constraint firstItem="Kvu-Od-2ob" firstAttribute="height" secondItem="ZV1-2s-EeI" secondAttribute="height" multiplier="0.28" id="G6w-0t-Rym"/>
                         <constraint firstItem="DDf-II-X9K" firstAttribute="centerX" secondItem="ZV1-2s-EeI" secondAttribute="centerX" id="Jkg-yJ-QuV"/>
+                        <constraint firstItem="oji-X1-qri" firstAttribute="leading" secondItem="lCe-gx-DDX" secondAttribute="trailing" constant="2" id="Jtb-Jl-GtV"/>
                         <constraint firstItem="Kvu-Od-2ob" firstAttribute="leading" secondItem="ZV1-2s-EeI" secondAttribute="leading" id="KS8-d3-peT"/>
+                        <constraint firstItem="6dE-fc-OHf" firstAttribute="leading" secondItem="DDf-II-X9K" secondAttribute="leading" id="Psb-Da-Vao"/>
                         <constraint firstItem="hHm-Qg-bHS" firstAttribute="leading" secondItem="7z7-fW-JNu" secondAttribute="leading" id="RqC-4I-t2A"/>
+                        <constraint firstItem="6dE-fc-OHf" firstAttribute="top" secondItem="DDf-II-X9K" secondAttribute="bottom" constant="8" id="Z1k-gQ-7pP"/>
+                        <constraint firstItem="86n-Iz-aAc" firstAttribute="trailing" secondItem="RSZ-WD-QW3" secondAttribute="trailing" id="at7-IK-Ul4"/>
                         <constraint firstItem="7z7-fW-JNu" firstAttribute="width" secondItem="ZV1-2s-EeI" secondAttribute="width" multiplier="0.33" id="bmP-L7-XjM"/>
+                        <constraint firstItem="oji-X1-qri" firstAttribute="centerY" secondItem="lCe-gx-DDX" secondAttribute="centerY" id="d2m-nq-930"/>
                         <constraint firstItem="QoQ-mM-KxW" firstAttribute="centerX" secondItem="ZV1-2s-EeI" secondAttribute="centerX" id="hkm-qn-8sY"/>
                         <constraint firstItem="Kvu-Od-2ob" firstAttribute="top" secondItem="ZV1-2s-EeI" secondAttribute="top" id="hpg-vl-Lsn"/>
                         <constraint firstAttribute="trailing" secondItem="Kvu-Od-2ob" secondAttribute="trailing" id="ixA-Pq-vtK"/>
                         <constraint firstItem="RSZ-WD-QW3" firstAttribute="height" secondItem="ZV1-2s-EeI" secondAttribute="height" multiplier="0.25" id="jdg-mA-cm6"/>
                         <constraint firstItem="RSZ-WD-QW3" firstAttribute="width" secondItem="ZV1-2s-EeI" secondAttribute="width" multiplier="0.33" id="l64-Cg-bNf"/>
                         <constraint firstItem="86n-Iz-aAc" firstAttribute="top" secondItem="RSZ-WD-QW3" secondAttribute="bottom" constant="8" id="rLW-6G-Wh2"/>
-                        <constraint firstItem="RSZ-WD-QW3" firstAttribute="centerY" secondItem="ZV1-2s-EeI" secondAttribute="centerY" multiplier="1.15" id="soM-pe-HKL"/>
+                        <constraint firstItem="RSZ-WD-QW3" firstAttribute="centerY" secondItem="ZV1-2s-EeI" secondAttribute="centerY" multiplier="1.1" id="soM-pe-HKL"/>
                         <constraint firstItem="ghl-bK-e7o" firstAttribute="top" secondItem="ZV1-2s-EeI" secondAttribute="top" constant="12" id="suc-3x-8Rf"/>
                         <constraint firstAttribute="trailing" secondItem="ghl-bK-e7o" secondAttribute="trailing" constant="12" id="uTe-qk-aqv"/>
                         <constraint firstItem="hHm-Qg-bHS" firstAttribute="top" secondItem="7z7-fW-JNu" secondAttribute="bottom" constant="8" id="vGQ-Zh-IxS"/>
                         <constraint firstItem="RSZ-WD-QW3" firstAttribute="centerX" secondItem="ZV1-2s-EeI" secondAttribute="centerX" multiplier="1.5" id="wop-eV-ECD"/>
+                        <constraint firstItem="lCe-gx-DDX" firstAttribute="top" secondItem="DDf-II-X9K" secondAttribute="bottom" constant="7" id="zdA-qZ-Yp2"/>
                     </constraints>
                 </view>
             </subviews>
@@ -111,7 +145,7 @@
                 <constraint firstItem="ZV1-2s-EeI" firstAttribute="centerY" secondItem="Azr-wT-KQO" secondAttribute="centerY" id="3U2-Vi-5vh"/>
                 <constraint firstItem="ZV1-2s-EeI" firstAttribute="width" secondItem="Azr-wT-KQO" secondAttribute="width" multiplier="0.9" id="ChZ-2s-boV"/>
                 <constraint firstItem="ZV1-2s-EeI" firstAttribute="centerX" secondItem="Azr-wT-KQO" secondAttribute="centerX" id="Pqs-pG-eOU"/>
-                <constraint firstItem="ZV1-2s-EeI" firstAttribute="height" secondItem="Azr-wT-KQO" secondAttribute="height" multiplier="0.55" id="ejx-nW-P7i"/>
+                <constraint firstItem="ZV1-2s-EeI" firstAttribute="height" secondItem="Azr-wT-KQO" secondAttribute="height" multiplier="0.61" id="ejx-nW-P7i"/>
             </constraints>
             <connections>
                 <outlet property="bgView" destination="ZV1-2s-EeI" id="6V0-bM-V74"/>
@@ -125,6 +159,8 @@
     </objects>
     <resources>
         <image name="X" width="24" height="24"/>
+        <image name="协议选择" width="15" height="15"/>
         <image name="展期头部" width="340" height="102"/>
+        <image name="立即按钮未选中" width="23" height="23"/>
     </resources>
 </document>

@@ -31,6 +31,8 @@
 @property (nonatomic ,copy) NSNumber *extensionDueRepayDate;
 @property (nonatomic ,copy) NSNumber *extensionAmt;
 @property (nonatomic ,copy) NSNumber *extensionStatus;
+@property (nonatomic ,copy) NSNumber *hasPartRepay;
+@property (nonatomic ,copy) NSString *originalOrderNo;
 @end
 //dueRepayAmt    number($double)
 //到期还款金额
