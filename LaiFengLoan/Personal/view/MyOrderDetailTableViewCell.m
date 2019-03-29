@@ -58,14 +58,20 @@
                 [self.paybtn setBackgroundColor:AppMainColor];
                 [self.paybtn setTitle:@"立即还款" forState:UIControlStateNormal];
             }
-            if (orderListModel.extensionStatus.integerValue == 1 ||orderListModel.extensionStatus.integerValue == 2 ||orderListModel.extensionStatus.integerValue == 4 || orderListModel.repayStatus.integerValue == 4 || orderListModel.overDueDays.integerValue > 0 || orderListModel.hasPartRepay.integerValue == 1) {
+            if (orderListModel.extensionStatus.integerValue == 1 ||orderListModel.extensionStatus.integerValue == 2 ||orderListModel.extensionStatus.integerValue == 4 || orderListModel.repayStatus.integerValue == 4 ||  orderListModel.overDueDays.integerValue > 0  || orderListModel.hasPartRepay.integerValue == 1) {
                 [self.nextPayBtn setBackgroundColor:LineColor];
 //                self.nextPayBtn.userInteractionEnabled = NO;
             }else{
                 [self.nextPayBtn setBackgroundColor:XColorWithRGB(56, 123, 230)];
 //                self.nextPayBtn.userInteractionEnabled = YES;
             }
-            
+            if (orderListModel.overDueDays.integerValue) {
+                if (orderListModel.overDueDays.integerValue < 4) {
+                    if (self.clientGlobalInfo.overdue3dayHasExtension.integerValue == 1) {
+                        [self.nextPayBtn setBackgroundColor:XColorWithRGB(56, 123, 230)];
+                    }
+                }
+            }
             if (orderListModel.hasExtension.integerValue == 1) {
                 self.extensionImage.hidden = NO;
             }else{
@@ -135,6 +141,12 @@
     if (self.block) {
         self.block(self.row, sender);
     }
+}
+- (ClientGlobalInfo *)clientGlobalInfo{
+    if (!_clientGlobalInfo) {
+        _clientGlobalInfo = [ClientGlobalInfo getClientGlobalInfoModel];
+    }
+    return _clientGlobalInfo;
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

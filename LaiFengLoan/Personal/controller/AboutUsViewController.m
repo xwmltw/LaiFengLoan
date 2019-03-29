@@ -21,7 +21,7 @@
     self.title = @"关于我们";
     
     UIImageView *imageView = [[UIImageView alloc]init];
-    imageView.image = [UIImage imageNamed:@"LOGO"];
+    imageView.image = [UIImage imageNamed:APPLOGO];
     [self.view addSubview:imageView];
     [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.view).offset(30);

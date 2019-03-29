@@ -18,13 +18,15 @@
 static NSString *const TalkingData_ChannelId = @"AppStore";
 
 #if (APP_Type == 0)
-
-#define SERVICEURL @"http://pd-mapi.91qnd.com" // 测试环境
+#define SERVICEURL @"http://qsj-mapi.pdl001.com"
+//#define SERVICEURL @"http://xed-mapi.pdl001.com"
+//#define SERVICEURL @"http://pd-mapi.91qnd.com" // 测试环境
 //#define SERVICEURL @"http://192.168.5.66:8053" // 从秦测试环境
 //#define SERVICEURL @"http://192.168.5.126:8053" // 测试环境
 
 
 static NSString *const AppName = @"来风现金贷";
+static NSString *const APPLOGO = @"LOGO";
 static NSString *const AppScheme = @"LaiFengXJD";
 static NSString *const AMapKey = @"7021cdb14ec5bdc9f52b5b420512f3db";
 static NSString *const TalkingData_AppID =   @"";
@@ -33,6 +35,7 @@ static NSString *const TalkingData_AppID =   @"";
 //#define SERVICEURL @"http://mapi.lf.sdhoo.me" //正式环境
 #define SERVICEURL @"http://pd-mapi.91qnd.com" // 测试环境
 static NSString *const AppName = @"来风现金贷";
+static NSString *const APPLOGO = @"LOGO";
 static NSString *const AppScheme = @"LaiFengXJD";
 static NSString *const TalkingData_AppID =   @"969A998745F14C05B8634C3B9ACB872D";
 static NSString *const AMapKey = @"7021cdb14ec5bdc9f52b5b420512f3db";
@@ -41,6 +44,7 @@ static NSString *const AMapKey = @"7021cdb14ec5bdc9f52b5b420512f3db";
 #define SERVICEURL @"http://cxh-mapi.pdl001.com"
 
 static NSString *const AppName = @"潮享花";
+static NSString *const APPLOGO = @"LOGO_CXH";
 static NSString *const AppScheme = @"ChaoHengHuaLoan";
 static NSString *const TalkingData_AppID =   @"30F9A95726F44039A9872B7F3C940444";
 static NSString *const AMapKey = @"1f75efab0632a947e96d6c099b5d5a9e";
@@ -49,6 +53,7 @@ static NSString *const AMapKey = @"1f75efab0632a947e96d6c099b5d5a9e";
 #define SERVICEURL @"https://mapi.lf.hujiujinfu.com"
 
 static NSString *const AppName = @"用呗";
+static NSString *const APPLOGO = @"LOGO_YB";
 static NSString *const AppScheme = @"YongBeiLoan";
 static NSString *const TalkingData_AppID =   @"BF529F0C63914860999F0F85F6B198BA";
 static NSString *const AMapKey = @"396a4baefddd54c5d7ff19b1f8a374d6";
@@ -57,6 +62,7 @@ static NSString *const AMapKey = @"396a4baefddd54c5d7ff19b1f8a374d6";
 #define SERVICEURL @"https://mapi.lf.myhairun.com"
 
 static NSString *const AppName = @"海量花";
+static NSString *const APPLOGO = @"LOGO_HLH";
 static NSString *const AppScheme = @"HaiLiangHuaLoan";
 static NSString *const TalkingData_AppID =   @"1D959493B7044E65B1C70D70BC021A85";
 static NSString *const AMapKey = @"b71aee16533e4683b02681f66cc7cee2";
@@ -66,6 +72,7 @@ static NSString *const AMapKey = @"b71aee16533e4683b02681f66cc7cee2";
 #define SERVICEURL @"https://mapi.mykuaibei.net"
 
 static NSString *const AppName = @"快呗";
+static NSString *const APPLOGO = @"LOGO_KB";
 static NSString *const AppScheme = @"kuaibeiLoan";
 static NSString *const TalkingData_AppID =   @"96985635A7D5435DA29602B214034B1C";
 static NSString *const AMapKey = @"309135e58e292bf426310adb188f7c82";
@@ -75,6 +82,7 @@ static NSString *const AMapKey = @"309135e58e292bf426310adb188f7c82";
 #define SERVICEURL @"https://mapi.lf.yrxin.com"
 
 static NSString *const AppName = @"优来花";
+static NSString *const APPLOGO = @"LOGO_YLH";
 static NSString *const AppScheme = @"YouLaiHuaLoan";
 static NSString *const TalkingData_AppID =   @"1B79EDD8ED374A6D91679BAE6F7224BB";
 static NSString *const AMapKey = @"325e91aa43515bc2b76f0d332c47dd8e";
@@ -84,6 +92,7 @@ static NSString *const AMapKey = @"325e91aa43515bc2b76f0d332c47dd8e";
 #define SERVICEURL @"http://mapi.jidaibao168.com"
 
 static NSString *const AppName = @"急贷宝";
+static NSString *const APPLOGO = @"LOGO_JDB";
 static NSString *const AppScheme = @"JiDaiBaoLoan";
 static NSString *const TalkingData_AppID =   @"E2EC96B77E3E4967821F7CFA605FEA0A";
 static NSString *const AMapKey = @"7cf771e4ffc357d670c1ce58374eea06";
@@ -93,6 +102,7 @@ static NSString *const AMapKey = @"7cf771e4ffc357d670c1ce58374eea06";
 #define SERVICEURL @"https://mapi.tspsy.net.cn"
 
 static NSString *const AppName = @"梦想贷";
+static NSString *const APPLOGO = @"LOGO_MXD";
 static NSString *const AppScheme = @"MengXiangLoan";
 static NSString *const TalkingData_AppID =   @"59BA7F6C8C2944AEA4642434479E92AA";
 static NSString *const AMapKey = @"98b016a3e2c4b17f9ca42c41888965d2";
@@ -102,6 +112,7 @@ static NSString *const AMapKey = @"98b016a3e2c4b17f9ca42c41888965d2";
 #define SERVICEURL @"http://mapi.xiaodaishu01.com"
 
 static NSString *const AppName = @"小贷鼠";
+static NSString *const APPLOGO = @"LOGO_XDS";
 static NSString *const AppScheme = @"XiaoDaiShuLoan";
 static NSString *const TalkingData_AppID =   @"44373F983D954F83AA20297ECE277C94";
 static NSString *const AMapKey = @"e22ac688e591cd1efd8e7c427d748863";
@@ -111,6 +122,7 @@ static NSString *const AMapKey = @"e22ac688e591cd1efd8e7c427d748863";
 #define SERVICEURL @"http://xhy-mapi.pdl001.com"
 
 static NSString *const AppName = @"小黄鱼";
+static NSString *const APPLOGO = @"LOGO_XHY";
 static NSString *const AppScheme = @"XiaoHuangYuLoan";
 static NSString *const TalkingData_AppID =   @"1AF4D12666EC4A0CADF20A1F2CD5A8D1";
 static NSString *const AMapKey = @"8d24ffe23173796fa7b5d7a362665f5d";
@@ -120,6 +132,7 @@ static NSString *const AMapKey = @"8d24ffe23173796fa7b5d7a362665f5d";
 #define SERVICEURL @"http://mapi.xiaokoudai00.com"
 
 static NSString *const AppName = @"小口袋";
+static NSString *const APPLOGO = @"LOGO_XKD";
 static NSString *const AppScheme = @"XiaoKouLoan";
 static NSString *const TalkingData_AppID =   @"B53D426EE09B460D936BD52F3E77F217";
 static NSString *const AMapKey = @"de5999050bb72794ffa789231542e7d2";
@@ -129,6 +142,7 @@ static NSString *const AMapKey = @"de5999050bb72794ffa789231542e7d2";
 #define SERVICEURL @"https://mapi.pdl001.com"
 
 static NSString *const AppName = @"鑫易贷";
+static NSString *const APPLOGO = @"LOGO_XYD";
 static NSString *const AppScheme = @"XinYiDai";
 static NSString *const TalkingData_AppID =   @"2138E87340F64502BAF22FB2B413BE72";
 static NSString *const AMapKey = @"fd7016bdd0be18a5ddf2ebc27ddd0783";
@@ -138,6 +152,7 @@ static NSString *const AMapKey = @"fd7016bdd0be18a5ddf2ebc27ddd0783";
 #define SERVICEURL @"http://mapi.51taomidai.com"
 
 static NSString *const AppName = @"淘米贷";
+static NSString *const APPLOGO = @"LOGO_TMD";
 static NSString *const AppScheme = @"TaoMiDai";
 static NSString *const TalkingData_AppID = @"82306D92A127431A8B9A44B92124B88A";
 static NSString *const AMapKey = @"a5641abd529ff2008c99b5af36c27e04";
@@ -147,18 +162,75 @@ static NSString *const AMapKey = @"a5641abd529ff2008c99b5af36c27e04";
 #define SERVICEURL @"http://jlh-mapi.pdl001.com/"
 
 static NSString *const AppName = @"借来花";
+static NSString *const APPLOGO = @"LOGO_JLH";
 static NSString *const AppScheme = @"JieLaiHua";
 static NSString *const TalkingData_AppID = @"08183576B4E649AFA88804A94A301660";
 static NSString *const AMapKey = @"1ed69b869fc89bbfe987f365726a7020";
 
 #elif (APP_Type == 15)
 
-#define SERVICEURL @"http://xed-mapi.pdl001.com/"
+#define SERVICEURL @"http://mapi.91xiaoedai.com/"
 
 static NSString *const AppName = @"小鹅贷";
+static NSString *const APPLOGO = @"LOGO_XED";
 static NSString *const AppScheme = @"XiaoEDai";
 static NSString *const TalkingData_AppID = @"D43781A023814B2E8D07C51939256FA1";
 static NSString *const AMapKey = @"cbbadb404889eab46938f4edce16dc52";
+
+#elif (APP_Type == 16)
+
+#define SERVICEURL @"http://ryh-mapi.pdl001.com"
+
+static NSString *const AppName = @"如意花";
+static NSString *const APPLOGO = @"LOGO_RYH";
+static NSString *const AppScheme = @"RuYiHua";
+static NSString *const TalkingData_AppID = @"769FA3CB723143CF856A94EB16A40D50";
+static NSString *const AMapKey = @"1528b5ef3f9fa693f0b6b36edabc73ce";
+#elif (APP_Type == 17)
+
+#define SERVICEURL @"http://mapi.51youqiandai.com/"
+
+static NSString *const AppName = @"有钱袋";
+static NSString *const APPLOGO = @"LOGO_YQD";
+static NSString *const AppScheme = @"YouQianDai";
+static NSString *const TalkingData_AppID = @"9F7BBA2406E945B2B8A666C058BF9916";
+static NSString *const AMapKey = @"e8bd19c78df417bfb470cd37dc4c498a";
+
+#elif (APP_Type == 18)
+#define SERVICEURL @"http://mapi.91xiaoeyizhan.com"
+
+static NSString *const AppName = @"小鹅驿站";
+static NSString *const APPLOGO = @"LOGO_XEYZ";
+static NSString *const AppScheme = @"XiaoEYiZhan";
+static NSString *const TalkingData_AppID = @"6322CEAD00B44976BD69B7F74293B68E";
+static NSString *const AMapKey = @"a0c2fdf8c2e8bdc3d5c1a7cc74391c9c";
+
+#elif (APP_Type == 19)
+#define SERVICEURL @"http://mapi.91jinyuanbao.com/"
+
+static NSString *const AppName = @"金元宝";
+static NSString *const APPLOGO = @"LOGO_JYB";
+static NSString *const AppScheme = @"JinYuanBao";
+static NSString *const TalkingData_AppID = @"5428F1F49F0A4A7583E9B623C0D626D4";
+static NSString *const AMapKey = @"4fe673200aef46463045abb92d62d507";
+
+#elif (APP_Type == 20)
+#define SERVICEURL @"http://mapi.shandianchaoren.xin/"
+
+static NSString *const AppName = @"钞急飞侠";
+static NSString *const APPLOGO = @"LOGO_CJFX";
+static NSString *const AppScheme = @"ChaoJiFeiXia";
+static NSString *const TalkingData_AppID = @"424550F070E4458395A54841559446AF";
+static NSString *const AMapKey = @"b1180be3696449717ae72329d36f4704";
+
+#elif (APP_Type == 21)
+#define SERVICEURL @"http://qsj-mapi.pdl001.com"
+
+static NSString *const AppName = @"轻松借";
+static NSString *const APPLOGO = @"LOGO_QSD";
+static NSString *const AppScheme = @"QingSongJie";
+static NSString *const TalkingData_AppID = @"972D0DFDC46D4FE6811EB11835F0FF24";
+static NSString *const AMapKey = @"da42f53dd574db7048a87a67c04ec077";
 #endif
 
 

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LaF-c0-d2b"/>
+                        <viewControllerLayoutGuide type="bottom" id="lPy-Q5-A1n"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="ZJF-HK-HhH">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO_RYH" translatesAutoresizingMaskIntoConstraints="NO" id="8YR-zX-8Mv">
+                                <rect key="frame" x="157.5" y="546" width="60" height="60"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="如意花" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zYP-nY-zaD">
+                                <rect key="frame" x="161.5" y="616" width="52" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="8YR-zX-8Mv" firstAttribute="centerX" secondItem="ZJF-HK-HhH" secondAttribute="centerX" id="0cz-ex-Zay"/>
+                            <constraint firstItem="zYP-nY-zaD" firstAttribute="centerX" secondItem="ZJF-HK-HhH" secondAttribute="centerX" id="Kyt-Bv-5up"/>
+                            <constraint firstItem="ZJF-HK-HhH" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="d0l-GG-bVl"/>
+                            <constraint firstAttribute="trailing" secondItem="ZJF-HK-HhH" secondAttribute="trailing" id="fOv-gI-CM3"/>
+                            <constraint firstItem="lPy-Q5-A1n" firstAttribute="top" secondItem="ZJF-HK-HhH" secondAttribute="bottom" id="gCN-ll-dZH"/>
+                            <constraint firstItem="lPy-Q5-A1n" firstAttribute="top" secondItem="zYP-nY-zaD" secondAttribute="bottom" constant="30" id="gH9-Ze-jS8"/>
+                            <constraint firstItem="zYP-nY-zaD" firstAttribute="top" secondItem="8YR-zX-8Mv" secondAttribute="bottom" constant="10" id="hyE-AB-Ksc"/>
+                            <constraint firstItem="ZJF-HK-HhH" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="zvp-hE-cTQ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LOGO_RYH" width="60" height="60"/>
+        <image name="LaunchScreen" width="375" height="668"/>
+    </resources>
+</document>

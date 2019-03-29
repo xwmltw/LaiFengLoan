@@ -45,6 +45,7 @@
 @property (nonatomic ,copy) NSNumber *isNeedAlipayVerify;
 @property (nonatomic ,copy) NSNumber *hasExtension;
 @property (nonatomic ,copy) NSString *extensionAgreementUrl;
+@property (nonatomic ,copy) NSString *overdue3dayHasExtension;
 //存储数据
 - (void)setClientGlobalInfoModel;
 + (ClientGlobalInfo *)getClientGlobalInfoModel;
@@ -70,6 +71,7 @@
 //isNeedAlipayVerify    string是否需要支付宝认证: 1是 0否
 //hasExtension    integer($int32)是否开启展期: 1是 0否
 //extensionAgreementUrl  展期协议
+//overdue3dayHasExtension    integer($int32)逾期3天内可否展期: 1是 0否
 @end
 @interface VersionInfo:ParamModel
 @property (nonatomic ,copy) NSNumber *needForceUpdate;

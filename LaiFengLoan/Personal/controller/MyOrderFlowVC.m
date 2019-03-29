@@ -271,8 +271,9 @@ typedef NS_ENUM(NSInteger ,MyOrderFlowRequset) {
         extensionBtn.tag = 103;
         [extensionBtn setCornerValue:AdaptationWidth(22)];
         
-     
+       
         if (self.orderDetailModel.extensionStatus.integerValue == 1 ||self.orderDetailModel.extensionStatus.integerValue == 2 ||self.orderDetailModel.extensionStatus.integerValue == 4 || self.orderDetailModel.repayStatus.integerValue == 4 || self.orderDetailModel.overDueDays.integerValue > 0 || self.orderDetailModel.hasPartRepay.integerValue == 1) {
+            
             [extensionBtn setTitle:@"下期再还" forState:UIControlStateNormal];
             [extensionBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             [extensionBtn setBackgroundColor:LineColor];
@@ -283,6 +284,17 @@ typedef NS_ENUM(NSInteger ,MyOrderFlowRequset) {
             [extensionBtn setTitleColor:AppMainColor forState:UIControlStateNormal];
             [extensionBtn setBackgroundColor:[UIColor whiteColor]];
             [extensionBtn setBorderWidth:1 andColor:AppMainColor];
+        }
+        if (self.orderDetailModel.overDueDays.integerValue) {
+            if (self.orderDetailModel.overDueDays.integerValue < 4) {
+                if (self.clientGlobalInfo.overdue3dayHasExtension.integerValue == 1) {
+                    extensionBtn.enabled = YES;
+                    [extensionBtn setTitle:@"下期再还" forState:UIControlStateNormal];
+                    [extensionBtn setTitleColor:AppMainColor forState:UIControlStateNormal];
+                    [extensionBtn setBackgroundColor:[UIColor whiteColor]];
+                    [extensionBtn setBorderWidth:1 andColor:AppMainColor];
+                }
+            }
         }
         [extensionBtn addTarget:self action:@selector(btnOnClick:) forControlEvents:UIControlEventTouchUpInside];
         [view addSubview:extensionBtn];
@@ -405,7 +417,19 @@ typedef NS_ENUM(NSInteger ,MyOrderFlowRequset) {
             break;
         case 103:{
             
-            if (self.orderDetailModel.extensionStatus.integerValue == 1 ||self.orderDetailModel.extensionStatus.integerValue == 2 ||self.orderDetailModel.extensionStatus.integerValue == 4 || self.orderDetailModel.repayStatus.integerValue == 4 || self.orderDetailModel.overDueDays.integerValue > 0 || self.orderDetailModel.hasPartRepay.integerValue == 1) {
+            if (self.orderDetailModel.extensionStatus.integerValue == 1 ||self.orderDetailModel.extensionStatus.integerValue == 2 ||self.orderDetailModel.extensionStatus.integerValue == 4 || self.orderDetailModel.repayStatus.integerValue == 4 ||  self.orderDetailModel.overDueDays.integerValue > 0) {
+                if (self.orderDetailModel.overDueDays.integerValue) {
+                    if (self.orderDetailModel.overDueDays.integerValue < 4) {
+                        if (self.clientGlobalInfo.overdue3dayHasExtension.integerValue == 1) {
+                            isExtension = @1;
+                            self.extensionView.hidden = NO;
+                            [self.extensionView.oldDateBtn setTitle:[NSString stringWithFormat:@"原款日期\n%@",[DateHelper getDateFromTimeNumber:self.orderDetailModel.dueRepayDate withFormat:@"MM月dd日"]] forState:UIControlStateNormal];
+                            [self.extensionView.nowDateBtn setTitle:[NSString stringWithFormat:@"新款日期\n%@",[DateHelper getDateFromTimeNumber:self.orderDetailModel.extensionDueRepayDate withFormat:@"MM月dd日"]] forState:UIControlStateNormal];
+                            self.extensionView.poundageLab.text = [NSString stringWithFormat:@"￥%@",self.orderDetailModel.extensionAmt.description];
+                        }
+                    }
+                }
+            }else if (self.orderDetailModel.hasPartRepay.integerValue == 1) {
                 [self setHudWithName:@"已部分还款订单不能申请展期，请联系客服人员" Time:1 andType:1];
             }else{
                 isExtension = @1;
@@ -718,6 +742,7 @@ typedef NS_ENUM(NSInteger ,MyOrderFlowRequset) {
     }
     return _immediateView;
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

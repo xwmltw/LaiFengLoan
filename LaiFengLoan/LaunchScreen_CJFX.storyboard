@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mc9-so-yhN"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ev2-vv-FGJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5Wr-Ue-c6i">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="aVS-FL-66x">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO_CJFX" translatesAutoresizingMaskIntoConstraints="NO" id="DIO-ux-Lnb">
+                                <rect key="frame" x="157.5" y="546" width="60" height="60"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="钞急飞侠" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eH9-tr-fEO">
+                                <rect key="frame" x="153" y="616" width="69.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="aVS-FL-66x" firstAttribute="top" secondItem="5Wr-Ue-c6i" secondAttribute="top" id="ICb-Hg-vQq"/>
+                            <constraint firstItem="eH9-tr-fEO" firstAttribute="centerX" secondItem="aVS-FL-66x" secondAttribute="centerX" id="Maq-50-NWk"/>
+                            <constraint firstAttribute="bottom" secondItem="aVS-FL-66x" secondAttribute="bottom" id="N3B-gM-Rd4"/>
+                            <constraint firstItem="aVS-FL-66x" firstAttribute="trailing" secondItem="5Wr-Ue-c6i" secondAttribute="trailing" id="Y8v-DQ-GiH"/>
+                            <constraint firstItem="eH9-tr-fEO" firstAttribute="top" secondItem="DIO-ux-Lnb" secondAttribute="bottom" constant="10" id="cln-k8-gTf"/>
+                            <constraint firstItem="Ev2-vv-FGJ" firstAttribute="top" secondItem="eH9-tr-fEO" secondAttribute="bottom" constant="30" id="eeu-5W-4y6"/>
+                            <constraint firstItem="aVS-FL-66x" firstAttribute="leading" secondItem="5Wr-Ue-c6i" secondAttribute="leading" id="i3T-Ky-Kl1"/>
+                            <constraint firstItem="DIO-ux-Lnb" firstAttribute="centerX" secondItem="aVS-FL-66x" secondAttribute="centerX" id="jQJ-cU-hgh"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LOGO_CJFX" width="60" height="60"/>
+        <image name="LaunchScreen" width="375" height="668"/>
+    </resources>
+</document>

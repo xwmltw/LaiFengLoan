@@ -139,8 +139,20 @@ typedef NS_ENUM(NSInteger ,MyOrderDetailRequest) {
                     isExtension = @2;
                
             }else{
-                if (weakSelf.orderListModel.extensionStatus.integerValue == 1 ||weakSelf.orderListModel.extensionStatus.integerValue == 2 ||weakSelf.orderListModel.extensionStatus.integerValue == 4 || weakSelf.orderListModel.repayStatus.integerValue == 4 || weakSelf.orderListModel.overDueDays.integerValue > 0 || weakSelf.orderListModel.hasPartRepay.integerValue == 1) {
-                    [self setHudWithName:@"已部分还款的订单不能申请展期，请联系客服人员" Time:1 andType:1];
+                if (weakSelf.orderListModel.extensionStatus.integerValue == 1 ||weakSelf.orderListModel.extensionStatus.integerValue == 2 ||weakSelf.orderListModel.extensionStatus.integerValue == 4 || weakSelf.orderListModel.repayStatus.integerValue == 4 || weakSelf.orderListModel.overDueDays.integerValue > 0 ) {
+                    if (weakSelf.orderListModel.overDueDays.integerValue) {
+                        if (weakSelf.orderListModel.overDueDays.integerValue < 4) {
+                            if (weakSelf.clientGlobalInfo.overdue3dayHasExtension.integerValue == 1) {
+                                isExtension = @1;
+                                weakSelf.extensionView.hidden = NO;
+                                [weakSelf.extensionView.oldDateBtn setTitle:[NSString stringWithFormat:@"原款日期\n%@",[DateHelper getDateFromTimeNumber:weakSelf.orderListModel.dueRepayDate withFormat:@"MM月dd日"]] forState:UIControlStateNormal];
+                                [weakSelf.extensionView.nowDateBtn setTitle:[NSString stringWithFormat:@"新款日期\n%@",[DateHelper getDateFromTimeNumber:weakSelf.orderListModel.extensionDueRepayDate withFormat:@"MM月dd日"]] forState:UIControlStateNormal];
+                                weakSelf.extensionView.poundageLab.text = [NSString stringWithFormat:@"￥%@",weakSelf.orderListModel.extensionAmt.description];
+                            }
+                        }
+                    }
+                }else if (self.orderListModel.hasPartRepay.integerValue == 1) {
+                    [self setHudWithName:@"已部分还款订单不能申请展期，请联系客服人员" Time:1 andType:1];
                 }else{
                     isExtension = @1;
                     weakSelf.extensionView.hidden = NO;
@@ -196,6 +208,7 @@ typedef NS_ENUM(NSInteger ,MyOrderDetailRequest) {
             }else{
                 repayType = @1;
             }
+            newPayMoney = self.orderListModel.waitingAmt.description;
             if (isExtension.integerValue == 1) {
                 [self prepareDataWithCount:MyOrderDetailRequestExtensionPay];
             }else{

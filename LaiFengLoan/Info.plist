@@ -15,7 +15,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.2.5.0</string>
+	<string>2.3.0.0</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -168,6 +168,66 @@
 				<string>XiaoEDai</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>YouQianDai</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>YouQianDai</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>RuYiHua</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>RuYiHua</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>XiaoEYiZhan</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>XiaoEYiZhan</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>JinYuanBao</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>JinYuanBao</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>ChaoJiFeiXia</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>ChaoJiFeiXia</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>QingSongJie</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>QingSongJie</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
@@ -191,7 +251,7 @@
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>我们需要通过您的相册获取相关相册</string>
 	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
+	<string>LaunchScreen_CJFX</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>

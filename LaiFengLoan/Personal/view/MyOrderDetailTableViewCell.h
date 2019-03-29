@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "OrderListModel.h"
+#import "ParamModel.h"
 @interface MyOrderDetailTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *firstLab;
 @property (weak, nonatomic) IBOutlet UILabel *twoLab;
@@ -21,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *orderTopLayout;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *lineTopLayout;
 @property (nonatomic ,strong) OrderListModel *orderListModel;
+@property (nonatomic ,strong) ClientGlobalInfo *clientGlobalInfo;
 @property (nonatomic ,assign) MyOrderState  orderState;
 @property (nonatomic ,copy) XDoubleBlock block;
 @property (nonatomic ,copy) NSNumber *row;

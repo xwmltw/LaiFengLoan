@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="C07-7b-6HG"/>
+                        <viewControllerLayoutGuide type="bottom" id="zyI-Z4-n7A"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4pq-UH-udw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="iOg-qy-2wU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO_JYB" translatesAutoresizingMaskIntoConstraints="NO" id="NgQ-hS-qQG">
+                                <rect key="frame" x="157.5" y="546" width="60" height="60"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="金元宝" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFX-7y-IvW">
+                                <rect key="frame" x="161.5" y="616" width="52" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="NgQ-hS-qQG" firstAttribute="centerX" secondItem="iOg-qy-2wU" secondAttribute="centerX" id="AEM-eZ-SZY"/>
+                            <constraint firstItem="zyI-Z4-n7A" firstAttribute="top" secondItem="aFX-7y-IvW" secondAttribute="bottom" constant="30" id="Alo-3V-j0C"/>
+                            <constraint firstItem="zyI-Z4-n7A" firstAttribute="top" secondItem="iOg-qy-2wU" secondAttribute="bottom" id="HEs-Ug-Br5"/>
+                            <constraint firstItem="aFX-7y-IvW" firstAttribute="centerX" secondItem="iOg-qy-2wU" secondAttribute="centerX" id="Nri-Hr-7aL"/>
+                            <constraint firstItem="aFX-7y-IvW" firstAttribute="top" secondItem="NgQ-hS-qQG" secondAttribute="bottom" constant="10" id="d9k-DC-2Te"/>
+                            <constraint firstItem="iOg-qy-2wU" firstAttribute="leading" secondItem="4pq-UH-udw" secondAttribute="leading" id="deP-eN-D0V"/>
+                            <constraint firstAttribute="trailing" secondItem="iOg-qy-2wU" secondAttribute="trailing" id="giY-bG-cE7"/>
+                            <constraint firstItem="iOg-qy-2wU" firstAttribute="top" secondItem="4pq-UH-udw" secondAttribute="top" id="po5-7T-z0y"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LOGO_JYB" width="60" height="60"/>
+        <image name="LaunchScreen" width="375" height="668"/>
+    </resources>
+</document>
